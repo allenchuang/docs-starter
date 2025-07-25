@@ -1,0 +1,621 @@
+---
+title: "Troubleshooting Guide"
+description: "Solutions to common issues and problems in Hyperscript automated trading"
+---
+
+## Common Issues and Solutions
+
+This troubleshooting guide addresses the most frequently encountered issues in Hyperscript. Use this guide to quickly diagnose and resolve problems with your automated trading strategies.
+
+<CardGroup cols={2}>
+  <Card title="Strategy Issues" icon="wrench">
+    Problems with strategy execution and performance
+  </Card>
+  <Card title="Connection Problems" icon="wifi">
+    Exchange connectivity and API issues
+  </Card>
+  <Card title="Performance Issues" icon="gauge-high">
+    Slow performance and optimization problems
+  </Card>
+  <Card title="Account Issues" icon="user">
+    Account setup and authentication problems
+  </Card>
+</CardGroup>
+
+## Strategy-Related Issues
+
+### Strategy Not Executing Trades
+
+<AccordionGroup>
+  <Accordion title="Check Strategy Status">
+    Verify your strategy is active and properly configured
+    
+    **Common Causes:**
+    - Strategy is paused or stopped
+    - Insufficient account balance
+    - Risk limits exceeded
+    - Market conditions don't meet entry criteria
+    
+    **Solutions:**
+    1. Navigate to Strategy Dashboard
+    2. Check strategy status indicator
+    3. Review recent activity logs
+    4. Verify account balance exceeds minimum requirements
+    5. Check risk management settings
+</Accordion>
+  
+  <Accordion title="Insufficient Balance">
+    Your account doesn't have enough funds to execute trades
+    
+    **Error Messages:**
+    - "Insufficient balance for trade execution"
+    - "Account balance below minimum threshold"
+    - "Not enough collateral for position"
+    
+    **Solutions:**
+    ```json
+    {
+      "troubleshooting_steps": [
+        "Check current account balance",
+        "Review minimum balance requirements",
+        "Add funds to your account",
+        "Reduce position sizes in strategy settings",
+        "Adjust risk parameters to lower requirements"
+      ]
+    }
+    ```
+</Accordion>
+  
+  <Accordion title="Risk Limits Exceeded">
+    Strategy stopped due to risk management controls
+    
+    **Common Triggers:**
+    - Daily loss limit reached
+    - Maximum drawdown exceeded
+    - Position size limit violated
+    - Correlation limits breached
+    
+    **Resolution Steps:**
+    1. Review risk management dashboard
+    2. Check which limit was exceeded
+    3. Adjust risk parameters if appropriate
+    4. Wait for daily limits to reset
+    5. Consider strategy modifications
+</Accordion>
+</AccordionGroup>
+
+### Poor Strategy Performance
+
+<AccordionGroup>
+  <Accordion title="High Slippage">
+    Trades executing at worse prices than expected **Symptoms:** - Large
+    difference between expected and actual fill prices - Reduced profitability
+    compared to backtests - Frequent partial fills **Causes and Solutions:** -
+    **Low Liquidity Assets**: Switch to more liquid trading pairs - **Large
+    Position Sizes**: Reduce position sizes relative to market volume - **Market
+    Volatility**: Adjust order types and timing - **Poor Timing**: Avoid trading
+    during low volume periods
+</Accordion>
+
+{" "}
+<Accordion title="Frequent Stop-Loss Triggers">
+  Strategies getting stopped out too frequently **Analysis Steps:** ```mermaid
+  graph TD A[Frequent Stops] --> B[Check Volatility] A --> C[Review Stop
+  Distance] A --> D[Analyze Entry Quality] B --> B1[High Volatility Period?] B1
+  --> B2[Widen Stops Temporarily] C --> C1[Stops Too Tight?] C1 --> C2[Use
+  ATR-Based Stops] D --> D1[Poor Entry Timing?] D1 --> D2[Add Confirmation
+  Filters] ``` **Solutions:** - Use volatility-adjusted stop losses - Implement
+  multiple confirmation signals - Consider market regime in stop placement -
+  Review and optimize entry criteria
+</Accordion>
+
+  <Accordion title="Low Win Rate">
+    Strategy winning fewer trades than expected **Diagnostic Questions:** - Is
+    this a new market regime? - Have market conditions changed? - Are entry
+    signals still valid? - Is the strategy over-optimized? **Improvement
+    Actions:** 1. **Market Analysis**: Check if current conditions match
+    strategy assumptions 2. **Signal Quality**: Review and potentially add
+    filters 3. **Parameter Adjustment**: Consider modest parameter changes 4.
+    **Portfolio Approach**: Diversify across multiple strategies
+</Accordion>
+</AccordionGroup>
+
+### Strategy Configuration Errors
+
+<AccordionGroup>
+  <Accordion title="Invalid Parameter Values">
+    Strategy fails to start due to configuration issues
+    
+    **Common Errors:**
+    ```json
+    {
+      "parameter_errors": {
+        "position_size": "Cannot exceed 100% of account",
+        "stop_loss": "Must be positive value less than 50%",
+        "take_profit": "Must be greater than stop loss",
+        "timeframe": "Unsupported timeframe selected",
+        "indicators": "Period cannot be greater than available data"
+      }
+    }
+    ```
+    
+    **Validation Checklist:**
+    <CheckList>
+      - [ ] Position size between 0.1% and 50% of account
+      - [ ] Stop loss between 0.5% and 20%
+      - [ ] Take profit greater than stop loss
+      - [ ] Indicator periods appropriate for timeframe
+      - [ ] Asset pairs supported by exchange
+    </CheckList>
+</Accordion>
+  
+  <Accordion title="Conflicting Strategy Rules">
+    Contradictory entry/exit conditions preventing execution
+    
+    **Examples:**
+    - Entry requires RSI < 30 AND RSI > 70 (impossible)
+    - Long and short signals triggered simultaneously
+    - Stop loss set above entry price for long positions
+    
+    **Resolution:**
+    1. Review all strategy conditions systematically
+    2. Test logic with sample data
+    3. Simplify complex rule sets
+    4. Use strategy validation tools
+</Accordion>
+</AccordionGroup>
+
+## Exchange and API Issues
+
+### Connection Problems
+
+<AccordionGroup>
+  <Accordion title="API Connection Failed">
+    Cannot connect to exchange APIs
+    
+    **Error Messages:**
+    - "Connection timeout"
+    - "API key authentication failed"
+    - "Exchange unreachable"
+    - "SSL certificate error"
+    
+    **Troubleshooting Steps:**
+    1. **Check Exchange Status**: Verify exchange is operational
+    2. **API Key Validation**: Ensure keys are correct and active
+    3. **Network Connectivity**: Test internet connection
+    4. **Firewall Settings**: Check for blocking rules
+    5. **Rate Limiting**: Verify not exceeding API limits
+</Accordion>
+  
+  <Accordion title="API Rate Limiting">
+    Requests being throttled by exchange
+    
+    **Symptoms:**
+    - Delayed order execution
+    - "Rate limit exceeded" errors
+    - Partial data updates
+    - Increased latency
+    
+    **Solutions:**
+    ```json
+    {
+      "rate_limit_fixes": {
+        "reduce_frequency": "Lower update frequencies",
+        "batch_requests": "Combine multiple requests",
+        "upgrade_account": "Higher tier accounts get more requests",
+        "distribute_load": "Use multiple API keys if allowed",
+        "optimize_calls": "Cache data when possible"
+      }
+    }
+    ```
+</Accordion>
+  
+  <Accordion title="Authentication Errors">
+    API key or authentication issues
+    
+    **Common Causes:**
+    - Expired API keys
+    - Incorrect permissions
+    - IP address restrictions
+    - Wrong passphrase or secret
+    
+    **Resolution Steps:**
+    1. **Regenerate API Keys**: Create new keys with proper permissions
+    2. **Check Permissions**: Ensure trading permissions enabled
+    3. **IP Whitelist**: Add current IP to allowed list
+    4. **Test Connection**: Use exchange's API testing tools
+</Accordion>
+</AccordionGroup>
+
+### Order Execution Issues
+
+<AccordionGroup>
+  <Accordion title="Orders Not Filling">
+    Orders placed but not executing
+    
+    **Possible Reasons:**
+    - Price moved away from limit order
+    - Insufficient liquidity at price level
+    - Order size too large for market
+    - Exchange technical issues
+    
+    **Diagnostic Steps:**
+    ```mermaid
+    graph LR
+        A[Order Not Filled] --> B{Order Type?}
+        B -->|Market| C[Check Exchange Status]
+        B -->|Limit| D[Check Price vs Market]
+        
+        C --> C1[Exchange Issues?]
+        C1 --> C2[Wait or Cancel/Retry]
+        
+        D --> D1[Price Moved Away?]
+        D1 --> D2[Adjust Price or Use Market Order]
+    ```
+</Accordion>
+  
+  <Accordion title="Partial Fills">
+    Orders only partially executed
+    
+    **Understanding Partial Fills:**
+    - Large orders may fill in multiple parts
+    - Normal in illiquid markets
+    - Can affect strategy performance
+    
+    **Management Strategies:**
+    - **Accept Partials**: Allow partial fills for large orders
+    - **Size Reduction**: Use smaller order sizes
+    - **Time Limits**: Set maximum time for order completion
+    - **Iceberg Orders**: Break large orders into smaller pieces
+</Accordion>
+  
+  <Accordion title="Price Slippage">
+    Significant difference between expected and actual fill prices
+    
+    **Slippage Causes:**
+    - Market volatility
+    - Low liquidity
+    - Large order sizes
+    - Network latency
+    
+    **Mitigation Techniques:**
+    1. **Limit Orders**: Use limit orders instead of market orders
+    2. **Size Management**: Reduce order sizes in volatile markets
+    3. **Timing**: Avoid trading during low liquidity periods
+    4. **Slippage Tolerance**: Set acceptable slippage limits
+</Accordion>
+</AccordionGroup>
+
+## Performance and Technical Issues
+
+### Slow Performance
+
+<AccordionGroup>
+  <Accordion title="Dashboard Loading Slowly">
+    Web interface taking too long to load
+    
+    **Quick Fixes:**
+    - Clear browser cache and cookies
+    - Disable browser extensions
+    - Try incognito/private browsing mode
+    - Switch to different browser
+    - Check internet connection speed
+    
+    **Advanced Solutions:**
+    - Reduce chart timeframe or indicators
+    - Limit number of strategies displayed
+    - Close unnecessary browser tabs
+    - Restart browser or device
+</Accordion>
+  
+  <Accordion title="Strategy Execution Delays">
+    Trades executing later than expected
+    
+    **Latency Sources:**
+    ```json
+    {
+      "latency_breakdown": {
+        "signal_generation": "1-5 seconds",
+        "strategy_processing": "0.1-1 seconds", 
+        "order_routing": "0.1-0.5 seconds",
+        "exchange_processing": "0.1-2 seconds",
+        "network_latency": "0.01-0.1 seconds"
+      }
+    }
+    ```
+    
+    **Optimization Tips:**
+    - Use faster execution modes
+    - Simplify strategy logic
+    - Reduce number of indicators
+    - Choose closer server locations
+</Accordion>
+  
+  <Accordion title="High CPU/Memory Usage">
+    System resources being overutilized
+    
+    **Resource Optimization:**
+    <CheckList>
+      - [ ] Reduce number of active strategies
+      - [ ] Lower chart update frequencies
+      - [ ] Close unused browser tabs
+      - [ ] Restart application periodically
+      - [ ] Upgrade system hardware if needed
+    </CheckList>
+</Accordion>
+</AccordionGroup>
+
+### Data Issues
+
+<AccordionGroup>
+  <Accordion title="Missing Price Data">
+    Gaps or missing data in charts and analysis **Common Causes:** - Exchange
+    downtime - Network connectivity issues - Data provider problems -
+    Maintenance periods **Solutions:** 1. **Data Backfill**: Request historical
+    data refresh 2. **Multiple Sources**: Use backup data providers 3. **Cache
+    Management**: Clear data cache and reload 4. **Time Adjustment**: Check
+    timezone settings
+</Accordion>
+
+  <Accordion title="Incorrect Indicators">
+    Technical indicators showing unexpected values **Verification Steps:**
+    ```mermaid graph TD A[Indicator Issues] --> B[Check Parameters] A -->
+    C[Verify Data Quality] A --> D[Compare with External Source] B --> B1[Period
+    Settings Correct?] C --> C1[Any Data Gaps?] D --> D1[Matches TradingView?]
+    ``` **Troubleshooting:** - Verify indicator parameters match expectations -
+    Check for data gaps in underlying price data - Compare with external
+    charting platforms - Reset indicator calculations if necessary
+</Accordion>
+</AccordionGroup>
+
+## Account and Setup Issues
+
+### Account Configuration
+
+<AccordionGroup>
+  <Accordion title="Cannot Connect Exchange Account">
+    Problems linking exchange accounts to Hyperscript **Setup Checklist:**
+    <CheckList>
+      - [ ] Exchange account verified and active - [ ] API trading enabled on
+      exchange - [ ] Correct API key and secret entered - [ ] IP address
+      whitelisted if required - [ ] Appropriate permissions granted (trading,
+      reading)
+    </CheckList>
+    **Common Issues:** - **Wrong Environment**: Using testnet keys for mainnet -
+    **Restricted API**: Some exchanges limit API access - **Geographic
+    Restrictions**: VPN or location blocking - **Account Verification**: KYC
+    requirements not met
+</Accordion>
+
+{" "}
+<Accordion title="Risk Settings Not Saving">
+  Changes to risk management settings not persisting **Potential Causes:** -
+  Browser session expired - Conflicting values entered - Network connectivity
+  issues - System maintenance mode **Resolution:** 1. **Refresh Session**: Log
+  out and back in 2. **Clear Cache**: Clear browser data 3. **Validate
+  Settings**: Ensure all values are within allowed ranges 4. **Try Different
+  Browser**: Test with alternative browser 5. **Contact Support**: If issue
+  persists
+</Accordion>
+
+  <Accordion title="Subscription/Billing Issues">
+    Problems with account subscriptions or payments **Billing Troubleshooting:**
+    - Check payment method validity - Verify billing address information -
+    Review transaction history - Check for failed payment notifications - Ensure
+    sufficient funds in payment account **Feature Access Issues:** - Confirm
+    current subscription tier - Check feature availability in your plan - Review
+    usage limits and consumption - Consider plan upgrade if needed
+</Accordion>
+</AccordionGroup>
+
+### Security Issues
+
+<AccordionGroup>
+  <Accordion title="Suspicious Account Activity">
+    Unexpected trades or account changes
+    
+    **Immediate Actions:**
+    1. **Change Passwords**: Update all account passwords immediately
+    2. **Review API Keys**: Check and regenerate API keys
+    3. **Check Devices**: Review logged-in devices and sessions
+    4. **Enable 2FA**: Activate two-factor authentication
+    5. **Review Logs**: Check activity logs for unauthorized access
+    
+    **Prevention Measures:**
+    - Use unique, strong passwords
+    - Enable 2FA on all accounts
+    - Regularly review account activity
+    - Keep devices and browsers updated
+    - Use secure networks for trading
+</Accordion>
+  
+  <Accordion title="Two-Factor Authentication Issues">
+    Problems with 2FA setup or login
+    
+    **Common Problems:**
+    - Lost authenticator device
+    - Time synchronization issues
+    - Backup codes not working
+    - QR code scanning problems
+    
+    **Solutions:**
+    ```json
+    {
+      "2fa_troubleshooting": {
+        "time_sync": "Ensure device time is accurate",
+        "backup_codes": "Use saved backup codes",
+        "authenticator_reset": "Reset authenticator app",
+        "contact_support": "Use account recovery process"
+      }
+    }
+    ```
+</Accordion>
+</AccordionGroup>
+
+## Error Messages and Codes
+
+### Common Error Codes
+
+<AccordionGroup>
+  <Accordion title="Error Code Reference">
+    | Error Code | Description | Solution |
+    |------------|-------------|----------| | 1001 | Invalid API Key |
+    Regenerate API key with proper permissions | | 1002 | Insufficient Balance |
+    Add funds or reduce position size | | 1003 | Rate Limit Exceeded | Reduce
+    request frequency | | 2001 | Strategy Validation Failed | Check strategy
+    parameters | | 2002 | Risk Limit Violated | Adjust risk settings | | 3001 |
+    Exchange Connection Lost | Check network and exchange status | | 3002 |
+    Order Rejected | Verify order parameters | | 4001 | Data Feed Interrupted |
+    Check data provider status | | 5001 | System Maintenance | Wait for
+    maintenance completion |
+</Accordion>
+
+  <Accordion title="Exchange-Specific Errors">
+    Different exchanges may return unique error messages **Hyperliquid Common
+    Errors:** - "Insufficient margin": Need more collateral - "Invalid size":
+    Order size outside allowed range - "Rate limited": Too many requests -
+    "Market closed": Trading not available **General Exchange Errors:** -
+    "Symbol not found": Invalid trading pair - "Order not found": Order already
+    filled or cancelled - "Precision error": Incorrect decimal places - "Minimum
+    size": Order below minimum amount
+</Accordion>
+</AccordionGroup>
+
+## Diagnostic Tools
+
+### Built-in Diagnostics
+
+<AccordionGroup>
+  <Accordion title="Strategy Health Check">
+    Use Hyperscript's built-in diagnostic tools **Health Check Items:**
+    <CheckList>
+      - [ ] Strategy configuration validity - [ ] Account balance sufficiency -
+      [ ] API connection status - [ ] Risk limit compliance - [ ] Recent
+      performance metrics - [ ] Market condition compatibility
+    </CheckList>
+    **Accessing Diagnostics:** 1. Navigate to Strategy Dashboard 2. Click
+    "Health Check" button 3. Review all diagnostic results 4. Follow recommended
+    actions
+</Accordion>
+
+{" "}
+<Accordion title="Connection Testing">
+  Test exchange connectivity and API functionality **Test Components:** -
+  Network latency measurement - API authentication verification - Market data
+  feed quality - Order routing functionality - Error handling capabilities
+  **Running Tests:** ```bash # Example diagnostic commands curl -X GET
+  "https://api.hyperliquid.xyz/info" # Test basic connectivity ping
+  api.hyperliquid.xyz # Check network latency ```
+</Accordion>
+
+  <Accordion title="Performance Monitoring">
+    Monitor system and strategy performance metrics **Key Metrics:** - Order
+    execution latency - Strategy signal generation time - Data feed reliability
+    - System resource usage - Network connectivity quality **Monitoring
+    Dashboard:** - Real-time performance graphs - Historical trend analysis -
+    Alert configuration - Comparative benchmarks
+</Accordion>
+</AccordionGroup>
+
+## Getting Additional Help
+
+### Support Resources
+
+<AccordionGroup>
+  <Accordion title="Documentation and Guides">
+    Comprehensive resources for learning and troubleshooting **Available
+    Resources:** - **User Manual**: Complete feature documentation - **Video
+    Tutorials**: Step-by-step visual guides - **FAQ Database**: Common questions
+    and answers - **Best Practices**: Recommended approaches - **API
+    Documentation**: Technical integration guides
+</Accordion>
+
+{" "}
+<Accordion title="Community Support">
+  Connect with other users and experts **Community Channels:** - **Discord
+  Server**: Real-time chat and support - **Telegram Groups**: Strategy
+  discussions - **Reddit Community**: Tips and experiences - **YouTube
+  Channel**: Educational content - **Blog and Updates**: Latest features and
+  news
+</Accordion>
+
+  <Accordion title="Direct Support">
+    Contact Hyperscript support team **Support Channels:** - **Email Support**:
+    support@hyperscript.xyz - **Live Chat**: Available during business hours -
+    **Ticket System**: Track support requests - **Priority Support**: Available
+    for premium users **Before Contacting Support:**
+    <CheckList>
+      - [ ] Check this troubleshooting guide - [ ] Review relevant documentation
+      - [ ] Gather error messages and screenshots - [ ] Note steps to reproduce
+      the issue - [ ] Check system and browser details
+    </CheckList>
+</Accordion>
+</AccordionGroup>
+
+### Preparing for Support
+
+<AccordionGroup>
+  <Accordion title="Information to Gather">
+    Collect relevant information before contacting support **System
+    Information:** - Operating system and version - Browser type and version -
+    Internet connection speed - Time zone and location **Account Information:**
+    - Account email address - Subscription tier - Connected exchanges - Affected
+    strategies **Issue Details:** - Exact error messages - Steps to reproduce -
+    When issue first occurred - Screenshots or screen recordings
+</Accordion>
+
+  <Accordion title="Effective Communication">
+    How to communicate issues clearly for faster resolution **Best Practices:**
+    1. **Be Specific**: Provide exact error messages 2. **Include Context**:
+    Describe what you were trying to do 3. **Provide Examples**: Include
+    specific trades or strategies 4. **Be Patient**: Allow time for
+    investigation 5. **Follow Up**: Provide additional information if requested
+    **Sample Support Request:** ``` Subject: Strategy not executing trades -
+    Error 2001 Hello, I'm experiencing an issue with my DCA strategy on
+    BTC/USDT. The strategy shows as "Active" but hasn't executed any trades for
+    the past 3 hours. Error message: "Strategy Validation Failed - Error Code
+    2001" Strategy details: - Name: BTC DCA Conservative - Exchange: Hyperliquid
+    - Position size: 1% of account - Account balance: $10,000 Screenshots
+    attached showing the error and strategy settings. Please help resolve this
+    issue. Best regards, [Your name] ```
+</Accordion>
+</AccordionGroup>
+
+## Preventive Measures
+
+### Best Practices for Avoiding Issues
+
+<CheckList>
+  - [ ] **Regular Updates**: Keep browser and system updated - [ ] **Backup
+  Settings**: Export strategy configurations regularly - [ ] **Monitor
+  Performance**: Review strategy performance weekly - [ ] **Test Changes**: Use
+  paper trading for strategy modifications - [ ] **Stay Informed**: Follow
+  updates and announcements - [ ] **Secure Access**: Use strong passwords and
+  2FA - [ ] **Risk Management**: Always use appropriate position sizing - [ ]
+  **Documentation**: Keep records of configurations and changes
+</CheckList>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Strategy Building Guide"
+    href="/guides/strategy-building"
+    icon="hammer"
+  >
+    Learn to build robust strategies that avoid common issues
+  </Card>
+  <Card
+    title="Risk Management Best Practices"
+    href="/guides/risk-management-best-practices"
+    icon="shield-check"
+  >
+    Implement proper risk controls to prevent problems
+  </Card>
+  <Card title="Getting Started" href="/quickstart" icon="rocket">
+    Review setup fundamentals to ensure proper configuration
+  </Card>
+  <Card title="Support" href="mailto:support@hyperscript.xyz" icon="envelope">
+    Contact support for additional assistance
+  </Card>
+</CardGroup>{" "}

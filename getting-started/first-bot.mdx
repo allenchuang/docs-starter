@@ -1,0 +1,258 @@
+---
+title: "First Bot Setup"
+description: "Step-by-step guide to creating and deploying your first automated trading bot"
+---
+
+## Your First Trading Bot
+
+Follow this comprehensive guide to set up, configure, and deploy your first automated trading bot safely and effectively.
+
+## Choosing Your First Strategy
+
+For beginners, we recommend starting with these low-risk strategies:
+
+<CardGroup cols={2}>
+<Card title="DCA Bot" icon="chart-line-up">
+**Best for:** Long-term accumulation
+- Regular purchases regardless of price
+- Reduces average cost over time
+- Simple, set-and-forget approach
+</Card>
+
+<Card title="Smart Portfolio Rebalancer" icon="balance-scale">
+**Best for:** Portfolio maintenance
+- Maintains target asset allocation
+- Automatically rebalances on price movements
+- Diversification benefits
+</Card>
+</CardGroup>
+
+<Info>
+  Both strategies are conservative and perfect for learning how Hyperscript
+  works before moving to more advanced strategies.
+</Info>
+
+## Setting Up a DCA Bot
+
+Let's walk through creating a Dollar-Cost Averaging bot step by step.
+
+### Step 1: Strategy Selection
+
+1. Go to **Dashboard → Create New Bot**
+2. Select **"DCA Bot"** from the strategy list
+3. Choose your trading pair (recommended: **ETH/USDC** for beginners)
+
+### Step 2: Basic Configuration
+
+<AccordionGroup>
+<Accordion icon="dollar-sign" title="Investment Parameters">
+Configure how much and how often to invest:
+
+- **Investment Amount**: $25 per purchase (start small)
+- **Purchase Frequency**: Every 7 days (weekly)
+- **Total Budget**: $500 (20 weeks of purchasing)
+- **Asset**: ETH (or your preferred asset)
+  </Accordion>
+
+<Accordion icon="calendar" title="Timing Settings">
+Set when your bot should trade:
+
+- **Start Date**: Tomorrow (gives you time to review)
+- **Purchase Time**: 12:00 PM UTC (during active trading)
+- **End Condition**: After 20 purchases or manual stop
+- **Weekend Trading**: Disabled (optional)
+  </Accordion>
+</AccordionGroup>
+
+### Step 3: Risk Management
+
+<AccordionGroup>
+<Accordion icon="shield" title="Safety Settings">
+Essential risk controls for your first bot:
+
+- **Maximum Single Purchase**: $50 (prevents large accidental buys)
+- **Price Deviation Limit**: 5% (skip purchase if price moved >5% since last check)
+- **Slippage Tolerance**: 0.5% (maximum acceptable slippage)
+- **Emergency Stop**: Enabled (pause on 10% daily portfolio loss)
+  </Accordion>
+
+<Accordion icon="bell" title="Notifications">
+Stay informed about your bot's activity:
+
+- **Email Notifications**: Enabled for all purchases
+- **Discord Alerts**: Optional webhook integration
+- **Daily Summary**: Enabled
+- **Error Alerts**: Enabled (important for troubleshooting)
+  </Accordion>
+</AccordionGroup>
+
+### Step 4: Review and Deploy
+
+Before launching, carefully review your configuration:
+
+```javascript
+DCA Bot Configuration Summary:
+├── Asset: ETH/USDC
+├── Amount: $25 every 7 days
+├── Total Budget: $500 (20 purchases)
+├── Safety Features:
+│   ├── Max single purchase: $50
+│   ├── Price deviation limit: 5%
+│   └── Emergency stop: Enabled
+└── Start Date: Tomorrow 12:00 PM UTC
+```
+
+<CheckList>
+  - ✅ Configuration reviewed and understood - ✅ Risk limits appropriate for
+  your account size - ✅ Sufficient balance for initial purchases - ✅
+  Notifications configured - ✅ Emergency stop procedures understood
+</CheckList>
+
+Click **"Deploy Bot"** to start automated trading!
+
+## Alternative: Smart Portfolio Rebalancer
+
+If you prefer portfolio rebalancing, here's a quick setup:
+
+<AccordionGroup>
+<Accordion icon="chart-pie" title="Asset Allocation">
+Set your target portfolio composition:
+
+**Conservative Portfolio:**
+
+- 60% ETH
+- 30% BTC
+- 10% USDC
+
+**Moderate Portfolio:**
+
+- 40% ETH
+- 40% BTC
+- 20% Altcoins (SOL, ARB, etc.)
+  </Accordion>
+
+<Accordion icon="arrows-rotate" title="Rebalancing Rules">
+Configure when rebalancing occurs:
+
+- **Threshold**: 5% deviation from target
+- **Minimum Interval**: 24 hours between rebalances
+- **Transaction Size**: Minimum $10 per trade
+- **Rebalancing Hours**: 9 AM - 5 PM UTC only
+  </Accordion>
+</AccordionGroup>
+
+## Monitoring Your Bot
+
+### Real-Time Dashboard
+
+Monitor your bot's performance from the main dashboard:
+
+- **Current Status**: Active/Paused/Error
+- **Total Invested**: Running total of investments
+- **Average Buy Price**: Your cost basis
+- **Unrealized P&L**: Current profit/loss
+- **Next Action**: When the next purchase will occur
+
+### Performance Metrics
+
+Track key metrics to evaluate your bot:
+
+<CardGroup cols={3}>
+<Card title="ROI" icon="percentage">
+Return on investment compared to lump-sum purchase
+</Card>
+
+<Card title="Sharpe Ratio" icon="chart-line">
+  Risk-adjusted returns vs volatility
+</Card>
+
+<Card title="Max Drawdown" icon="arrow-down">
+Largest loss from peak performance
+</Card>
+</CardGroup>
+
+### Weekly Review Process
+
+Every week, review your bot's performance:
+
+1. **Check purchase history**: Verify all trades executed correctly
+2. **Analyze average cost**: Compare to current market price
+3. **Review risk metrics**: Ensure within acceptable limits
+4. **Adjust if needed**: Modify frequency or amount based on results
+
+## Common First Bot Mistakes
+
+<Warning>
+**Avoid These Beginner Mistakes:**
+
+- **Starting too large**: Begin with amounts you're comfortable losing
+- **Ignoring fees**: Factor in transaction costs to your calculations
+- **No stop conditions**: Always set maximum loss limits
+- **Emotional interference**: Let the bot run according to plan
+- **Poor timing**: Don't start during extreme market conditions
+  </Warning>
+
+## Troubleshooting Your First Bot
+
+<AccordionGroup>
+<Accordion icon="exclamation-triangle" title="Bot Won't Start">
+**Common causes:**
+- Insufficient balance for minimum trade
+- API connection issues
+- Invalid configuration parameters
+
+**Solutions:**
+
+- Check account balance and deposit if needed
+- Test API connection in settings
+- Review all configuration values
+  </Accordion>
+
+<Accordion icon="pause" title="Bot Paused Unexpectedly">
+**Common causes:**
+- Risk limits triggered
+- Market conditions outside parameters
+- Technical issues with exchange
+
+**Solutions:**
+
+- Check risk management logs
+- Review market volatility settings
+- Verify exchange status and connectivity
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps After Your First Bot
+
+Once your bot is running successfully:
+
+<CardGroup cols={2}>
+<Card title="Advanced Strategies" icon="gear-complex" href="/trading-strategies/grid-trading">
+  Explore grid trading and martingale strategies.
+</Card>
+
+<Card
+  title="Portfolio Analytics"
+  icon="chart-mixed"
+  href="/portfolio/performance-analytics"
+>
+  Dive deeper into performance analysis.
+</Card>
+
+<Card
+  title="Trading Wizard"
+  icon="magic-wand"
+  href="/trading-strategies/trading-wizard"
+>
+  Get AI-powered strategy recommendations.
+</Card>
+
+<Card title="Strategy Marketplace" icon="store" href="/marketplace/strategy-marketplace">
+  Discover community-created strategies.
+</Card>
+</CardGroup>
+
+<Tip>
+  Start small, learn from each bot, and gradually increase complexity as you
+  gain experience with automated trading.
+</Tip>{" "}

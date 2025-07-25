@@ -1,0 +1,437 @@
+---
+title: "Technical Indicators"
+description: "Advanced technical analysis tools enhanced with orderbook data and market microstructure insights for superior trading signals"
+---
+
+## Enhanced Technical Analysis
+
+Hyperscript's technical indicators go beyond traditional price-based analysis by incorporating real-time orderbook data and market microstructure insights. This combination provides more accurate signals and better timing for your trading strategies.
+
+## Traditional vs Enhanced Indicators
+
+<CardGroup cols={2}>
+<Card title="Traditional Indicators" icon="chart-line">
+**Standard technical analysis:**
+- Based only on price and volume data
+- Reactive to price movements
+- Limited market context
+- High false positive rates during choppy markets
+</Card>
+
+<Card title="Hyperscript Enhanced" icon="microscope">
+**Orderbook-enhanced analysis:**
+- Incorporates real-time orderbook depth
+- Predictive of price movements
+- Rich market microstructure context
+- Significantly reduced false positives
+</Card>
+</CardGroup>
+
+## Core Technical Indicators
+
+### Momentum Indicators
+
+Track the strength and persistence of price movements:
+
+<AccordionGroup>
+<Accordion icon="chart-line-up" title="Liquidity-Weighted RSI">
+**RSI enhanced with orderbook depth:**
+
+Traditional RSI measures overbought/oversold conditions based on price movements. Our enhanced version weighs these calculations by available liquidity at each price level.
+
+```javascript
+Enhanced RSI Calculation:
+├── Traditional RSI: 73 (Overbought)
+├── Liquidity Weight Factor: 0.65 (Thin orderbook above)
+├── Enhanced RSI: 81 (More overbought than traditional)
+├── Signal Strength: 87%
+└── Recommendation: Strong sell signal
+```
+
+**Key Features**:
+
+- More sensitive to actual market conditions
+- Accounts for liquidity availability
+- Reduces false signals during low-liquidity periods
+- Provides confidence scores for each reading
+  </Accordion>
+
+<Accordion icon="zap" title="Momentum with Order Flow">
+**Momentum confirmed by order flow direction:**
+
+Combines traditional momentum calculations with real-time order flow analysis to distinguish between genuine momentum and price manipulation.
+
+**Signal Components**:
+
+- **Price momentum**: Traditional rate of change calculation
+- **Volume momentum**: Acceleration in trading volumes
+- **Order flow momentum**: Direction of aggressive orders
+- **Liquidity momentum**: Changes in orderbook depth distribution
+  </Accordion>
+</AccordionGroup>
+
+### Trend Indicators
+
+Identify market direction with enhanced accuracy:
+
+<CardGroup cols={2}>
+<Card title="Orderbook-Confirmed Moving Averages" icon="wave-square">
+**Moving averages validated by liquidity:**
+- Traditional MA calculations enhanced with liquidity weighting
+- Support/resistance levels confirmed by orderbook concentration
+- Breakout signals validated by order flow direction
+- Trend strength measured by liquidity participation
+</Card>
+
+<Card title="Trend Exhaustion Detector" icon="battery-quarter">
+**Early warning for trend reversals:**
+- Monitors decreasing participation in trend direction
+- Tracks momentum divergences with price
+- Analyzes order flow for reversal patterns
+- Provides probability scores for trend continuation
+</Card>
+</CardGroup>
+
+### Volatility Indicators
+
+Predict and measure market volatility with precision:
+
+<AccordionGroup>
+<Accordion icon="chart-mixed" title="Orderbook-Implied Volatility">
+**Volatility prediction from market structure:**
+
+Unlike traditional volatility measures that look backward, our orderbook-implied volatility predicts future volatility based on current market structure.
+
+```javascript
+Volatility Analysis for ETH:
+├── Historical Volatility (20d): 65%
+├── Orderbook-Implied Volatility: 78%
+├── Volatility Expansion Probability: 85%
+├── Predicted Range (24h): $1,920 - $2,180
+├── Confidence Level: 82%
+└── Strategy Recommendation: Prepare for increased volatility
+```
+
+**Applications**:
+
+- Position sizing based on expected volatility
+- Options strategy optimization
+- Risk management adjustments
+- Market timing for volatility-sensitive strategies
+  </Accordion>
+
+<Accordion icon="thermometer" title="Volatility Regime Detection">
+**Identify when market behavior changes:**
+- **Low volatility regimes**: Trending, predictable markets
+- **High volatility regimes**: Ranging, unpredictable markets
+- **Transition periods**: When regimes are changing
+- **Stability scores**: How likely current regime is to persist
+</Accordion>
+</AccordionGroup>
+
+## Advanced Market Microstructure Indicators
+
+### Liquidity Analysis Tools
+
+Understand market depth and liquidity distribution:
+
+<AccordionGroup>
+<Accordion icon="layers" title="Market Depth Heatmap">
+**Visual representation of liquidity at each price level:**
+
+Real-time visualization showing where buy and sell orders are concentrated, revealing true support and resistance levels.
+
+**Features**:
+
+- **Depth concentration**: Price levels with highest liquidity
+- **Liquidity voids**: Areas with minimal support
+- **Asymmetric distribution**: Imbalances between buy/sell side
+- **Dynamic updates**: Real-time changes in liquidity placement
+  </Accordion>
+
+<Accordion icon="target" title="True Support & Resistance">
+**Support/resistance levels backed by actual orders:**
+
+Traditional support/resistance is based on historical price action. Our enhanced version identifies levels based on actual order concentration.
+
+**Enhancement Features**:
+
+- **Order density analysis**: Concentration of resting orders
+- **Historical reinforcement**: Levels that have held multiple times
+- **Liquidity quality**: Size and persistence of supporting orders
+- **Breakout probability**: Likelihood of level holding under pressure
+  </Accordion>
+</AccordionGroup>
+
+### Order Flow Analysis
+
+Track the direction and intensity of trading interest:
+
+<CardGroup cols={2}>
+<Card title="Aggressive vs Passive Flow" icon="scale-unbalanced">
+**Measure market aggression:**
+- Ratio of market orders to limit orders
+- Buy-side vs sell-side aggression levels
+- Institutional vs retail order patterns
+- Urgency indicators in order placement
+</Card>
+
+<Card title="Hidden Order Detection" icon="eye-slash">
+**Reveal concealed trading intentions:**
+- Iceberg order identification
+- Stealth accumulation patterns
+- Large order fragmentation analysis
+- Professional trader behavior recognition
+</Card>
+</CardGroup>
+
+## Execution-Level Indicators
+
+### Slippage & Impact Prediction
+
+Optimize trade execution with predictive analytics:
+
+<AccordionGroup>
+<Accordion icon="chart-area" title="Price Impact Curves">
+**Predict how your trades will affect price:**
+
+```javascript
+Trade Impact Analysis:
+├── Order Size: $50,000 ETH buy
+├── Expected Slippage: 0.23%
+├── Price Impact: 0.31%
+├── Optimal Execution: Split into 5 orders over 2 hours
+├── Best Timing: Next 15 minutes (high liquidity period)
+└── Alternative Route: Use limit orders at $2,010-2,015
+```
+
+**Optimization Features**:
+
+- **Size optimization**: Ideal order sizes to minimize impact
+- **Timing optimization**: Best execution windows
+- **Route optimization**: Multi-venue execution strategies
+- **Cost analysis**: Compare different execution approaches
+  </Accordion>
+
+<Accordion icon="clock" title="Optimal Execution Timing">
+**When to execute for best results:**
+- **Liquidity cycles**: Periods of highest/lowest liquidity
+- **Volatility timing**: Execute during calm vs volatile periods
+- **Flow alignment**: Trade with or against dominant order flow
+- **Market maker behavior**: When professionals are most active
+</Accordion>
+</AccordionGroup>
+
+### MEV Protection Indicators
+
+Protect against Maximum Extractable Value attacks:
+
+<CardGroup cols={2}>
+<Card title="Front-Running Risk" icon="shield-exclamation">
+**Assess vulnerability to MEV:**
+- High-impact trade detection
+- Mempool congestion analysis
+- Gas price optimization suggestions
+- Private mempool recommendations
+</Card>
+
+<Card title="Sandwich Attack Detection" icon="layers">
+**Identify potential sandwich opportunities:**
+- Large pending transaction detection
+- Optimal counter-positioning analysis
+- Protection strategy recommendations
+- Alternative execution routes
+</Card>
+</CardGroup>
+
+## Signal Combination & Scoring
+
+### Multi-Indicator Confluence
+
+Combine multiple indicators for stronger signals:
+
+<AccordionGroup>
+<Accordion icon="star" title="Signal Scoring System">
+**Weighted combination of multiple indicators:**
+
+```javascript
+ETH Long Signal Analysis:
+├── Liquidity-Weighted RSI: 28 (Oversold) → Score: +75
+├── Order Flow Imbalance: +0.65 (Buying) → Score: +80
+├── Support Level Strength: 89% → Score: +85
+├── Volatility Expansion: 72% probability → Score: +60
+├── Market Maker Behavior: Increasing bids → Score: +70
+├── Combined Signal Score: 78/100
+├── Confidence Level: 84%
+└── Recommendation: Strong Long Entry
+```
+
+**Scoring Benefits**:
+
+- Reduces false positives from single indicator noise
+- Provides confidence levels for each signal
+- Allows position sizing based on signal strength
+- Enables systematic backtesting and optimization
+  </Accordion>
+
+<Accordion icon="chart-pie" title="Indicator Weighting">
+**Customize indicator importance:**
+- **Market regime adaptation**: Different weights for different conditions
+- **Strategy alignment**: Weight indicators based on your strategy type
+- **Performance feedback**: Adjust weights based on historical accuracy
+- **Asset-specific tuning**: Different weightings for different trading pairs
+</Accordion>
+</AccordionGroup>
+
+## Custom Indicator Development
+
+### Building Your Own Indicators
+
+Create personalized technical analysis tools:
+
+<AccordionGroup>
+<Accordion icon="code" title="Indicator Builder">
+**No-code indicator creation:**
+- **Drag-and-drop interface**: Combine data sources visually
+- **Template library**: Start with proven indicator frameworks
+- **Backtesting integration**: Test your indicators against historical data
+- **Performance analytics**: Track your custom indicator accuracy
+</Accordion>
+
+<Accordion icon="brain" title="AI-Enhanced Indicators">
+**Machine learning powered analysis:**
+- **Pattern recognition**: AI identifies complex patterns in data
+- **Adaptive parameters**: Indicators that self-optimize over time
+- **Market regime awareness**: Automatic adjustment to market conditions
+- **Personalization**: Indicators that learn your trading preferences
+</Accordion>
+</AccordionGroup>
+
+## Indicator Performance & Optimization
+
+### Backtesting & Validation
+
+Ensure your indicators provide genuine edge:
+
+<CardGroup cols={3}>
+<Card title="Historical Accuracy" icon="bullseye">
+Track indicator performance across different market conditions and timeframes
+</Card>
+
+<Card title="Forward Testing" icon="arrow-right">
+  Validate indicators on out-of-sample data to avoid overfitting
+</Card>
+
+<Card title="Live Performance" icon="activity">
+Monitor real-time indicator accuracy and adjust parameters as needed
+</Card>
+</CardGroup>
+
+### Optimization Strategies
+
+<AccordionGroup>
+<Accordion icon="sliders" title="Parameter Optimization">
+**Fine-tune indicator settings:**
+- **Lookback periods**: Optimize time windows for calculations
+- **Smoothing factors**: Balance responsiveness vs noise reduction
+- **Threshold levels**: Set optimal trigger points for signals
+- **Confirmation requirements**: Multiple indicator agreement settings
+</Accordion>
+
+<Accordion icon="arrows-rotate" title="Adaptive Indicators">
+**Indicators that evolve with markets:**
+- **Volatility adjustment**: Parameters that scale with market volatility
+- **Trend adaptation**: Different settings for trending vs ranging markets
+- **Volume weighting**: Adjust indicator sensitivity based on trading volume
+- **Time-based evolution**: Indicators that learn from recent market behavior
+</Accordion>
+</AccordionGroup>
+
+## Using Indicators in Trading Strategies
+
+### Strategy Integration
+
+<AccordionGroup>
+<Accordion icon="robot" title="Bot Integration">
+**Incorporate indicators into automated strategies:**
+- **Entry signals**: Use indicators to trigger position opening
+- **Exit signals**: Close positions when indicators reverse
+- **Position sizing**: Scale position size based on indicator strength
+- **Risk management**: Adjust stop losses based on volatility indicators
+</Accordion>
+
+<Accordion icon="bell" title="Alert System">
+**Stay informed of important indicator signals:**
+- **Threshold alerts**: Notifications when indicators reach key levels
+- **Divergence alerts**: When price and indicators disagree
+- **Confluence alerts**: When multiple indicators align
+- **Custom alerts**: Personalized notification rules
+</Accordion>
+</AccordionGroup>
+
+### Best Practices
+
+<CheckList>
+  - Use multiple indicators to confirm signals rather than relying on single
+  indicators - Adjust indicator parameters based on market volatility and regime
+  - Regularly backtest indicator performance and update parameters - Combine
+  technical indicators with fundamental and sentiment analysis - Use appropriate
+  timeframes for your trading strategy horizon - Monitor indicator performance
+  and replace underperforming indicators
+</CheckList>
+
+## Indicator Reference Library
+
+### Quick Reference
+
+**Momentum Indicators**:
+
+- Liquidity-Weighted RSI: Overbought/oversold with market depth context
+- Order Flow Momentum: Trend strength with directional bias
+- MACD with Volume: Traditional MACD enhanced with volume analysis
+
+**Trend Indicators**:
+
+- Orderbook-Confirmed Moving Averages: MAs validated by liquidity
+- Trend Exhaustion Detector: Early reversal warning system
+- Liquidity Trend Analyzer: Trend strength based on participation
+
+**Volatility Indicators**:
+
+- Orderbook-Implied Volatility: Forward-looking volatility prediction
+- Volatility Regime Detector: Market state classification
+- Bollinger Bands Enhanced: Traditional bands with liquidity weighting
+
+**Microstructure Indicators**:
+
+- Market Depth Analyzer: Liquidity distribution analysis
+- Order Flow Imbalance: Buy/sell pressure measurement
+- Hidden Order Detector: Institutional order pattern recognition
+
+## Next Steps
+
+<CardGroup cols={2}>
+<Card title="Orderbook Signal Engine" icon="radar" href="/signals/orderbook-signal-engine">
+  Explore our proprietary orderbook analysis system.
+</Card>
+
+<Card
+  title="Signal-Based Trading"
+  icon="chart-mixed"
+  href="/trading-strategies/signal-based-trading"
+>
+  Learn how to build strategies using technical indicators.
+</Card>
+
+<Card
+  title="Backtesting Engine"
+  icon="clock-rotate-left"
+  href="/advanced/backtesting-engine"
+>
+  Test your technical indicator strategies.
+</Card>
+
+<Card title="Trading Wizard" icon="magic-wand" href="/trading-strategies/trading-wizard">
+  Get AI recommendations for indicator usage.
+</Card>
+</CardGroup>

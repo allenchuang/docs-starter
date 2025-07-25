@@ -1,59 +1,76 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "HyperScript",
+  "name": "Hyperscript",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#1defdf",
+    "light": "#36e3d6",
+    "dark": "#07f8e6"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
-            "pages": ["index", "quickstart", "development"]
-          },
-          {
-            "group": "Customization",
-            "pages": ["essentials/settings", "essentials/navigation"]
-          },
-          {
-            "group": "Writing content",
+            "group": "Getting Started",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "index",
+              "getting-started/quickstart",
+              "getting-started/account-setup",
+              "getting-started/risk-management",
+              "getting-started/first-bot"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Trading Strategies",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "trading-strategies/smart-portfolio-rebalancer",
+              "trading-strategies/dca-bots",
+              "trading-strategies/grid-trading",
+              "trading-strategies/martingale-strategies",
+              "trading-strategies/signal-based-trading",
+              "trading-strategies/trading-wizard"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": ["api-reference/introduction"]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Signals & Market Analytics",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "signals/orderbook-signal-engine",
+              "signals/technical-indicators"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "advanced/pinescript-integration",
+              "advanced/webhook-configuration",
+              "advanced/backtesting-engine"
+            ]
+          },
+          {
+            "group": "Marketplace & Community",
+            "pages": [
+              "marketplace/strategy-marketplace",
+              "marketplace/publishing-strategies"
+            ]
+          },
+          {
+            "group": "Portfolio & Analytics",
+            "pages": [
+              "portfolio/dashboard",
+              "portfolio/performance-analytics",
+              "portfolio/risk-management-tools"
+            ]
+          },
+          {
+            "group": "Guides & Tutorials",
+            "pages": [
+              "guides/strategy-building",
+              "guides/risk-management-best-practices",
+              "guides/market-analysis",
+              "guides/troubleshooting"
             ]
           }
         ]
@@ -62,19 +79,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Dashboard",
+          "href": "https://app.hyperscript.xyz",
+          "icon": "chart-line"
         },
         {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "href": "https://discord.gg/hyperscript",
+          "icon": "discord"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+          "href": "mailto:support@hyperscript.xyz",
+          "icon": "envelope"
         }
       ]
     }
@@ -87,20 +104,20 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hi@hyperscript.xyz"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Started",
+      "href": "https://app.hyperscript.xyz"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/hyperscriptxyz",
+      "github": "https://github.com/hyperscript-trading",
+      "discord": "https://discord.gg/hyperscript"
     }
   }
 }

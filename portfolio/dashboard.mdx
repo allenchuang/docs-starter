@@ -1,0 +1,481 @@
+---
+title: "Portfolio Dashboard"
+description: "Your centralized command center for monitoring all trading strategies, performance analytics, and portfolio management"
+---
+
+## Portfolio Dashboard Overview
+
+The Hyperscript Portfolio Dashboard is your comprehensive control center that provides real-time visibility into all your trading activities, performance metrics, and risk exposures across multiple strategies and assets.
+
+## Dashboard Layout & Navigation
+
+### Main Dashboard Components
+
+Get a complete overview of your trading portfolio at a glance:
+
+<CardGroup cols={2}>
+<Card title="Portfolio Summary" icon="chart-pie">
+**High-level portfolio metrics:**
+- Total portfolio value and P&L
+- Daily, weekly, and monthly performance
+- Asset allocation breakdown
+- Active strategy count and status
+</Card>
+
+<Card title="Strategy Overview" icon="robot">
+  **All your trading bots in one view:** - Individual strategy performance -
+  Active, paused, and stopped strategies - Resource utilization and capacity -
+  Strategy health indicators
+</Card>
+
+<Card title="Asset Breakdown" icon="coins">
+  **Complete asset allocation view:** - Holdings by asset type and value -
+  Performance by individual asset - Concentration risk analysis - Rebalancing
+  opportunities
+</Card>
+
+<Card title="Risk Monitoring" icon="shield-check">
+**Real-time risk assessment:**
+- Portfolio risk score and alerts
+- Exposure limits and utilization
+- Correlation analysis
+- Volatility tracking
+</Card>
+</CardGroup>
+
+### Navigation Structure
+
+Efficiently access all portfolio management features:
+
+<AccordionGroup>
+<Accordion icon="home" title="Dashboard Home">
+**Main overview page with key metrics:**
+- Portfolio value progression chart
+- Top performing and underperforming strategies
+- Recent trade activity feed
+- Important alerts and notifications
+- Quick action buttons for common tasks
+</Accordion>
+
+<Accordion icon="chart-line" title="Performance Analytics">
+  **Detailed performance analysis:** - Comprehensive return analysis -
+  Risk-adjusted performance metrics - Benchmark comparisons - Attribution
+  analysis by strategy and asset - Historical performance trends
+</Accordion>
+
+<Accordion icon="robot" title="Strategy Management">
+  **Control center for all trading bots:** - Strategy list with status
+  indicators - Individual strategy configuration panels - Performance comparison
+  across strategies - Strategy deployment and management tools - Resource
+  allocation and optimization
+</Accordion>
+
+<Accordion icon="shield" title="Risk Management">
+**Portfolio risk monitoring and controls:**
+- Real-time risk metrics dashboard
+- Exposure limits and violations
+- Correlation heatmaps
+- Stress testing results
+- Risk control configuration
+</Accordion>
+</AccordionGroup>
+
+## Portfolio Summary
+
+### Real-Time Portfolio Value
+
+Track your portfolio's performance with live updates:
+
+<AccordionGroup>
+<Accordion icon="chart-line-up" title="Portfolio Value Tracking">
+**Live portfolio valuation:**
+
+```javascript
+Portfolio Value Dashboard:
+├── Current Portfolio Value: $47,832.45
+├── Daily Change: +$1,247.83 (+2.68%)
+├── Weekly Change: +$3,891.22 (+8.86%)
+├── Monthly Change: +$7,234.17 (+17.83%)
+├── All-Time High: $52,891.33 (2024-01-10)
+├── Maximum Drawdown: -$4,891.22 (-9.25%)
+└── Since Inception: +$23,832.45 (+99.30%)
+```
+
+**Key Metrics**:
+
+- **Real-time valuation**: Updated every few seconds
+- **Multi-timeframe view**: Daily, weekly, monthly, yearly performance
+- **Historical context**: All-time highs, drawdowns, key milestones
+- **Benchmark comparison**: Performance vs ETH, BTC, and market indices
+  </Accordion>
+
+<Accordion icon="chart-area" title="Performance Visualization">
+**Interactive charts and graphs:**
+
+- **Portfolio Value Chart**: Cumulative value over time with key events
+- **Daily P&L Chart**: Daily profit and loss with moving averages
+- **Asset Allocation Pie Chart**: Current portfolio composition
+- **Strategy Contribution Chart**: Performance attribution by strategy
+- **Drawdown Chart**: Historical drawdown periods and recovery
+- **Volatility Chart**: Portfolio volatility trends over time
+  </Accordion>
+</AccordionGroup>
+
+### Asset Allocation Analysis
+
+Monitor how your capital is distributed across different assets:
+
+<CardGroup cols={3}>
+<Card title="Current Allocation" icon="chart-pie">
+Real-time breakdown of portfolio holdings by asset, value, and percentage
+</Card>
+
+<Card title="Target vs Actual" icon="balance-scale">
+  Comparison between intended allocation and current positions
+</Card>
+
+<Card title="Allocation Drift" icon="arrows-left-right">
+Tracking of allocation changes over time and rebalancing needs
+</Card>
+</CardGroup>
+
+## Strategy Performance Overview
+
+### Active Strategy Monitoring
+
+Keep track of all your automated trading strategies:
+
+<AccordionGroup>
+<Accordion icon="list" title="Strategy List View">
+**Comprehensive strategy overview:**
+
+```javascript
+Active Strategies Overview:
+├── ETH Grid Trading Bot:
+│   ├── Status: Active (Running 12 days)
+│   ├── P&L: +$2,347.81 (+15.2%)
+│   ├── Trades: 47 completed (85% win rate)
+│   ├── Current Position: Long $1,200 ETH
+│   └── Risk Score: 6.2/10 (Medium)
+├── DCA Weekly BTC:
+│   ├── Status: Active (Running 8 weeks)
+│   ├── P&L: +$891.45 (+8.9%)
+│   ├── Purchases: 8 completed ($250 each)
+│   ├── Average Cost: $43,247 vs Current $46,891
+│   └── Risk Score: 3.1/10 (Low)
+├── Signal-Based SOL Strategy:
+│   ├── Status: Paused (Market conditions)
+│   ├── P&L: -$145.23 (-2.1%)
+│   ├── Trades: 12 completed (58% win rate)
+│   ├── Last Signal: 4 hours ago (Weak buy)
+│   └── Risk Score: 7.8/10 (High)
+└── Portfolio Rebalancer:
+    ├── Status: Active (Last rebalance: 2 days ago)
+    ├── P&L: +$567.22 (+3.8%)
+    ├── Rebalances: 6 completed this month
+    ├── Allocation Drift: Within tolerance
+    └── Risk Score: 4.5/10 (Medium-Low)
+```
+
+</Accordion>
+
+<Accordion icon="gauge" title="Strategy Health Indicators">
+**Monitor strategy performance and health:**
+
+- **Performance Status**: Green (outperforming), Yellow (meeting expectations), Red (underperforming)
+- **Risk Level**: Current risk score vs configured limits
+- **Resource Utilization**: Capital deployment and availability
+- **Signal Quality**: For signal-based strategies, signal strength and frequency
+- **Market Alignment**: How well strategy matches current market conditions
+- **Error Status**: Any technical issues or failed executions
+  </Accordion>
+</AccordionGroup>
+
+### Strategy Comparison
+
+Compare performance across different strategies:
+
+<CardGroup cols={2}>
+<Card title="Performance Ranking" icon="trophy">
+**Top and bottom performers:**
+- Best performing strategies by return
+- Risk-adjusted performance ranking
+- Consistency and reliability scores
+- Recent performance trends
+</Card>
+
+<Card title="Resource Allocation" icon="chart-bar">
+**Capital deployment analysis:**
+- Capital allocation by strategy
+- Utilization rates and capacity
+- Return on allocated capital
+- Optimal allocation recommendations
+</Card>
+</CardGroup>
+
+## Real-Time Activity Feed
+
+### Trade Execution Monitoring
+
+Stay informed about all trading activity as it happens:
+
+<AccordionGroup>
+<Accordion icon="activity" title="Live Trade Feed">
+**Real-time trade execution updates:**
+
+```javascript
+Recent Activity Feed:
+├── 14:32:15 - ETH Grid Bot: BUY 0.5 ETH @ $2,347.82
+├── 14:28:43 - Portfolio Rebalancer: SELL 200 USDC @ $1.0001
+├── 14:15:22 - Signal Strategy: Position CLOSED +$89.34 profit
+├── 13:47:58 - DCA Bot: BUY $250 BTC @ $46,892.15
+├── 13:12:44 - ETH Grid Bot: SELL 0.3 ETH @ $2,389.91
+├── 12:58:17 - Risk Manager: ALERT - Portfolio approaching daily limit
+├── 12:33:29 - Signal Strategy: PAUSED - Low signal confidence
+└── 12:15:06 - Portfolio Rebalancer: Allocation drift detected (ETH +2.8%)
+```
+
+**Activity Categories**:
+
+- **Trade Executions**: Buy/sell orders with prices and quantities
+- **Strategy Events**: Start, stop, pause, configuration changes
+- **Risk Alerts**: Limit violations, unusual activity warnings
+- **System Notifications**: Updates, maintenance, performance alerts
+  </Accordion>
+
+<Accordion icon="filter" title="Activity Filtering">
+**Customize your activity view:**
+
+- **Strategy Filter**: Show activity for specific strategies only
+- **Asset Filter**: Focus on particular assets or trading pairs
+- **Event Type**: Filter by trades, alerts, system events
+- **Time Range**: View activity from last hour, day, week, or custom range
+- **Severity Level**: Show only critical alerts or all notifications
+- **Performance Impact**: Filter by events that affected P&L significantly
+  </Accordion>
+</AccordionGroup>
+
+## Alerts & Notifications
+
+### Portfolio Alerts
+
+Stay informed about important portfolio events:
+
+<AccordionGroup>
+<Accordion icon="bell" title="Alert Categories">
+**Comprehensive alert system:**
+
+```javascript
+Active Alerts:
+├── Performance Alerts:
+│   ├── Daily loss limit approaching (78% used)
+│   ├── Strategy underperforming benchmark by >5%
+│   └── Portfolio volatility spike detected (+15%)
+├── Risk Alerts:
+│   ├── Correlation spike: ETH/SOL correlation > 0.9
+│   ├── Concentration risk: 67% allocation in ETH
+│   └── Leverage utilization: 85% of maximum leverage used
+├── Strategy Alerts:
+│   ├── ETH Grid Bot: 3 consecutive losing trades
+│   ├── Signal Strategy: Low signal quality detected
+│   └── DCA Bot: Unable to execute purchase (insufficient funds)
+└── System Alerts:
+    ├── API connection issues with Hyperliquid (resolved)
+    ├── Strategy update available: Grid Bot v2.1
+    └── Scheduled maintenance: Sunday 2AM-4AM UTC
+```
+
+</Accordion>
+
+<Accordion icon="settings" title="Alert Configuration">
+**Customize your notification preferences:**
+
+- **Alert Thresholds**: Set custom limits for performance and risk alerts
+- **Delivery Methods**: Email, SMS, push notifications, in-app only
+- **Frequency Control**: Immediate, batched hourly, daily summaries
+- **Priority Levels**: Critical, important, informational alert categories
+- **Time Restrictions**: Quiet hours for non-critical notifications
+- **Strategy-Specific**: Different alert settings per trading strategy
+  </Accordion>
+</AccordionGroup>
+
+## Portfolio Analytics
+
+### Performance Metrics
+
+Comprehensive analysis of your portfolio's performance:
+
+<AccordionGroup>
+<Accordion icon="chart-mixed" title="Key Performance Indicators">
+**Essential portfolio metrics:**
+
+```javascript
+Portfolio Performance Analytics:
+├── Return Metrics:
+│   ├── Total Return: +47.8% (Since inception)
+│   ├── Annualized Return: +28.4%
+│   ├── Monthly Average: +3.2%
+│   ├── Best Month: +12.7% (March 2024)
+│   └── Worst Month: -5.2% (December 2023)
+├── Risk Metrics:
+│   ├── Volatility (Annual): 24.8%
+│   ├── Sharpe Ratio: 1.14
+│   ├── Sortino Ratio: 1.67
+│   ├── Maximum Drawdown: -9.25%
+│   └── Value at Risk (95%): -$1,247 daily
+├── Trading Metrics:
+│   ├── Total Trades: 1,247
+│   ├── Win Rate: 68.4%
+│   ├── Average Win: $89.34
+│   ├── Average Loss: -$47.82
+│   └── Profit Factor: 1.67
+└── Efficiency Metrics:
+    ├── Capital Utilization: 87.3%
+    ├── Strategy Efficiency: 4.2/5
+    ├── Risk-Adjusted Return: +22.1%
+    └── Benchmark Outperformance: +8.7%
+```
+
+</Accordion>
+
+<Accordion icon="comparison" title="Benchmark Comparison">
+**Performance vs market benchmarks:**
+
+- **ETH Buy & Hold**: Your performance vs holding ETH
+- **BTC Buy & Hold**: Comparison with Bitcoin holding strategy
+- **DeFi Index**: Performance vs diversified DeFi token index
+- **Market Cap Weighted**: Comparison with market-weighted crypto portfolio
+- **Traditional 60/40**: Performance vs traditional stock/bond portfolio
+- **Risk-Free Rate**: Excess return over stablecoin yields
+  </Accordion>
+</AccordionGroup>
+
+## Risk Dashboard
+
+### Portfolio Risk Monitoring
+
+Real-time assessment of portfolio risk exposure:
+
+<CardGroup cols={2}>
+<Card title="Risk Score" icon="gauge">
+**Overall portfolio risk rating:**
+- Current risk score: 6.8/10 (Medium-High)
+- Risk trend: Increasing over past week
+- Risk breakdown by source
+- Recommended risk level: 5.5/10
+</Card>
+
+<Card title="Exposure Analysis" icon="chart-area">
+  **Asset and strategy exposure:** - Concentration risk by asset - Strategy
+  correlation analysis - Liquidity risk assessment - Market condition
+  sensitivity
+</Card>
+
+<Card title="Stress Testing" icon="chart-line-down">
+  **Portfolio resilience analysis:** - Performance during market crashes -
+  Volatility spike scenarios - Liquidity crisis simulation - Strategy failure
+  impact analysis
+</Card>
+
+<Card title="Risk Controls" icon="shield-check">
+**Active risk management:**
+- Position size limits and utilization
+- Daily/monthly loss limits
+- Correlation and concentration limits
+- Emergency stop conditions
+</Card>
+</CardGroup>
+
+## Mobile Dashboard
+
+### Mobile-Optimized Interface
+
+Access your portfolio anywhere with mobile-responsive design:
+
+<AccordionGroup>
+<Accordion icon="mobile" title="Mobile Features">
+**Full portfolio access on mobile:**
+
+- **Portfolio Summary**: Key metrics and performance at a glance
+- **Strategy Status**: Quick view of all active and paused strategies
+- **Trade Notifications**: Real-time alerts and trade confirmations
+- **Emergency Controls**: Quick stop/pause buttons for all strategies
+- **Performance Charts**: Mobile-optimized charts and visualizations
+- **Quick Actions**: Fast deployment and configuration changes
+  </Accordion>
+
+<Accordion icon="touch" title="Touch-Friendly Interface">
+**Optimized for mobile interaction:**
+
+- **Swipe Navigation**: Easy switching between dashboard sections
+- **Touch Charts**: Interactive charts with pinch-to-zoom and pan
+- **Quick Filters**: Easy filtering of strategies and time ranges
+- **Voice Alerts**: Optional spoken notifications for critical events
+- **Offline Mode**: View cached data when connectivity is limited
+- **Biometric Security**: Fingerprint/face unlock for mobile access
+  </Accordion>
+</AccordionGroup>
+
+## Customization & Personalization
+
+### Dashboard Personalization
+
+Tailor your dashboard to your trading style and preferences:
+
+<AccordionGroup>
+<Accordion icon="layout" title="Layout Customization">
+**Personalize your dashboard layout:**
+
+- **Widget Selection**: Choose which metrics and charts to display
+- **Layout Arrangement**: Drag-and-drop dashboard component positioning
+- **Color Themes**: Dark mode, light mode, custom color schemes
+- **Chart Types**: Select preferred visualization styles
+- **Refresh Rates**: Customize update frequencies for different components
+- **Screen Layouts**: Different layouts for desktop, tablet, mobile
+  </Accordion>
+
+<Accordion icon="user" title="User Preferences">
+**Personalized settings:**
+
+- **Default Time Ranges**: Set preferred timeframes for charts and analysis
+- **Currency Display**: Choose base currency for all value displays
+- **Notification Preferences**: Customize alert types and delivery methods
+- **Privacy Settings**: Control data sharing and analytics collection
+- **Accessibility Options**: Screen reader support, contrast adjustments
+- **Language Settings**: Multi-language support for global users
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+<Card title="Performance Analytics" icon="chart-mixed" href="/portfolio/performance-analytics">
+  Deep dive into detailed performance analysis and optimization.
+</Card>
+
+<Card
+  title="Risk Management Tools"
+  icon="shield-check"
+  href="/portfolio/risk-management-tools"
+>
+  Explore comprehensive risk monitoring and control features.
+</Card>
+
+<Card
+  title="Strategy Management"
+  icon="robot"
+  href="/trading-strategies/smart-portfolio-rebalancer"
+>
+  Learn about different trading strategies you can deploy.
+</Card>
+
+<Card title="Mobile App" icon="mobile" href="/guides/mobile-app-guide">
+  Download and set up the mobile app for on-the-go portfolio management.
+</Card>
+</CardGroup>
+
+<Note>
+  The Portfolio Dashboard is designed to provide complete transparency and
+  control over your automated trading activities. Regular monitoring helps
+  ensure your strategies align with your investment goals and risk tolerance.
+</Note>{" "}

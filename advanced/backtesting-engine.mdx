@@ -1,0 +1,583 @@
+---
+title: "Backtesting Engine"
+description: "Test and validate your trading strategies against historical data with Hyperscript's comprehensive backtesting framework"
+---
+
+## What is Backtesting?
+
+Backtesting is the process of testing trading strategies against historical market data to evaluate their performance before deploying real capital. Hyperscript's backtesting engine provides comprehensive simulation capabilities with accurate orderbook modeling and realistic execution assumptions.
+
+## Why Backtesting Matters
+
+Backtesting helps you understand how your strategies would have performed in different market conditions:
+
+<CardGroup cols={2}>
+<Card title="Strategy Validation" icon="check-circle">
+**Prove strategy effectiveness:**
+- Historical performance analysis
+- Risk-adjusted return calculations
+- Drawdown and recovery analysis
+- Win rate and profit factor metrics
+</Card>
+
+<Card title="Risk Assessment" icon="shield-check">
+  **Understand strategy risks:** - Maximum drawdown periods - Volatility of
+  returns - Correlation with market conditions - Tail risk and worst-case
+  scenarios
+</Card>
+
+<Card title="Parameter Optimization" icon="sliders">
+  **Find optimal settings:** - Test parameter ranges systematically - Identify
+  robust parameter combinations - Avoid overfitting to historical data - Balance
+  performance vs stability
+</Card>
+
+<Card title="Market Regime Analysis" icon="chart-mixed">
+**Performance across conditions:**
+- Bull market performance
+- Bear market resilience
+- Sideways market efficiency
+- High volatility adaptability
+</Card>
+</CardGroup>
+
+## Hyperscript's Backtesting Advantage
+
+### High-Fidelity Simulation
+
+Our backtesting engine provides institutional-grade accuracy:
+
+<AccordionGroup>
+<Accordion icon="database" title="Historical Orderbook Data">
+**Complete market microstructure recreation:**
+- Full orderbook depth at every timestamp
+- Real bid-ask spreads and liquidity levels
+- Actual slippage and market impact modeling
+- True-to-life execution conditions
+
+```javascript
+Orderbook Data Coverage:
+├── Timeframes: 1 second to 1 day intervals
+├── History: 2+ years of complete data
+├── Assets: All major Hyperliquid pairs
+├── Depth: Full L2 orderbook (100+ levels)
+├── Updates: Real-time data capture
+└── Accuracy: Sub-millisecond precision
+```
+
+</Accordion>
+
+<Accordion icon="gear" title="Realistic Execution Modeling">
+**Accurate trade simulation:**
+- **Slippage modeling**: Based on actual orderbook depth
+- **Partial fills**: Realistic order execution in volatile markets
+- **Latency simulation**: Network and processing delays
+- **MEV impact**: Front-running and sandwich attack effects
+- **Gas cost modeling**: Transaction costs on Hyperliquid
+- **Liquidity constraints**: Limited fill sizes during low liquidity
+</Accordion>
+</AccordionGroup>
+
+### Advanced Analytics
+
+Comprehensive performance analysis beyond basic metrics:
+
+<CardGroup cols={2}>
+<Card title="Risk Analytics" icon="chart-line-down">
+**Deep risk analysis:**
+- Value at Risk (VaR) calculations
+- Expected Shortfall analysis
+- Maximum Drawdown timing
+- Tail risk quantification
+- Correlation analysis
+</Card>
+
+<Card title="Attribution Analysis" icon="microscope">
+**Performance breakdown:**
+- Returns by asset allocation
+- Strategy component contribution
+- Time period performance
+- Market regime attribution
+- Signal quality analysis
+</Card>
+</CardGroup>
+
+## Running Your First Backtest
+
+### Step 1: Strategy Selection
+
+Choose the strategy you want to backtest:
+
+<AccordionGroup>
+<Accordion icon="robot" title="Existing Strategy Backtesting">
+**Test your current automated strategies:**
+
+1. **Navigate to Backtesting**: Dashboard → Analytics → Backtesting
+2. **Select Strategy**: Choose from your active or paused strategies
+3. **Choose Configuration**: Use current settings or modify parameters
+4. **Set Time Period**: Select historical range for testing
+
+```javascript
+Strategy Backtest Setup:
+├── Strategy: "ETH Grid Trading Bot"
+├── Configuration: "Current Live Settings"
+├── Time Period: "2023-01-01 to 2024-01-01"
+├── Initial Capital: $10,000
+├── Assets: ETH/USDC
+└── Execution Model: "Realistic with slippage"
+```
+
+</Accordion>
+
+<Accordion icon="chart-line" title="Signal Strategy Backtesting">
+**Test signal-based strategies:**
+
+1. **Select Signal Combination**: Choose your signal portfolio
+2. **Configure Thresholds**: Set entry/exit signal strengths
+3. **Define Position Sizing**: Risk-based or fixed sizing
+4. **Set Filters**: Market condition and time-based filters
+
+```javascript
+Signal Strategy Backtest:
+├── Primary Signals:
+│   ├── Order Flow Imbalance (40% weight)
+│   ├── Liquidity Momentum (35% weight)
+│   └── RSI Divergence (25% weight)
+├── Entry Threshold: 75%
+├── Exit Threshold: 30%
+├── Position Size: 2% of portfolio
+├── Max Positions: 3 concurrent
+└── Filters: Volatility < 5% daily
+```
+
+</Accordion>
+</AccordionGroup>
+
+### Step 2: Configuration & Parameters
+
+Fine-tune your backtest settings:
+
+<AccordionGroup>
+<Accordion icon="calendar" title="Time Period Selection">
+**Choose appropriate testing periods:**
+
+- **Bull Market Test**: Rising market conditions (e.g., 2023 Q1-Q2)
+- **Bear Market Test**: Declining conditions (e.g., 2022 market crash)
+- **Sideways Market**: Range-bound periods (e.g., summer 2023)
+- **High Volatility**: Stressed market conditions
+- **Full Cycle**: Complete market cycle (2+ years)
+
+**Best Practices**:
+
+- Test multiple non-overlapping periods
+- Include different market regimes
+- Use out-of-sample data for validation
+- Consider seasonal effects and patterns
+
+</Accordion>
+
+<Accordion icon="dollar-sign" title="Capital & Position Sizing">
+**Configure realistic capital constraints:**
+
+```javascript
+Capital Configuration:
+├── Initial Capital: $10,000 - $1,000,000
+├── Position Sizing Method:
+│   ├── Fixed Dollar: $100 per trade
+│   ├── Fixed Percentage: 2% of equity
+│   ├── Risk-Based: 1% risk per trade
+│   └── Kelly Criterion: Optimal growth
+├── Leverage Settings:
+│   ├── Maximum Leverage: 3x
+│   ├── Margin Requirements: Hyperliquid rules
+│   └── Liquidation Modeling: Enabled
+└── Cash Management:
+    ├── Reserve Cash: 10% minimum
+    ├── Reinvestment: Automatic
+    └── Withdrawal Simulation: None
+```
+
+</Accordion>
+
+<Accordion icon="shield" title="Risk Management Settings">
+**Apply realistic risk controls:**
+
+- **Portfolio-level stops**: Maximum daily/monthly losses
+- **Position-level stops**: Stop-loss and take-profit levels
+- **Volatility filters**: Pause during extreme conditions
+- **Correlation limits**: Maximum position correlation
+- **Time-based rules**: Trading hours and blackout periods
+- **Liquidity constraints**: Minimum orderbook depth requirements
+
+</Accordion>
+</AccordionGroup>
+
+## Advanced Backtesting Features
+
+### Walk-Forward Analysis
+
+Test strategy robustness over time:
+
+<AccordionGroup>
+<Accordion icon="arrow-right" title="Rolling Optimization">
+**Continuously optimize parameters:**
+
+```javascript
+Walk-Forward Setup:
+├── Total Period: 2 years
+├── Optimization Window: 6 months
+├── Test Window: 3 months
+├── Step Size: 1 month
+├── Parameters to Optimize:
+│   ├── Signal thresholds
+│   ├── Position sizing
+│   ├── Risk management levels
+│   └── Entry/exit timing
+└── Reoptimization Frequency: Monthly
+```
+
+**Process Flow**:
+
+1. Optimize parameters on first 6 months
+2. Test optimized strategy on next 3 months
+3. Move forward 1 month and repeat
+4. Analyze consistency of optimal parameters
+5. Identify regime-dependent parameters
+
+</Accordion>
+
+<Accordion icon="chart-bar" title="Performance Stability Analysis">
+**Assess parameter sensitivity:**
+
+- **Parameter stability**: How often do optimal parameters change?
+- **Performance decay**: How quickly do optimized parameters deteriorate?
+- **Robustness testing**: Performance with slightly different parameters
+- **Regime analysis**: Parameter effectiveness in different market conditions
+
+</Accordion>
+</AccordionGroup>
+
+### Monte Carlo Simulation
+
+Assess strategy robustness through randomization:
+
+<CardGroup cols={2}>
+<Card title="Return Randomization" icon="dice">
+**Test with randomized returns:**
+- Bootstrap historical returns
+- Preserve statistical properties
+- Test thousands of scenarios
+- Assess worst-case outcomes
+</Card>
+
+<Card title="Path Randomization" icon="route">
+**Vary order of historical events:**
+- Shuffle market regime sequences
+- Test different market conditions
+- Assess order dependency
+- Evaluate timing sensitivity
+</Card>
+</CardGroup>
+
+## Backtesting Results Analysis
+
+### Performance Metrics
+
+Comprehensive performance evaluation:
+
+<AccordionGroup>
+<Accordion icon="chart-line" title="Return Metrics">
+**Profitability analysis:**
+
+```javascript
+Return Analysis:
+├── Total Return: 24.5%
+├── Annualized Return: 12.3%
+├── Compound Annual Growth Rate: 11.8%
+├── Volatility (Annualized): 18.2%
+├── Sharpe Ratio: 0.68
+├── Sortino Ratio: 0.89
+├── Calmar Ratio: 0.76
+├── Information Ratio: 1.12
+├── Alpha vs Market: 3.2%
+└── Beta vs Market: 0.85
+```
+
+**Key Insights**:
+
+- Risk-adjusted returns relative to market
+- Consistency of performance over time
+- Volatility compared to benchmark
+- Return distribution characteristics
+  </Accordion>
+
+<Accordion icon="chart-line-down" title="Risk Metrics">
+**Risk assessment:**
+
+```javascript
+Risk Analysis:
+├── Maximum Drawdown: -8.7%
+├── Average Drawdown: -2.1%
+├── Recovery Time: 45 days average
+├── Value at Risk (95%): -1.8% daily
+├── Expected Shortfall: -2.9% daily
+├── Downside Deviation: 12.4%
+├── Pain Index: 0.15
+├── Ulcer Index: 4.2
+├── Gain-to-Pain Ratio: 2.8
+└── Sterling Ratio: 1.41
+```
+
+</Accordion>
+
+<Accordion icon="target" title="Trade Statistics">
+**Execution analysis:**
+
+```javascript
+Trade Statistics:
+├── Total Trades: 347
+├── Win Rate: 58.2%
+├── Average Win: $287
+├── Average Loss: -$195
+├── Profit Factor: 1.67
+├── Expectancy: $67 per trade
+├── Largest Win: $1,245
+├── Largest Loss: -$892
+├── Consecutive Wins: 8 max
+├── Consecutive Losses: 5 max
+├── Average Trade Duration: 4.2 hours
+└── Average Trades per Day: 2.3
+```
+
+</Accordion>
+</AccordionGroup>
+
+### Visual Analysis
+
+Rich charting and visualization tools:
+
+<CardGroup cols={2}>
+<Card title="Equity Curve" icon="chart-line">
+**Portfolio value over time:**
+- Cumulative returns progression
+- Drawdown periods highlighted
+- Benchmark comparison overlay
+- Risk-adjusted performance bands
+</Card>
+
+<Card title="Return Distribution" icon="chart-bar">
+  **Return characteristics:** - Daily/monthly return histograms - Normal
+  distribution comparison - Tail risk visualization - Skewness and kurtosis
+  analysis
+</Card>
+
+<Card title="Rolling Performance" icon="chart-area">
+  **Time-based analysis:** - Rolling Sharpe ratios - Moving average returns -
+  Volatility over time - Performance regime identification
+</Card>
+
+<Card title="Trade Analysis" icon="scatter-plot">
+**Individual trade insights:**
+- Win/loss distribution
+- Trade size vs performance
+- Holding period analysis
+- Entry/exit timing quality
+</Card>
+</CardGroup>
+
+## Strategy Optimization
+
+### Parameter Optimization
+
+Systematic parameter tuning for better performance:
+
+<AccordionGroup>
+<Accordion icon="sliders" title="Grid Search Optimization">
+**Exhaustive parameter testing:**
+
+```javascript
+Optimization Setup:
+├── Strategy: "RSI Mean Reversion"
+├── Parameters to Optimize:
+│   ├── RSI Period: [10, 12, 14, 16, 18, 20]
+│   ├── Oversold Level: [20, 25, 30, 35]
+│   ├── Overbought Level: [65, 70, 75, 80]
+│   ├── Position Size: [1%, 2%, 3%, 5%]
+│   └── Stop Loss: [2%, 3%, 4%, 5%]
+├── Optimization Metric: Sharpe Ratio
+├── Constraint: Max Drawdown < 10%
+├── Test Period: 18 months
+└── Validation Period: 6 months
+```
+
+**Results Analysis**:
+
+- Identify optimal parameter combinations
+- Assess parameter sensitivity
+- Validate on out-of-sample data
+- Check for overfitting
+  </Accordion>
+
+<Accordion icon="brain" title="Genetic Algorithm Optimization">
+**AI-powered parameter evolution:**
+
+```javascript
+Genetic Optimization:
+├── Population Size: 100 parameter sets
+├── Generations: 50 iterations
+├── Mutation Rate: 5%
+├── Crossover Rate: 80%
+├── Selection Method: Tournament
+├── Fitness Function: Risk-adjusted return
+├── Constraints:
+│   ├── Max Drawdown: 15%
+│   ├── Min Trade Frequency: 1/week
+│   └── Max Trade Frequency: 5/day
+└── Convergence Criteria: 10 stable generations
+```
+
+**Advantages**:
+
+- Explores complex parameter spaces efficiently
+- Finds non-obvious parameter interactions
+- Avoids local optimization minima
+- Handles multiple constraints simultaneously
+  </Accordion>
+</AccordionGroup>
+
+### Multi-Objective Optimization
+
+Balance multiple performance criteria:
+
+<CardGroup cols={2}>
+<Card title="Return vs Risk" icon="balance-scale">
+**Optimize risk-adjusted returns:**
+- Maximize Sharpe ratio
+- Minimize maximum drawdown
+- Balance return and volatility
+- Optimize tail risk measures
+</Card>
+
+<Card title="Performance vs Stability" icon="anchor">
+**Balance performance and robustness:**
+- Consistent performance across periods
+- Parameter stability over time
+- Reduced overfitting risk
+- Market regime adaptability
+</Card>
+</CardGroup>
+
+## Benchmark Comparison
+
+### Market Benchmarks
+
+Compare strategy performance against relevant benchmarks:
+
+<AccordionGroup>
+<Accordion icon="chart-line" title="Standard Benchmarks">
+**Common comparison baselines:**
+
+- **Buy and Hold**: Simple asset purchase and hold
+- **DCA Benchmark**: Regular dollar-cost averaging
+- **Market Index**: Weighted crypto market performance
+- **Risk-Free Rate**: Stablecoin yield or Treasury rates
+- **60/40 Portfolio**: Traditional balanced allocation
+
+```javascript
+Benchmark Comparison Results:
+├── Strategy Return: 18.5%
+├── Buy & Hold ETH: 12.3%
+├── DCA ETH Weekly: 14.7%
+├── Crypto Index: 15.2%
+├── USDC Yield: 4.2%
+├── 60/40 ETH/USDC: 8.9%
+├── Best Performer: Strategy (+18.5%)
+├── Risk-Adjusted Best: Strategy (Sharpe: 1.12)
+└── Maximum Drawdown Best: 60/40 (-4.2%)
+```
+
+</Accordion>
+
+<Accordion icon="trophy" title="Peer Strategy Comparison">
+**Compare against other automated strategies:**
+
+- Similar strategy types (grid, DCA, signal-based)
+- Community strategy performance
+- Professional fund performance
+- Academic strategy research results
+
+**Comparison Metrics**:
+
+- Return per unit of risk
+- Downside protection
+- Market regime performance
+- Scalability and capacity
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices & Common Pitfalls
+
+### Best Practices
+
+<CheckList>
+  - **Use sufficient data**: Minimum 2 years, preferably 3-5 years - **Test
+  multiple periods**: Include different market regimes - **Validate
+  out-of-sample**: Reserve 20-30% of data for validation - **Consider
+  transaction costs**: Include realistic fees and slippage - **Account for
+  market impact**: Model liquidity constraints - **Test parameter stability**:
+  Ensure robustness across periods - **Use walk-forward analysis**: Validate
+  optimization over time - **Compare to benchmarks**: Assess relative
+  performance - **Document assumptions**: Track all modeling decisions -
+  **Regular re-testing**: Update backtests with new data
+</CheckList>
+
+### Common Pitfalls
+
+<Warning>
+**Avoid These Backtesting Mistakes:**
+
+- **Look-ahead bias**: Using future information in signals
+- **Survivorship bias**: Only testing on currently available assets
+- **Data snooping**: Over-optimizing on the same dataset
+- **Unrealistic assumptions**: Ignoring slippage, fees, and market impact
+- **Insufficient data**: Testing on too short or unrepresentative periods
+- **Point-in-time errors**: Using revised data not available historically
+- **Regime bias**: Testing only in favorable market conditions
+- **Parameter overfitting**: Optimizing too many parameters
+- **Ignoring correlation**: Not accounting for portfolio interactions
+- **Static optimization**: Using the same parameters throughout
+  </Warning>
+
+## Next Steps
+
+<CardGroup cols={2}>
+<Card title="Strategy Implementation" icon="rocket" href="/getting-started/first-bot">
+  Deploy your backtested strategy with confidence.
+</Card>
+
+<Card
+  title="Performance Monitoring"
+  icon="chart-mixed"
+  href="/portfolio/performance-analytics"
+>
+  Track live performance vs backtested expectations.
+</Card>
+
+<Card
+  title="Risk Management"
+  icon="shield-check"
+  href="/portfolio/risk-management-tools"
+>
+  Implement the risk controls validated in backtesting.
+</Card>
+
+<Card title="Signal-Based Trading" icon="radar" href="/trading-strategies/signal-based-trading">
+  Backtest strategies using Hyperscript's signal engine.
+</Card>
+</CardGroup>
+
+<Note>
+  Backtesting is a powerful tool but not a guarantee of future performance.
+  Always use proper risk management and start with small position sizes when
+  deploying strategies based on backtest results.
+</Note>{" "}

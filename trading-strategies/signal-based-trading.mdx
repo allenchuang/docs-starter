@@ -1,0 +1,463 @@
+---
+title: "Signal-Based Trading"
+description: "Leverage Hyperscript's proprietary orderbook signals and technical indicators for intelligent automated trading"
+---
+
+## What is Signal-Based Trading?
+
+Signal-based trading uses market data, technical indicators, and proprietary signals to make automated trading decisions. Hyperscript's advanced orderbook signal engine provides unique insights unavailable on other platforms, enabling sophisticated trading strategies.
+
+## Hyperscript's Signal Advantage
+
+Our proprietary signal engine analyzes the full Hyperliquid orderbook in real-time to generate actionable trading signals:
+
+<CardGroup cols={2}>
+<Card title="Orderbook Microstructure" icon="microscope">
+**Deep market analysis:**
+- Order flow imbalance detection
+- Liquidity void identification
+- Hidden order pattern recognition
+- Price impact prediction
+</Card>
+
+<Card title="Market Sentiment Signals" icon="chart-mixed">
+  **Sentiment and momentum:** - Long/short sentiment shifts - Liquidation
+  threshold analysis - Momentum ignition detection - Trend inflection zones
+</Card>
+
+<Card title="Execution Intelligence" icon="zap">
+  **Optimal timing signals:** - Slippage prediction engine - Best execution
+  timing - MEV protection indicators - Gas optimization signals
+</Card>
+
+<Card title="Risk Assessment" icon="shield-check">
+**Risk-aware signals:**
+- Volatility regime detection
+- Correlation spike warnings
+- Liquidity stress indicators
+- Market stress signals
+</Card>
+</CardGroup>
+
+## Signal Types & Categories
+
+### Technical Signals
+
+Traditional technical analysis enhanced with orderbook data:
+
+<AccordionGroup>
+<Accordion icon="chart-line" title="Trend Signals">
+**Directional momentum indicators:**
+- **Liquidity-weighted momentum**: Price trends weighted by orderbook depth
+- **Volume-confirmed breakouts**: Breakouts validated by order flow
+- **Trend exhaustion signals**: When orderbook shows momentum fatigue
+- **Support/resistance confirmation**: Level validation via liquidity concentration
+</Accordion>
+
+<Accordion icon="arrows-rotate" title="Mean Reversion Signals">
+**Reversal and pullback indicators:**
+- **Oversold/overbought with liquidity**: RSI combined with orderbook imbalance
+- **Bounce probability**: Statistical likelihood of reversal at current levels
+- **Liquidity magnet levels**: Price levels with high probability of attraction
+- **Reversion pressure**: When price deviates significantly from fair value
+</Accordion>
+</AccordionGroup>
+
+### Orderbook Signals
+
+Proprietary signals from our full orderbook analysis:
+
+<CardGroup cols={2}>
+<Card title="Order Flow Imbalance" icon="scale-unbalanced">
+**Aggressive buying vs selling pressure:**
+- Real-time buyer/seller aggression ratios
+- Institutional order flow detection
+- Hidden liquidity revelation patterns
+- Market maker withdrawal signals
+</Card>
+
+<Card title="Liquidity Analysis" icon="droplet">
+  **Market depth and availability:** - True market depth calculations -
+  Liquidity void detection - Iceberg order identification - Flash crash risk
+  assessment
+</Card>
+
+<Card title="Price Impact Modeling" icon="target">
+  **Execution cost prediction:** - Slippage forecasting for various sizes -
+  Optimal order sizing recommendations - VWAP deviation predictions - Market
+  impact minimization signals
+</Card>
+
+<Card title="Volatility Signals" icon="wave-square">
+**Volatility prediction and timing:**
+- Orderbook-implied volatility
+- Volatility expansion warnings
+- Calm before storm detection
+- Volatility collapse signals
+</Card>
+</CardGroup>
+
+## Signal-Based Strategy Types
+
+### Momentum Strategies
+
+Trade with confirmed trends using signal validation:
+
+<AccordionGroup>
+<Accordion icon="trending-up" title="Trend Following with Signals">
+**Enhanced trend strategies:**
+- Enter trends only when orderbook confirms direction
+- Use liquidity signals to time entries and exits
+- Monitor for trend exhaustion via flow analysis
+- Dynamic position sizing based on signal strength
+</Accordion>
+
+<Accordion icon="zap" title="Breakout Trading">
+**Signal-confirmed breakouts:**
+- Wait for volume and orderbook confirmation
+- Avoid false breakouts using liquidity analysis
+- Size positions based on breakout probability
+- Use flow signals for optimal entry timing
+</Accordion>
+</AccordionGroup>
+
+### Mean Reversion Strategies
+
+Counter-trend trading with reversal signals:
+
+<CardGroup cols={2}>
+<Card title="Bounce Trading" icon="arrow-up">
+**Support/resistance bounces:**
+- Enter reversals when signals align
+- Use liquidity concentration for level identification
+- Monitor flow for reversal confirmation
+- Scale out using probability models
+</Card>
+
+<Card title="Fade Strategies" icon="arrow-down">
+**Fade overextended moves:**
+- Identify exhaustion via orderbook analysis
+- Enter against weak momentum
+- Use reversion pressure signals
+- Quick exits when signals change
+</Card>
+</CardGroup>
+
+### Arbitrage & Market Making
+
+Advanced strategies using execution signals:
+
+<AccordionGroup>
+<Accordion icon="arrows-left-right" title="Statistical Arbitrage">
+**Price discrepancy exploitation:**
+- Identify mispricings using fair value models
+- Execute when liquidity signals are favorable
+- Monitor for arbitrage closure conditions
+- Optimize execution using impact models
+</Accordion>
+
+<Accordion icon="layers" title="Signal-Based Market Making">
+**Intelligent liquidity provision:**
+- Place orders when flow signals indicate edge
+- Adjust spreads based on volatility predictions
+- Withdraw liquidity during adverse conditions
+- Dynamic inventory management using signals
+</Accordion>
+</AccordionGroup>
+
+## Signal Configuration
+
+### Signal Selection & Weighting
+
+<AccordionGroup>
+<Accordion icon="sliders" title="Signal Portfolio">
+**Choose and weight your signals:**
+```javascript
+Signal Configuration:
+├── Primary Signals (60% weight)
+│   ├── Order Flow Imbalance: 30%
+│   └── Liquidity-Weighted Momentum: 30%
+├── Secondary Signals (30% weight)
+│   ├── Volatility Expansion: 15%
+│   └── Support/Resistance Strength: 15%
+└── Filter Signals (10% weight)
+    ├── Market Stress Indicator: 5%
+    └── Correlation Spike Warning: 5%
+```
+</Accordion>
+
+<Accordion icon="gear" title="Signal Parameters">
+**Customize signal sensitivity:**
+- **Lookback periods**: 5m, 15m, 1h, 4h timeframes
+- **Threshold levels**: Signal strength required for action
+- **Confirmation requirements**: Multiple signal alignment
+- **Signal decay**: How quickly signals lose relevance
+</Accordion>
+</AccordionGroup>
+
+### Entry & Exit Rules
+
+<AccordionGroup>
+<Accordion icon="door-open" title="Entry Conditions">
+**When to open positions:**
+- **Signal alignment**: 2+ primary signals must agree
+- **Strength threshold**: Combined signal score > 70%
+- **Market conditions**: No stress indicators active
+- **Timing filters**: Avoid low liquidity periods
+</Accordion>
+
+<Accordion icon="door-closed" title="Exit Conditions">
+**When to close positions:**
+- **Signal reversal**: Primary signals flip direction
+- **Profit targets**: Based on signal-predicted moves
+- **Stop losses**: Dynamic based on volatility signals
+- **Time decay**: Exit if signals weaken over time
+</Accordion>
+</AccordionGroup>
+
+## Setting Up Signal-Based Trading
+
+### Step 1: Signal Analysis & Selection
+
+1. **Analyze signal performance**: Review historical accuracy and profitability
+2. **Choose signal combination**: Select 3-5 complementary signals
+3. **Set signal weights**: Allocate importance based on strategy type
+4. **Define thresholds**: Set trigger levels for entry/exit signals
+
+<Tip>
+  Start with proven signal combinations and gradually customize based on your
+  market analysis and backtesting results.
+</Tip>
+
+### Step 2: Strategy Configuration
+
+<AccordionGroup>
+<Accordion icon="settings" title="Basic Signal Bot Setup">
+```javascript
+Signal-Based Bot Configuration:
+├── Strategy Type: Momentum Following
+├── Primary Signals:
+│   ├── Order Flow Imbalance (40% weight)
+│   ├── Liquidity Momentum (35% weight)
+│   └── Breakout Confirmation (25% weight)
+├── Entry Threshold: 75% signal strength
+├── Exit Threshold: 30% signal strength
+├── Position Size: 2% of portfolio per trade
+├── Maximum Positions: 3 concurrent
+└── Timeframe: 15-minute signal updates
+```
+</Accordion>
+
+<Accordion icon="shield" title="Risk Management">
+- **Maximum position size**: 5% of portfolio per signal
+- **Daily signal limit**: Maximum 10 signal-triggered trades
+- **Drawdown protection**: Pause if signals underperform by 10%
+- **Signal confidence filter**: Only trade signals with >60% confidence
+</Accordion>
+</AccordionGroup>
+
+### Step 3: Backtesting & Optimization
+
+Test your signal strategy thoroughly:
+
+<CheckList>
+  - Backtest across different market regimes (bull, bear, sideways) - Analyze
+  signal accuracy and false positive rates - Optimize signal weights and
+  thresholds - Test position sizing and risk management rules - Validate
+  strategy during high volatility periods
+</CheckList>
+
+## Advanced Signal Features
+
+### Machine Learning Enhanced Signals
+
+Our AI-enhanced signal processing provides:
+
+<CardGroup cols={2}>
+<Card title="Pattern Recognition" icon="brain">
+**AI-identified patterns:**
+- Complex orderbook pattern detection
+- Multi-timeframe pattern analysis
+- Rare event pattern recognition
+- Pattern probability scoring
+</Card>
+
+<Card title="Adaptive Signals" icon="arrows-rotate">
+  **Self-improving signals:** - Signals that learn from market changes - Dynamic
+  threshold adjustment - Performance-based signal weighting - Market regime
+  adaptive signals
+</Card>
+
+<Card title="Ensemble Models" icon="layer-group">
+  **Combined signal intelligence:** - Multiple model consensus signals -
+  Uncertainty quantification - Model disagreement indicators - Confidence
+  interval signals
+</Card>
+
+<Card title="Real-Time Learning" icon="graduation-cap">
+**Continuous improvement:**
+- Live signal performance tracking
+- Automatic parameter optimization
+- Market adaptation mechanisms
+- Performance degradation alerts
+</Card>
+</CardGroup>
+
+### Multi-Asset Signal Strategies
+
+Coordinate signals across multiple assets:
+
+<AccordionGroup>
+<Accordion icon="chart-pie" title="Portfolio-Level Signals">
+**Cross-asset signal analysis:**
+- Correlation-adjusted position sizing
+- Portfolio momentum signals
+- Sector rotation signals
+- Risk-on/risk-off detection
+</Accordion>
+
+<Accordion icon="link" title="Pair Trading Signals">
+**Relative value signals:**
+- ETH/BTC ratio signals
+- Layer-1 vs Layer-2 relative strength
+- DeFi vs Infrastructure rotation signals
+- Stablecoin premium/discount signals
+</Accordion>
+</AccordionGroup>
+
+## Performance Optimization
+
+### Signal Quality Assessment
+
+<CardGroup cols={3}>
+<Card title="Signal Accuracy" icon="target">
+Percentage of signals that correctly predict direction
+</Card>
+
+<Card title="Signal Timing" icon="stopwatch">
+  How quickly signals identify opportunities
+</Card>
+
+<Card title="False Positive Rate" icon="exclamation-triangle">
+  Frequency of incorrect signals
+</Card>
+
+<Card title="Profit per Signal" icon="dollar-sign">
+  Average profit generated per signal
+</Card>
+
+<Card title="Signal Persistence" icon="clock">
+  How long signal advantages last
+</Card>
+
+<Card title="Risk-Adjusted Returns" icon="shield-check">
+Returns relative to signal-based risk taken
+</Card>
+</CardGroup>
+
+### Signal Strategy Monitoring
+
+Track your signal-based strategy performance:
+
+- **Real-time signal strength**: Current signal readings and confidence levels
+- **Signal history**: Recent signal triggers and their outcomes
+- **Performance attribution**: Which signals contribute most to profits
+- **Signal degradation alerts**: Warnings when signal quality decreases
+
+## Combining Signals with Other Strategies
+
+### Signal-Enhanced DCA
+
+Improve dollar-cost averaging with signals:
+
+<AccordionGroup>
+<Accordion icon="chart-line-up" title="Opportunistic DCA">
+**Buy more when signals are favorable:**
+- Increase DCA amounts during strong buy signals
+- Skip DCA periods during negative signals
+- Use reversal signals to time larger purchases
+- Combine trend and reversion signals for timing
+</Accordion>
+
+<Accordion icon="balance-scale" title="Signal-Weighted Portfolio">
+**Adjust allocation based on signals:**
+- Increase allocation to assets with strong signals
+- Reduce allocation when signals turn negative
+- Rebalance based on signal strength changes
+- Use cross-asset signals for rotation decisions
+</Accordion>
+</AccordionGroup>
+
+### Signal-Optimized Grid Trading
+
+Enhance grid strategies with signal intelligence:
+
+- **Dynamic grid placement**: Position grids based on support/resistance signals
+- **Signal-triggered grid activation**: Start grids only when signals are favorable
+- **Adaptive grid spacing**: Adjust spacing based on volatility signals
+- **Signal-based grid exits**: Close grids when trend signals conflict
+
+## Troubleshooting Signal Issues
+
+<AccordionGroup>
+<Accordion icon="chart-line-down" title="Signal Degradation">
+**Problem**: Previously profitable signals stop working
+
+**Solutions**:
+
+- Review market regime changes that might affect signals
+- Retrain or recalibrate signal parameters
+- Add new signals to compensate for degraded ones
+- Implement signal ensemble approaches for robustness
+  </Accordion>
+
+<Accordion icon="zap" title="Signal Latency">
+**Problem**: Signals arrive too late for profitable execution
+
+**Solutions**:
+
+- Optimize signal calculation frequency
+- Use predictive rather than reactive signals
+- Implement signal pre-positioning strategies
+- Reduce signal complexity for faster computation
+  </Accordion>
+
+<Accordion icon="exclamation-triangle" title="High False Positive Rate">
+**Problem**: Too many incorrect signals
+
+**Solutions**:
+
+- Increase signal confidence thresholds
+- Add confirmation signals before acting
+- Filter signals during uncertain market conditions
+- Use ensemble methods to reduce noise
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+<Card title="Trading Wizard" icon="magic-wand" href="/trading-strategies/trading-wizard">
+  Get AI-powered signal strategy recommendations.
+</Card>
+
+<Card
+  title="Orderbook Signal Engine"
+  icon="radar"
+  href="/signals/orderbook-signal-engine"
+>
+  Deep dive into our proprietary signal generation.
+</Card>
+
+<Card
+  title="Backtesting Engine"
+  icon="clock-rotate-left"
+  href="/advanced/backtesting-engine"
+>
+  Test your signal strategies against historical data.
+</Card>
+
+<Card title="Portfolio Dashboard" icon="chart-mixed" href="/portfolio/dashboard">
+  Monitor signal performance and strategy results.
+</Card>
+</CardGroup>

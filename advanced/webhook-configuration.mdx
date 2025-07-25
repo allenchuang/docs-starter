@@ -1,0 +1,571 @@
+---
+title: "Webhook Configuration"
+description: "Set up and manage webhook endpoints for external integrations, alerts, and automated strategy execution"
+---
+
+## What are Webhooks?
+
+Webhooks are HTTP endpoints that allow external services to send real-time data to Hyperscript. They enable seamless integration with trading platforms, alert services, and third-party applications for automated strategy execution and notification management.
+
+## Supported Webhook Types
+
+Hyperscript supports multiple webhook types for different use cases:
+
+<CardGroup cols={2}>
+<Card title="TradingView Integration" icon="chart-line">
+**PineScript strategy execution:**
+- Strategy alerts from TradingView
+- Custom signal generation
+- Multi-timeframe analysis
+- Automated position management
+</Card>
+
+<Card title="Custom Alert Systems" icon="bell">
+  **External alert processing:** - Price alerts from monitoring services -
+  Technical indicator signals - News-based trading triggers - Social sentiment
+  alerts
+</Card>
+
+<Card title="Portfolio Management" icon="chart-pie">
+  **Portfolio rebalancing triggers:** - External rebalancing signals - Risk
+  management alerts - Asset allocation adjustments - Performance-based
+  modifications
+</Card>
+
+<Card title="Risk Management" icon="shield-check">
+**Risk monitoring webhooks:**
+- Stop-loss triggers
+- Volatility alerts
+- Correlation warnings
+- Emergency position closing
+</Card>
+</CardGroup>
+
+## Setting Up Webhooks
+
+### Step 1: Create Webhook Endpoint
+
+Navigate to your webhook management dashboard:
+
+<AccordionGroup>
+<Accordion icon="plus" title="Create New Webhook">
+**Basic webhook setup:**
+
+1. **Go to Integrations**: Dashboard → Integrations → Webhooks
+2. **Click "Create Webhook"**: Start the setup process
+3. **Configure Basic Settings**:
+
+   ```javascript
+   Webhook Configuration:
+   ├── Name: "TradingView EMA Strategy"
+   ├── Type: "TradingView PineScript"
+   ├── Status: "Active"
+   ├── URL: "https://api.hyperscript.xyz/webhook/tv/abc123"
+   ├── Secret: "wh_secret_xyz789"
+   └── Rate Limit: "100 requests/minute"
+   ```
+
+4. **Copy Webhook Details**: Save URL and secret for external configuration
+
+</Accordion>
+
+<Accordion icon="shield" title="Security Configuration">
+**Secure your webhook endpoint:**
+
+- **Secret Verification**: Validate requests using webhook secret
+- **IP Whitelisting**: Restrict access to known IP addresses
+- **Rate Limiting**: Prevent abuse with request limits
+- **Signature Validation**: Verify request authenticity
+- **HTTPS Only**: Ensure encrypted data transmission
+
+**Security Best Practices**:
+
+- Regenerate secrets regularly (monthly recommended)
+- Monitor webhook activity for unusual patterns
+- Use different secrets for different integrations
+- Enable logging for security audit trails
+
+</Accordion>
+</AccordionGroup>
+
+### Step 2: Message Format Configuration
+
+Define how incoming webhook data should be processed:
+
+<AccordionGroup>
+<Accordion icon="code" title="Message Schema Definition">
+**Standard trading signal format:**
+
+```json
+{
+  "type": "trading_signal",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "source": "tradingview",
+  "strategy": "ema_crossover",
+  "signal": {
+    "action": "buy", // "buy", "sell", "close", "modify"
+    "symbol": "ETH", // Asset symbol
+    "size": 100, // Position size (USD)
+    "price": 2000, // Entry price (optional for market orders)
+    "stop_loss": 1950, // Stop loss price
+    "take_profit": 2100, // Take profit target
+    "confidence": 0.85, // Signal confidence (0-1)
+    "urgency": "normal" // "low", "normal", "high", "emergency"
+  },
+  "metadata": {
+    "timeframe": "4h",
+    "indicators": {
+      "rsi": 45,
+      "macd": 0.12,
+      "volume": 1500000
+    }
+  }
+}
+```
+
+</Accordion>
+
+<Accordion icon="gear" title="Custom Field Mapping">
+
+**Map webhook fields to Hyperscript parameters:**
+
+```javascript
+Field Mapping Configuration:
+├── Signal Action: webhook.signal.action → strategy.action
+├── Asset Symbol: webhook.signal.symbol → strategy.asset
+├── Position Size: webhook.signal.size → strategy.position_size
+├── Entry Price: webhook.signal.price → strategy.entry_price
+├── Stop Loss: webhook.signal.stop_loss → strategy.stop_loss
+├── Take Profit: webhook.signal.take_profit → strategy.take_profit
+├── Confidence: webhook.signal.confidence → strategy.signal_strength
+└── Custom Fields: webhook.metadata.* → strategy.metadata.*
+```
+
+**Supported Transformations**:
+
+- **Data type conversion**: String to number, boolean parsing
+- **Unit conversion**: Percentage to decimal, time zone conversion
+- **Conditional mapping**: Different mappings based on signal type
+- **Default values**: Fallback values when fields are missing
+
+</Accordion>
+</AccordionGroup>
+
+## Advanced Webhook Features
+
+### Conditional Processing
+
+Set up rules for when and how webhooks should be processed:
+
+<AccordionGroup>
+<Accordion icon="filter" title="Signal Filtering">
+**Filter incoming signals based on criteria:**
+
+```javascript
+Filter Configuration:
+├── Time Filters:
+│   ├── Trading Hours: 09:00 - 17:00 UTC
+│   ├── Weekdays Only: Monday - Friday
+│   └── Holiday Exclusions: Enabled
+├── Market Condition Filters:
+│   ├── Minimum Confidence: 0.70
+│   ├── Maximum Volatility: 5% daily
+│   └── Liquidity Threshold: $50k orderbook depth
+├── Asset Filters:
+│   ├── Allowed Assets: [ETH, BTC, SOL, ARB]
+│   ├── Minimum Market Cap: $1B
+│   └── Maximum Correlation: 0.8
+└── Rate Limiting:
+    ├── Max Signals per Hour: 10
+    ├── Cooldown Between Signals: 5 minutes
+    └── Duplicate Signal Prevention: Enabled
+```
+
+</Accordion>
+
+<Accordion icon="code-branch" title="Conditional Logic">
+**Execute different actions based on signal properties:**
+
+```javascript
+Conditional Processing Rules:
+├── High Confidence Signals (>0.85):
+│   ├── Execute immediately
+│   ├── Use full position size
+│   └── Enable stop-loss and take-profit
+├── Medium Confidence Signals (0.70-0.85):
+│   ├── Reduce position size by 50%
+│   ├── Wait for market confirmation
+│   └── Use tighter risk controls
+├── Low Confidence Signals (<0.70):
+│   ├── Log for analysis only
+│   ├── Do not execute trades
+│   └── Send notification for review
+└── Emergency Signals:
+    ├── Override all filters
+    ├── Execute immediately
+    └── Send urgent notifications
+```
+
+</Accordion>
+</AccordionGroup>
+
+### Multi-Webhook Coordination
+
+Coordinate signals from multiple webhook sources:
+
+<CardGroup cols={2}>
+<Card title="Signal Aggregation" icon="layer-group">
+**Combine signals from multiple sources:**
+- Require confirmation from 2+ sources
+- Weight signals by source reliability
+- Resolve conflicting signals intelligently
+- Track correlation between sources
+</Card>
+
+<Card title="Failover & Redundancy" icon="shield">
+**Ensure reliability with backup sources:**
+- Automatic failover to backup webhooks
+- Health monitoring for all endpoints
+- Alert when primary sources fail
+- Load balancing across endpoints
+</Card>
+</CardGroup>
+
+## Webhook Management
+
+### Monitoring & Analytics
+
+Track webhook performance and reliability:
+
+<AccordionGroup>
+<Accordion icon="chart-bar" title="Performance Metrics">
+**Monitor webhook health and performance:**
+
+```javascript
+Webhook Analytics Dashboard:
+├── Request Metrics:
+│   ├── Total Requests: 1,247
+│   ├── Success Rate: 98.5%
+│   ├── Average Latency: 45ms
+│   └── Error Rate: 1.5%
+├── Signal Metrics:
+│   ├── Signals Processed: 892
+│   ├── Signals Filtered: 78
+│   ├── Trades Executed: 814
+│   └── Execution Success: 99.2%
+├── Performance Analysis:
+│   ├── Peak Request Rate: 15 req/min
+│   ├── Average Response Time: 120ms
+│   ├── 99th Percentile Latency: 500ms
+│   └── Uptime: 99.95%
+└── Error Analysis:
+    ├── Timeout Errors: 0.3%
+    ├── Authentication Failures: 0.8%
+    ├── Schema Validation Errors: 0.4%
+    └── Rate Limit Exceeded: 0.0%
+```
+
+</Accordion>
+
+<Accordion icon="bell" title="Alert Configuration">
+**Set up notifications for webhook issues:**
+
+- **High Error Rate**: Alert when error rate > 5%
+- **Latency Spike**: Notify when response time > 1 second
+- **Authentication Failures**: Immediate alert for security issues
+- **Signal Quality**: Alert when signal confidence drops
+- **Execution Failures**: Notify when trade execution fails
+- **Rate Limiting**: Warning when approaching rate limits
+
+</Accordion>
+</AccordionGroup>
+
+### Webhook Testing & Debugging
+
+Tools for testing and troubleshooting webhook integrations:
+
+<CardGroup cols={2}>
+<Card title="Test Endpoints" icon="test-tube">
+**Validate webhook configuration:**
+- Send test signals to validate processing
+- Check field mapping and transformations
+- Verify filtering and conditional logic
+- Test error handling and edge cases
+</Card>
+
+<Card title="Debug Tools" icon="bug">
+**Troubleshoot webhook issues:**
+- Real-time request/response logging
+- Schema validation results
+- Processing step breakdown
+- Error message details and context
+</Card>
+</CardGroup>
+
+## Webhook Security
+
+### Authentication & Authorization
+
+Secure your webhook endpoints against unauthorized access:
+
+<AccordionGroup>
+<Accordion icon="key" title="Authentication Methods">
+**Multiple authentication options:**
+
+1. **Webhook Secrets**:
+
+   - HMAC-SHA256 signature verification
+   - Rotating secret keys
+   - Header-based authentication
+
+2. **API Key Authentication**:
+
+   - Bearer token validation
+   - Key-based rate limiting
+   - Scope-based permissions
+
+3. **IP Whitelisting**:
+
+   - Restrict access by source IP
+   - Support for IP ranges and CIDR notation
+   - Dynamic IP list management
+
+4. **OAuth 2.0** (for supported integrations):
+   - Secure token-based authentication
+   - Automatic token refresh
+   - Scope-based access control
+
+</Accordion>
+
+<Accordion icon="shield-check" title="Security Best Practices">
+**Recommended security measures:**
+
+<CheckList>
+- Use HTTPS for all webhook endpoints
+- Implement signature verification for all requests
+- Rotate webhook secrets regularly (monthly)
+- Monitor for unusual request patterns
+- Set up rate limiting to prevent abuse
+- Log all webhook activity for audit purposes
+- Use separate webhooks for different integrations
+- Validate and sanitize all incoming data
+- Implement timeout controls for processing
+- Set up alerting for security events
+</CheckList>
+</Accordion>
+</AccordionGroup>
+
+## Integration Examples
+
+### TradingView Integration
+
+Complete setup for TradingView PineScript integration:
+
+<AccordionGroup>
+<Accordion icon="chart-line" title="TradingView Webhook Setup">
+**Configure TradingView alert webhook:**
+
+1. **Create TradingView Alert**:
+
+   - Condition: Your PineScript strategy
+   - Webhook URL: `https://api.hyperscript.xyz/webhook/tv/your-id`
+   - Message: `{{strategy.order.alert_message}}`
+
+2. **Configure Hyperscript Webhook**:
+
+   ```javascript
+   TradingView Webhook Settings:
+   ├── Name: "TradingView Strategy Alerts"
+   ├── Type: "tradingview_pinescript"
+   ├── Authentication: "webhook_secret"
+   ├── Secret: "tv_wh_secret_123"
+   ├── Asset Mapping:
+   │   ├── ETHUSDT → ETH
+   │   ├── BTCUSDT → BTC
+   │   └── SOLUSDT → SOL
+   ├── Position Sizing: "dynamic_from_signal"
+   ├── Risk Management: "enabled"
+   └── Filters:
+       ├── Confidence Threshold: 0.60
+       ├── Trading Hours: "24/7"
+       └── Max Daily Trades: 20
+   ```
+
+3. **Test Integration**:
+   - Send test alert from TradingView
+   - Verify signal processing in Hyperscript
+   - Check trade execution on Hyperliquid
+
+</Accordion>
+</AccordionGroup>
+
+### Custom Alert Service
+
+Set up webhooks for custom monitoring and alert systems:
+
+<AccordionGroup>
+<Accordion icon="radar" title="Price Alert Integration">
+**Configure external price monitoring service:**
+
+```javascript
+Price Alert Webhook Configuration:
+├── Endpoint: /webhook/alerts/price-monitor
+├── Method: POST
+├── Authentication: API Key
+├── Expected Format:
+│   {
+│     "alert_type": "price_threshold",
+│     "symbol": "ETH",
+│     "price": 2050,
+│     "direction": "above",
+│     "confidence": 0.90,
+│     "timestamp": "2024-01-15T10:30:00Z"
+│   }
+├── Processing Rules:
+│   ├── High Confidence (>0.85): Execute market order
+│   ├── Medium Confidence (0.70-0.85): Place limit order
+│   └── Low Confidence (<0.70): Log only
+└── Risk Controls:
+    ├── Max Position: $500 per alert
+    ├── Cooldown: 10 minutes between alerts
+    └── Daily Limit: 5 executions
+```
+
+</Accordion>
+</AccordionGroup>
+
+## Webhook Troubleshooting
+
+### Common Issues & Solutions
+
+<AccordionGroup>
+<Accordion icon="exclamation-triangle" title="Authentication Failures">
+**Problem**: Webhook requests failing authentication
+
+**Troubleshooting Steps**:
+
+1. Verify webhook secret is correctly configured
+2. Check signature generation in sending application
+3. Ensure HMAC algorithm matches (SHA-256)
+4. Validate timestamp tolerance settings
+5. Test with manual curl request
+
+**Example Debug Request**:
+
+```bash
+curl -X POST \
+  https://api.hyperscript.xyz/webhook/tv/your-id \
+  -H "Content-Type: application/json" \
+  -H "X-Webhook-Signature: sha256=your-signature" \
+  -d '{"action":"buy","symbol":"ETH","size":100}'
+```
+
+</Accordion>
+
+<Accordion icon="clock" title="Processing Delays">
+**Problem**: Long delays between webhook receipt and execution
+
+**Diagnostic Steps**:
+
+1. Check webhook processing queue status
+2. Verify market hours and trading restrictions
+3. Review filtering and validation rules
+4. Check Hyperliquid network status
+5. Examine position size and liquidity requirements
+
+**Optimization Strategies**:
+
+- Simplify filtering logic
+- Use market orders for urgent signals
+- Pre-validate signal format
+- Implement parallel processing
+- Cache frequently accessed data
+  </Accordion>
+
+<Accordion icon="ban" title="Signal Rejection">
+**Problem**: Valid signals being rejected or filtered
+
+**Investigation Steps**:
+
+1. Review filtering rules and thresholds
+2. Check signal confidence levels
+3. Verify asset symbol mapping
+4. Examine market condition filters
+5. Review rate limiting settings
+
+**Common Causes**:
+
+- Signal confidence below threshold
+- Asset not in allowed list
+- Position size exceeds limits
+- Rate limit reached
+- Market hours restriction
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Webhook Patterns
+
+### Webhook Chaining
+
+Chain multiple webhooks for complex workflows:
+
+<AccordionGroup>
+<Accordion icon="link" title="Sequential Processing">
+**Chain webhooks for multi-step workflows:**
+
+```javascript
+Webhook Chain Example:
+├── Step 1: Signal Validation Webhook
+│   ├── Validate signal format and authenticity
+│   ├── Check market conditions
+│   └── Forward to next webhook if valid
+├── Step 2: Risk Assessment Webhook
+│   ├── Analyze current portfolio exposure
+│   ├── Calculate position sizing
+│   └── Apply risk management rules
+├── Step 3: Execution Webhook
+│   ├── Execute trade on Hyperliquid
+│   ├── Monitor fill status
+│   └── Send confirmation notifications
+└── Step 4: Reporting Webhook
+    ├── Log trade details
+    ├── Update performance metrics
+    └── Trigger portfolio rebalancing if needed
+```
+
+</Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+<Card title="PineScript Integration" icon="chart-line" href="/advanced/pinescript-integration">
+  Set up TradingView PineScript strategy execution.
+</Card>
+
+<Card
+  title="Backtesting Engine"
+  icon="clock-rotate-left"
+  href="/advanced/backtesting-engine"
+>
+  Test webhook-driven strategies against historical data.
+</Card>
+
+<Card
+  title="Signal-Based Trading"
+  icon="radar"
+  href="/trading-strategies/signal-based-trading"
+>
+  Combine webhooks with Hyperscript's signal engine.
+</Card>
+
+<Card title="Portfolio Dashboard" icon="chart-mixed" href="/portfolio/dashboard">
+  Monitor webhook-driven strategy performance.
+</Card>
+</CardGroup>
+
+<Note>
+  Webhooks provide powerful integration capabilities but require careful
+  security and error handling. Always test thoroughly in a sandbox environment
+  before deploying to production trading.
+</Note>{" "}

@@ -1,0 +1,234 @@
+---
+title: "Understanding Risk & Portfolio Management"
+description: "Essential risk management principles and tools to protect your capital while automated trading"
+---
+
+## Risk Management Fundamentals
+
+Successful automated trading starts with proper risk management. This guide covers essential concepts and tools to protect your capital.
+
+## Core Risk Management Principles
+
+### Position Sizing
+
+Never risk more than you can afford to lose on any single trade or strategy.
+
+<CardGroup cols={2}>
+<Card title="Conservative Approach" icon="shield">
+**Recommended for beginners:**
+- 1-2% of portfolio per trade
+- 5-10% maximum allocation per strategy
+- Diversify across multiple assets
+</Card>
+
+<Card title="Aggressive Approach" icon="zap">
+**For experienced traders:**
+- 3-5% of portfolio per trade
+- 15-25% maximum per strategy
+- Higher leverage tolerance
+</Card>
+</CardGroup>
+
+### The 1% Rule
+
+<Info>
+**Golden Rule**: Never risk more than 1% of your total portfolio on a single trade.
+
+**Example**: $10,000 portfolio = maximum $100 risk per trade
+
+</Info>
+
+## Risk Controls in Hyperscript
+
+### Portfolio-Level Controls
+
+<AccordionGroup>
+<Accordion icon="chart-pie" title="Total Portfolio Limits">
+Set maximum exposure across all your trading bots:
+
+- **Maximum daily loss**: Stop all bots if losses exceed threshold
+- **Maximum position size**: Limit total capital allocation
+- **Correlation limits**: Prevent over-concentration in similar assets
+  </Accordion>
+
+<Accordion icon="clock" title="Time-Based Controls">
+Manage trading frequency and duration:
+
+- **Daily trade limits**: Maximum number of trades per day
+- **Cool-down periods**: Minimum time between trades
+- **Session timeouts**: Automatic bot pause after set periods
+
+</Accordion>
+</AccordionGroup>
+
+### Strategy-Level Controls
+
+<AccordionGroup>
+<Accordion icon="robot" title="Per-Bot Limits">
+Configure individual bot risk parameters:
+
+- **Maximum position size per bot**
+- **Stop-loss levels** (percentage or dollar amount)
+- **Take-profit targets**
+- **Maximum drawdown limits**
+  </Accordion>
+
+<Accordion icon="trending-down" title="Drawdown Protection">
+Automatically pause bots during adverse conditions:
+
+- **Maximum drawdown**: 10-20% recommended
+- **Consecutive loss limits**: Stop after X losing trades
+- **Volatility filters**: Pause during extreme market conditions
+
+</Accordion>
+</AccordionGroup>
+
+## Risk Assessment Tools
+
+### Portfolio Risk Score
+
+Hyperscript calculates a real-time risk score based on:
+
+- Current position sizes
+- Asset correlations
+- Market volatility
+- Strategy performance
+
+<div style="background: linear-gradient(to right, #22c55e, #eab308, #ef4444); height: 20px; border-radius: 10px; position: relative;">
+  <div style="position: absolute; top: -30px; left: 0; color: #22c55e;">
+    Low Risk
+  </div>
+  <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); color: #eab308;">
+    Medium Risk
+  </div>
+  <div style="position: absolute; top: -30px; right: 0; color: #ef4444;">
+    High Risk
+  </div>
+</div>
+
+### Correlation Matrix
+
+Monitor how your assets move together:
+
+| Asset   | ETH | BTC | SOL | ARB |
+| ------- | --- | --- | --- | --- |
+| **ETH** | 1.0 | 0.8 | 0.9 | 0.7 |
+| **BTC** | 0.8 | 1.0 | 0.7 | 0.6 |
+| **SOL** | 0.9 | 0.7 | 1.0 | 0.8 |
+| **ARB** | 0.7 | 0.6 | 0.8 | 1.0 |
+
+<Warning>
+  High correlation (>0.8) between assets increases portfolio risk. Diversify
+  into uncorrelated assets when possible.
+</Warning>
+
+## Setting Up Risk Controls
+
+### Step 1: Portfolio Configuration
+
+Navigate to **Settings → Risk Management** and configure:
+
+```javascript
+Portfolio Settings:
+├── Maximum Daily Loss: $100 (1% of $10k portfolio)
+├── Maximum Position Size: $500 (5% allocation)
+├── Correlation Limit: 0.8 (maximum between assets)
+└── Emergency Stop: Enabled (pause all bots on 5% daily loss)
+```
+
+### Step 2: Individual Bot Limits
+
+For each trading bot, set:
+
+<CheckList>
+  - Maximum position size (dollars or percentage) - Stop-loss percentage
+  (recommended: 2-5%) - Take-profit target (recommended: 4-10%) - Maximum
+  consecutive losses (recommended: 3-5)
+</CheckList>
+
+### Step 3: Market Condition Filters
+
+Enable automatic trading pauses during:
+
+- **High volatility periods** (>50% daily price swings)
+- **Low liquidity conditions** (thin orderbooks)
+- **Major news events** (based on calendar integration)
+- **Weekend trading** (optional, lower liquidity)
+
+## Advanced Risk Management
+
+### Dynamic Position Sizing
+
+Automatically adjust position sizes based on:
+
+- **Recent performance**: Reduce size after losses
+- **Market volatility**: Smaller positions in volatile conditions
+- **Strategy confidence**: Larger positions for high-probability setups
+
+### Kelly Criterion Implementation
+
+Optimize position sizing using the Kelly Criterion:
+
+```
+Position Size = (Win Rate × Average Win - Loss Rate × Average Loss) / Average Win
+```
+
+Example: 60% win rate, $10 average win, $5 average loss
+
+```
+Position Size = (0.6 × 10 - 0.4 × 5) / 10 = 0.4 or 40% of available capital
+```
+
+<Warning>
+  Kelly Criterion can suggest aggressive position sizes. Consider using 25-50%
+  of the calculated amount for safety.
+</Warning>
+
+## Emergency Procedures
+
+### Circuit Breakers
+
+Hyperscript includes automatic circuit breakers:
+
+1. **5% daily loss**: Pause all bots for 1 hour
+2. **10% daily loss**: Pause all bots until manual review
+3. **Market crash detection**: Pause during >20% market drops
+
+### Manual Override
+
+Always maintain the ability to:
+
+- **Emergency stop**: Instantly pause all trading activity
+- **Close all positions**: Market orders to exit everything
+- **Withdraw funds**: Move assets to cold storage if needed
+
+### Crisis Communication
+
+In emergency situations:
+
+1. Check our [Status Page](https://status.hyperscript.xyz)
+2. Join our [Discord](https://discord.gg/hyperscript) for real-time updates
+3. Contact emergency support: [urgent@hyperscript.xyz](mailto:urgent@hyperscript.xyz)
+
+## Risk Management Checklist
+
+Before deploying any strategy:
+
+<CheckList>
+  - ✅ Portfolio limits configured and tested - ✅ Individual bot stop-losses
+  set - ✅ Position sizes within risk tolerance - ✅ Emergency procedures
+  understood - ✅ Diversification across assets/strategies - ✅ Performance
+  monitoring alerts enabled
+</CheckList>
+
+## Next Steps
+
+<CardGroup cols={2}>
+<Card title="Deploy Your First Bot" icon="rocket" href="/getting-started/first-bot">
+  Set up your first trading bot with proper risk controls.
+</Card>
+
+<Card title="Portfolio Dashboard" icon="chart-line" href="/portfolio/dashboard">
+  Monitor your risk metrics in real-time.
+</Card>
+</CardGroup>

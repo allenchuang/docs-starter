@@ -1,0 +1,190 @@
+---
+title: "Account Setup & Connection to Hyperliquid"
+description: "Complete guide to securely connecting your Hyperliquid account to Hyperscript"
+---
+
+## Setting Up Your Trading Account
+
+Follow these steps to securely connect your Hyperliquid account and start automated trading.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+<CheckList>
+  - A compatible wallet (MetaMask, WalletConnect, or Ledger) - An active
+  Hyperliquid account - Basic understanding of DEX trading - Test funds for
+  initial setup (recommended)
+</CheckList>
+
+## Step 1: Wallet Connection
+
+### Supported Wallets
+
+<CardGroup cols={3}>
+<Card title="MetaMask" icon="ethereum">
+  Most popular option with browser extension support.
+</Card>
+
+<Card title="WalletConnect" icon="link">
+  Connect mobile wallets and hardware wallets.
+</Card>
+
+<Card title="Ledger" icon="shield">
+  Hardware wallet for maximum security.
+</Card>
+</CardGroup>
+
+### Connection Process
+
+1. Click "Connect Wallet" in the Hyperscript dashboard
+2. Select your preferred wallet type
+3. Approve the connection request
+4. Sign the message to verify ownership
+
+<Warning>
+  Never share your private keys or seed phrase. Hyperscript only needs
+  read/write permissions for trading, not wallet access.
+</Warning>
+
+## Step 2: Hyperliquid API Configuration
+
+### Creating API Keys
+
+<AccordionGroup>
+<Accordion icon="key" title="Generate New API Keys">
+1. Log into [Hyperliquid](https://app.hyperliquid.xyz)
+2. Navigate to Account → API Settings
+3. Click "Create New API Key"
+4. Set permissions: **Trading** (required), **Read Account** (required)
+5. **Do not** enable withdrawals for safety
+6. Copy the API Key and Secret immediately
+
+<Tip>Store your API credentials securely using a password manager.</Tip>
+</Accordion>
+
+<Accordion icon="server" title="Testnet vs Mainnet">
+**Testnet (Recommended for Beginners):**
+- Risk-free environment
+- Test tokens provided
+- Full feature access
+- Perfect for learning
+
+**Mainnet (Production Trading):**
+
+- Real funds and real profits/losses
+- Live market conditions
+- Production-ready strategies only
+
+Start with testnet to familiarize yourself with the platform.
+
+</Accordion>
+</AccordionGroup>
+
+### Adding API Keys to Hyperscript
+
+1. Navigate to Settings → API Configuration
+2. Select "Hyperliquid" as your exchange
+3. Choose Testnet or Mainnet
+4. Enter your API Key and Secret
+5. Click "Test Connection" to verify
+6. Save your configuration
+
+<Note>
+  API keys are encrypted and stored securely. Hyperscript cannot access your
+  funds for withdrawal.
+</Note>
+
+## Step 3: Account Verification
+
+### Trading Permissions
+
+Verify your account has the correct permissions:
+
+<CheckList>
+  - ✅ Spot Trading (required) - ✅ Perpetual Trading (for advanced strategies)
+  - ✅ Account Reading (required) - ❌ Withdrawals (not recommended)
+</CheckList>
+
+### Initial Deposit
+
+For testnet:
+
+1. Request test tokens from Hyperliquid faucet
+2. Minimum recommended: 1000 USDC equivalent
+
+For mainnet:
+
+1. Bridge funds to Hyperliquid L1
+2. Start with small amounts ($100-500)
+3. Increase as you gain confidence
+
+## Step 4: Security Best Practices
+
+### API Key Security
+
+<Warning>
+  **Critical Security Rules:** - Never enable withdrawal permissions - Use
+  unique API keys only for Hyperscript - Regularly rotate your API keys
+  (monthly) - Monitor your account for unexpected activity
+</Warning>
+
+### Account Protection
+
+- Enable 2FA on your Hyperliquid account
+- Use a dedicated trading wallet
+- Set position size limits
+- Enable email notifications for trades
+
+### IP Whitelisting
+
+For maximum security, restrict API key access:
+
+1. In Hyperliquid API settings, add Hyperscript's IP addresses:
+   - `52.91.45.123` (Primary)
+   - `3.87.156.201` (Backup)
+2. This prevents unauthorized access from other locations
+
+## Troubleshooting Common Issues
+
+<AccordionGroup>
+<Accordion icon="exclamation-triangle" title="Connection Failed">
+**Possible causes:**
+- Incorrect API credentials
+- Network/firewall issues
+- API key permissions insufficient
+
+**Solutions:**
+
+- Verify API key and secret
+- Check Hyperliquid service status
+- Regenerate API keys if needed
+  </Accordion>
+
+<Accordion icon="ban" title="Trading Restrictions">
+**Possible causes:**
+- Insufficient balance
+- VPN/geo-restrictions
+- Account limitations
+
+**Solutions:**
+
+- Ensure adequate trading balance
+- Check Hyperliquid's supported regions
+- Contact Hyperliquid support if restricted
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+Once your account is set up:
+
+<CardGroup cols={2}>
+<Card title="Risk Management Setup" icon="shield-check" href="/getting-started/risk-management">
+  Configure essential risk controls before trading.
+</Card>
+
+<Card title="Deploy Your First Bot" icon="rocket" href="/getting-started/first-bot">
+  Launch your first automated trading strategy.
+</Card>
+</CardGroup>
