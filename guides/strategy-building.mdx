@@ -10,16 +10,21 @@ Building effective automated trading strategies requires a combination of market
 <CardGroup cols={2}>
   <Card title="Strategy Fundamentals" icon="foundation">
     Core concepts and principles of strategy design
-  </Card>
+  
+</Card>
   <Card title="Technical Implementation" icon="code">
     Practical steps to build and deploy strategies
-  </Card>
+  
+</Card>
   <Card title="Optimization Techniques" icon="sliders">
     Methods to improve strategy performance
-  </Card>
+  
+</Card>
   <Card title="Risk Integration" icon="shield-check">
     Incorporating risk management into strategies
-  </Card>
+  
+</Card>
+
 </CardGroup>
 
 ## Strategy Development Process
@@ -34,9 +39,11 @@ Building effective automated trading strategies requires a combination of market
     between related assets - **Market Making**: Provide liquidity to capture
     bid-ask spreads - **Event-Driven**: React to specific market events or
     announcements
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Strategy Classification">
   Choose your strategy type and timeframe ```mermaid graph TD A[Strategy Types]
   --> B[Trend Following] A --> C[Mean Reversion] A --> D[Market Making] A -->
@@ -44,6 +51,7 @@ Building effective automated trading strategies requires a combination of market
   --> C1[RSI Based] C --> C2[Bollinger Bands] C --> C3[Support/Resistance] D -->
   D1[Grid Trading] D --> D2[Order Book] E --> E1[Statistical Arbitrage] E -->
   E2[Cross-Exchange] ```
+
 </Accordion>
 
   <Accordion title="Asset Selection">
@@ -52,7 +60,9 @@ Building effective automated trading strategies requires a combination of market
     strategy to volatility characteristics - **Correlation Analysis**: Consider
     relationships between assets - **Market Hours**: Account for trading session
     overlaps - **Fundamental Factors**: Include macro and news considerations
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Phase 2: Technical Specification
@@ -60,6 +70,7 @@ Building effective automated trading strategies requires a combination of market
 <Info>
   Before implementing, clearly define your strategy's entry, exit, and risk
   management rules.
+
 </Info>
 
 #### Entry Conditions
@@ -72,6 +83,7 @@ Define precise conditions for entering positions:
   **Timing Constraints**: When during the day/week to trade - [ ] **Market
   Condition Filters**: Bull/bear/sideways market adaptations - [ ]
   **Volume/Liquidity Checks**: Minimum volume requirements
+
 </CheckList>
 
 #### Exit Conditions
@@ -83,6 +95,7 @@ Define precise conditions for entering positions:
     Exits**: Maximum holding periods - **Signal Reversal**: Exit when opposite
     signal appears - **Volatility-Based**: Exit based on market volatility
     changes
+
 </Accordion>
 
   <Accordion title="Loss Management">
@@ -91,7 +104,9 @@ Define precise conditions for entering positions:
     maximum unrealized losses - **Portfolio Heat**: Limit total portfolio risk
     exposure - **Correlation Stops**: Exit when asset correlations change -
     **Time Stops**: Exit after predetermined time periods
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Implementation in Hyperscript
@@ -101,6 +116,7 @@ Define precise conditions for entering positions:
 <Warning>
   Always start with paper trading to validate your strategy before risking real
   capital.
+
 </Warning>
 
 #### Step 1: Strategy Setup
@@ -139,6 +155,7 @@ Define precise conditions for entering positions:
       }
     }
     ```
+
 </Accordion>
   
   <Accordion title="Entry Logic">
@@ -164,6 +181,7 @@ Define precise conditions for entering positions:
       }
     }
     ```
+
 </Accordion>
   
   <Accordion title="Exit Logic">
@@ -187,7 +205,9 @@ Define precise conditions for entering positions:
       }
     }
     ```
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Advanced Strategy Features
@@ -197,6 +217,7 @@ Define precise conditions for entering positions:
 <Tip>
   Proper position sizing is crucial for long-term strategy success and risk
   management.
+
 </Tip>
 
 ```json
@@ -223,6 +244,7 @@ Define precise conditions for entering positions:
     Identification**: Adapt to trending vs sideways markets - **Volume
     Analysis**: Modify behavior based on market participation - **Correlation
     Monitoring**: Adjust when correlations break down
+
 </Accordion>
 
   <Accordion title="Performance-Based Adjustments">
@@ -231,7 +253,9 @@ Define precise conditions for entering positions:
     risk during hot streaks - **Signal Quality Assessment**: Adjust based on
     signal accuracy - **Market Impact Consideration**: Reduce size if moving
     markets
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Strategy Testing and Validation
@@ -241,6 +265,7 @@ Define precise conditions for entering positions:
 <Info>
   Comprehensive backtesting helps validate strategy effectiveness before live
   deployment.
+
 </Info>
 
 #### Historical Data Analysis
@@ -251,6 +276,7 @@ Define precise conditions for entering positions:
   Analysis**: Progressive testing methodology - [ ] **Out-of-Sample Testing**:
   Reserve data for final validation - [ ] **Survivorship Bias**: Account for
   delisted assets
+
 </CheckList>
 
 #### Performance Metrics
@@ -260,21 +286,26 @@ Define precise conditions for entering positions:
     - **Total Return**: Absolute and percentage gains - **Compound Annual Growth
     Rate (CAGR)** - **Risk-Adjusted Returns (Sharpe, Sortino Ratios)** -
     **Maximum Drawdown and Recovery Time** - **Win Rate and Profit Factor**
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Risk Metrics">
   - **Value at Risk (VaR)** at different confidence levels - **Expected
   Shortfall** (Conditional VaR) - **Beta vs Market** correlation and systematic
   risk - **Standard Deviation** of returns - **Skewness and Kurtosis** of return
   distribution
+
 </Accordion>
 
   <Accordion title="Trade-Level Analysis">
     - **Average Trade Duration** and holding periods - **Trade Frequency** and
     turnover analysis - **Slippage and Transaction Cost** impact - **Market
     Impact** of strategy trades - **Capacity Analysis** for strategy scalability
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Paper Trading Validation
@@ -298,6 +329,7 @@ graph LR
 <Warning>
   Paper trading should simulate real-world conditions including slippage,
   latency, and market impact.
+
 </Warning>
 
 ## Strategy Optimization Techniques
@@ -311,14 +343,17 @@ graph LR
     thoroughness with speed - **Cross-Validation**: Validate results across
     different periods - **Overfitting Prevention**: Avoid excessive parameter
     tuning
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Genetic Algorithms">
   Evolutionary approach to parameter optimization - **Population-Based Search**:
   Multiple parameter sets evolve - **Fitness Function**: Define optimization
   objectives - **Mutation and Crossover**: Create new parameter combinations -
   **Convergence Criteria**: Determine when optimization is complete
+
 </Accordion>
 
   <Accordion title="Bayesian Optimization">
@@ -327,7 +362,9 @@ graph LR
     explore parameter space - **Uncertainty Quantification**: Account for
     parameter uncertainty - **Sequential Design**: Iteratively improve parameter
     estimates
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Multi-Objective Optimization
@@ -337,6 +374,7 @@ Balance competing objectives in strategy design:
 <Tip>
   Consider multiple objectives like return, risk, and drawdown rather than
   optimizing for returns alone.
+
 </Tip>
 
 1. **Return Maximization** vs **Risk Minimization**
@@ -355,15 +393,18 @@ Balance competing objectives in strategy design:
     Optimal bet sizing based on edge - **Risk Parity**: Equal risk contribution
     from each position - **Volatility Scaling**: Size inversely proportional to
     volatility - **Maximum Risk per Trade**: Fixed percentage limits
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Correlation Management">
   Monitor and control correlation between strategies - **Maximum Correlation
   Limits**: Prevent concentration risk - **Dynamic Correlation Monitoring**:
   Track changing relationships - **Diversification Requirements**: Maintain
   portfolio balance - **Risk Budget Allocation**: Distribute risk across
   strategies
+
 </Accordion>
 
   <Accordion title="Drawdown Controls">
@@ -371,7 +412,9 @@ Balance competing objectives in strategy design:
     and strategy level - **Risk Scaling**: Reduce size during drawdown periods -
     **Circuit Breakers**: Halt trading during extreme conditions - **Recovery
     Protocols**: Structured re-entry procedures
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Common Strategy Patterns
@@ -395,6 +438,7 @@ Balance competing objectives in strategy design:
       }
     }
     ```
+
 </Accordion>
   
   <Accordion title="Breakout Strategy">
@@ -413,7 +457,9 @@ Balance competing objectives in strategy design:
       }
     }
     ```
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Mean Reversion Strategies
@@ -435,6 +481,7 @@ Balance competing objectives in strategy design:
       }
     }
     ```
+
 </Accordion>
   
   <Accordion title="Bollinger Band Reversal">
@@ -453,7 +500,9 @@ Balance competing objectives in strategy design:
       }
     }
     ```
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Strategy Monitoring and Maintenance
@@ -465,6 +514,7 @@ Balance competing objectives in strategy design:
   [ ] Risk metric monitoring (VaR, drawdown) - [ ] Signal quality assessment - [
   ] Market regime change detection - [ ] Correlation monitoring with other
   strategies - [ ] Transaction cost analysis - [ ] Capacity utilization tracking
+
 </CheckList>
 
 ### Maintenance Schedule
@@ -473,18 +523,23 @@ Balance competing objectives in strategy design:
   <Accordion title="Daily Reviews">
     - Performance vs expectations check - Risk limit compliance verification -
     Signal generation quality assessment - Market condition changes evaluation
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Weekly Analysis">
   - Detailed performance attribution - Parameter drift detection - Correlation
   matrix updates - Risk-adjusted return analysis
+
 </Accordion>
 
   <Accordion title="Monthly Optimization">
     - Strategy parameter review - Market regime analysis - Benchmark comparison
     study - Capacity and scalability assessment
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Advanced Topics
@@ -494,6 +549,7 @@ Balance competing objectives in strategy design:
 <Info>
   Incorporate ML techniques to enhance traditional strategies with adaptive and
   predictive capabilities.
+
 </Info>
 
 <AccordionGroup>
@@ -502,20 +558,25 @@ Balance competing objectives in strategy design:
     Microstructure**: Order book and trade data - **Alternative Data**:
     Sentiment, news, social media - **Cross-Asset Features**: Correlations and
     spreads
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Model Selection">
   - **Classification**: Signal generation (buy/sell/hold) - **Regression**:
   Price target prediction - **Clustering**: Market regime identification -
   **Reinforcement Learning**: Adaptive strategy optimization
+
 </Accordion>
 
   <Accordion title="Implementation Considerations">
     - **Data Leakage Prevention**: Proper train/test splitting - **Feature
     Importance**: Understanding model drivers - **Model Stability**: Robustness
     across market conditions - **Online Learning**: Adaptive model updating
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Next Steps
@@ -527,26 +588,31 @@ Balance competing objectives in strategy design:
     icon="shield-check"
   >
     Learn advanced risk management techniques
-  </Card>
+  
+</Card>
   <Card
     title="Backtesting Engine"
     href="/advanced/backtesting-engine"
     icon="clock-rotate-left"
   >
     Test your strategies with historical data
-  </Card>
+  
+</Card>
   <Card
     title="Market Analysis Guide"
     href="/guides/market-analysis"
     icon="chart-line"
   >
     Understand market dynamics for better strategies
-  </Card>
+  
+</Card>
   <Card
     title="Trading Wizard"
     href="/trading-strategies/trading-wizard"
     icon="magic-wand"
   >
     Get AI-powered strategy recommendations
-  </Card>
+  
+</Card>
+
 </CardGroup>{" "}

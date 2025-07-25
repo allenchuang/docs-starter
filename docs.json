@@ -82,16 +82,6 @@
           "anchor": "Dashboard",
           "href": "https://app.hyperscript.xyz",
           "icon": "chart-line"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://discord.gg/hyperscript",
-          "icon": "discord"
-        },
-        {
-          "anchor": "Support",
-          "href": "mailto:support@hyperscript.xyz",
-          "icon": "envelope"
         }
       ]
     }
@@ -103,8 +93,12 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@hyperscript.xyz"
+        "label": "Twitter",
+        "href": "https://x.com/hyperscriptxyz"
+      },
+      {
+        "label": "Telegram",
+        "href": "https://t.me/hyperscriptxyz"
       }
     ],
     "primary": {
@@ -115,9 +109,9 @@
   },
   "footer": {
     "socials": {
+      "website": "https://hyperscript.xyz",
       "x": "https://x.com/hyperscriptxyz",
-      "github": "https://github.com/hyperscript-trading",
-      "discord": "https://discord.gg/hyperscript"
+      "telegram": "https://t.me/hyperscriptxyz"
     }
   }
 }

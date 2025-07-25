@@ -42,19 +42,24 @@ graph TD
 <CardGroup cols={2}>
 <Card title="Volatility Profits" icon="chart-mixed">
 Turns market volatility into consistent profits through systematic trading.
+
 </Card>
 
 <Card title="Automated Execution" icon="robot">
   Removes emotion and timing decisions from trading process.
+
 </Card>
 
 <Card title="Range-Bound Markets" icon="arrows-left-right">
   Particularly effective in sideways or ranging markets.
+
 </Card>
 
 <Card title="Consistent Income" icon="coins">
 Generates regular trading profits from price oscillations.
+
 </Card>
+
 </CardGroup>
 
 ## Grid Strategy Types
@@ -70,6 +75,7 @@ Orders placed at equal dollar intervals:
 - Grid spacing: $50
 - Levels: $1,900, $1,950, $2,000, $2,050, $2,100
 - **Best for**: Stable, established assets with predictable volatility
+
 </Accordion>
 
 <Accordion icon="chart-line" title="Dynamic Spacing Grid">
@@ -78,7 +84,9 @@ Orders placed at equal dollar intervals:
 - **High volatility**: Wider grids (larger spacing)  
 - **Trend detection**: Asymmetric grids favoring trend direction
 - **Best for**: Adapting to changing market conditions
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Geometric Grid
@@ -91,6 +99,7 @@ Orders placed at equal percentage intervals:
 - ±2% levels: $1,960, $1,980, $2,000, $2,020, $2,040
 - ±5% levels: $1,900, $1,950, $2,000, $2,050, $2,100
 - **Better for**: High-volatility assets with exponential price movements
+
 </Card>
 
 <Card title="Logarithmic Grid" icon="chart-line-up">
@@ -98,7 +107,9 @@ Orders placed at equal percentage intervals:
 - Close levels: ±1%
 - Distant levels: ±5%, ±10%
 - **Best for**: Capturing both small oscillations and large moves
+
 </Card>
+
 </CardGroup>
 
 ## Configuration Parameters
@@ -123,6 +134,7 @@ Orders placed at equal percentage intervals:
   and strategy - **Order distribution**: Equal spacing vs concentrated around
   current price - **Asymmetric grids**: More buy orders than sell orders (or
   vice versa)
+
 </Accordion>
 
 <Accordion icon="dollar-sign" title="Position Sizing">
@@ -131,7 +143,9 @@ Orders placed at equal percentage intervals:
 - **Pyramiding**: Increasing amounts further from current price
 - **Martingale**: Doubling amounts at each level (higher risk)
 - **Total capital allocation**: Percentage of portfolio for this grid
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Risk Management
@@ -143,6 +157,7 @@ Orders placed at equal percentage intervals:
 - **Grid take profit**: Close positions and take profits at upper bound
 - **Time-based exits**: Close grid after specific duration
 - **Drawdown limits**: Stop if unrealized losses exceed threshold
+
 </Accordion>
 
 <Accordion icon="chart-line-down" title="Trend Protection">
@@ -151,7 +166,9 @@ Orders placed at equal percentage intervals:
 - **Asymmetric grids**: Favor one direction based on trend analysis
 - **Stop trailing**: Adjust grid range as trends develop
 - **Momentum filters**: Require low momentum before grid activation
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Setting Up Your Grid Bot
@@ -168,6 +185,7 @@ Before creating a grid, analyze your chosen market:
 <Tip>
   Grid trading works best in sideways markets with regular volatility. Avoid
   during strong trending periods.
+
 </Tip>
 
 ### Step 2: Configure Your Grid
@@ -184,6 +202,7 @@ Grid Bot Configuration:
 ├── Investment per Level: $100
 └── Total Investment: $2,000 (20 levels × $100)
 ```
+
 </Accordion>
 
 <Accordion icon="gear-complex" title="Advanced Settings">
@@ -192,7 +211,9 @@ Grid Bot Configuration:
 - **Rebalancing frequency**: Check every 30 seconds
 - **MEV protection**: Use private mempool
 - **Gas optimization**: Batch order updates when possible
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Step 3: Risk Configuration
@@ -203,6 +224,7 @@ Set comprehensive risk controls:
   - Grid stop loss at 10% below lower bound - Maximum 15% of portfolio
   allocation - Daily loss limit of 5% - Trend detection enabled (pause on 15%
   single-direction move) - Minimum liquidity requirement: $10k orderbook depth
+
 </CheckList>
 
 ## Grid Performance Optimization
@@ -218,6 +240,7 @@ Balance between trade frequency and profit per trade:
 - Better for stable, low-volatility assets
 - Higher transaction costs relative to profits
 - Requires more active monitoring
+
 </Card>
 
 <Card title="Wide Grids" icon="expand">
@@ -226,7 +249,9 @@ Balance between trade frequency and profit per trade:
 - Better for volatile assets
 - Lower relative transaction costs
 - More passive approach
+
 </Card>
+
 </CardGroup>
 
 ### Dynamic Grid Adjustments
@@ -240,6 +265,7 @@ Automatically optimize grid parameters:
 - Tighten spacing during low volatility periods
 - Adjust position sizes based on recent volatility
 - Modify stop loss levels based on asset volatility
+
 </Accordion>
 
 <Accordion icon="trending-up" title="Trend-Aware Grids">
@@ -248,7 +274,9 @@ Automatically optimize grid parameters:
 - Add more buy orders during downtrends
 - Reduce grid density during strong trends
 - Implement trailing stops for trend protection
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Advanced Grid Strategies
@@ -264,6 +292,7 @@ Layer multiple grids with different characteristics:
 - Small spacing ($5-15)
 - Quick profit taking
 - High frequency trading
+
 </Card>
 
 <Card title="Swing Grid" icon="wave-square">
@@ -272,7 +301,9 @@ Layer multiple grids with different characteristics:
 - Moderate spacing ($25-100)
 - Larger position sizes
 - Trend-following elements
+
 </Card>
+
 </CardGroup>
 
 ### Hybrid Grid Strategies
@@ -286,6 +317,7 @@ Combine grid trading with other approaches:
 - Grid trading for additional volatility capture
 - Separate capital allocation for each strategy
 - Coordinated entry and exit points
+
 </Accordion>
 
 <Accordion icon="balance-scale" title="Rebalancing Grid">
@@ -294,7 +326,9 @@ Combine grid trading with other approaches:
 - Automatic rebalancing when grids reach extremes
 - Multi-asset grid coordination
 - Portfolio-level risk management
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Performance Monitoring
@@ -304,27 +338,34 @@ Combine grid trading with other approaches:
 <CardGroup cols={3}>
 <Card title="Grid Efficiency" icon="chart-pie">
 Percentage of grid levels that have generated profits
+
 </Card>
 
 <Card title="Profit per Trade" icon="dollar-sign">
   Average profit captured per executed trade pair
+
 </Card>
 
 <Card title="Order Fill Rate" icon="percentage">
   How often your limit orders get filled vs rejected
+
 </Card>
 
 <Card title="Range Utilization" icon="arrows-left-right">
   How much of your price range the market has used
+
 </Card>
 
 <Card title="Risk-Adjusted Return" icon="shield-check">
   Returns relative to maximum potential loss
+
 </Card>
 
 <Card title="Market Capture" icon="target">
 Percentage of available volatility converted to profit
+
 </Card>
+
 </CardGroup>
 
 ### Real-Time Dashboard
@@ -346,7 +387,8 @@ Monitor your grid bot performance:
 - **Ignoring fees**: Not accounting for transaction costs in spacing calculations
 - **Static ranges**: Not adjusting ranges as market structure changes
 - **No trend protection**: Allowing grids to run against persistent trends
-  </Warning>
+
+</Warning>
 
 ### Troubleshooting Grid Issues
 
@@ -360,7 +402,8 @@ Monitor your grid bot performance:
 - Use asymmetric grids favoring trend direction
 - Set stop losses at reasonable levels below/above range
 - Consider trend-following strategies instead during strong trends
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="credit-card" title="High Transaction Costs">
 **Problem**: Fees eating into grid profits
@@ -371,7 +414,8 @@ Monitor your grid bot performance:
 - Choose assets and exchanges with lower fees
 - Optimize for fewer, larger trades rather than many small ones
 - Consider layer-2 solutions for lower gas costs
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="ban" title="Poor Order Fills">
 **Problem**: Orders not getting filled at desired prices
@@ -382,7 +426,9 @@ Monitor your grid bot performance:
 - Adjust slippage tolerance if necessary
 - Use post-only orders to ensure maker fees
 - Monitor for competition from other bots at similar levels
-  </Accordion>
+
+</Accordion>
+
 </AccordionGroup>
 
 ## Next Steps
@@ -390,6 +436,7 @@ Monitor your grid bot performance:
 <CardGroup cols={2}>
 <Card title="Martingale Strategies" icon="chart-line-down" href="/trading-strategies/martingale-strategies">
   Explore recovery-focused trading strategies.
+
 </Card>
 
 <Card
@@ -398,6 +445,7 @@ Monitor your grid bot performance:
   href="/trading-strategies/signal-based-trading"
 >
   Combine grids with market signals for better timing.
+
 </Card>
 
 <Card
@@ -406,9 +454,12 @@ Monitor your grid bot performance:
   href="/advanced/backtesting-engine"
 >
   Test your grid strategies against historical data.
+
 </Card>
 
 <Card title="Portfolio Dashboard" icon="chart-mixed" href="/portfolio/dashboard">
   Monitor multiple grid strategies and overall performance.
+
 </Card>
+
 </CardGroup>

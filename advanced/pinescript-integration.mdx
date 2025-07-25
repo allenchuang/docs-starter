@@ -16,6 +16,7 @@ Connect your TradingView strategies to Hyperscript for seamless automated execut
   Configure webhook alerts in TradingView 3. Connect webhook to Hyperscript
   execution engine 4. Hyperscript automatically executes trades on Hyperliquid
   5. Monitor performance and adjust parameters as needed
+
 </Info>
 
 ### Integration Architecture
@@ -97,6 +98,7 @@ if strategy.position_size < 0 and ta.crossover(fast_ma, slow_ma)
    - **Expiration**: Set appropriate timeframe
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Step 2: Hyperscript Configuration
@@ -137,6 +139,7 @@ Connect your TradingView alerts to Hyperscript execution:
 - **Manual Override**: Emergency stop capabilities
 
 </Accordion>
+
 </AccordionGroup>
 
 ## Advanced PineScript Features
@@ -196,6 +199,7 @@ regime_alert = '{"action":"buy","symbol":"' + syminfo.ticker + '","size":' + str
 ```
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Multi-Asset Strategies
@@ -209,6 +213,7 @@ Execute coordinated strategies across multiple assets:
 - DeFi token pair analysis
 - Spread trading between correlated assets
 - Mean reversion on price relationships
+
 </Card>
 
 <Card title="Portfolio Strategies" icon="chart-pie">
@@ -217,7 +222,9 @@ Execute coordinated strategies across multiple assets:
 - Risk parity implementations
 - Momentum-based allocation
 - Correlation-based hedging
+
 </Card>
+
 </CardGroup>
 
 ## Message Format & Protocol
@@ -276,6 +283,7 @@ Hyperscript supports flexible JSON message formats:
 ```
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Error Handling & Validation
@@ -290,6 +298,7 @@ Robust error handling ensures reliable strategy execution:
 - Parameter range checking
 - Asset symbol validation
 - Position size limits
+
 </Card>
 
 <Card title="Execution Monitoring" icon="eye">
@@ -299,7 +308,9 @@ Robust error handling ensures reliable strategy execution:
 - Error notifications
 - Performance metrics
 - Latency monitoring
+
 </Card>
+
 </CardGroup>
 
 ## Strategy Examples & Templates
@@ -369,6 +380,7 @@ if bearish_cross and strategy.position_size == 0
 ```
 
 </Accordion>
+
 </AccordionGroup>
 
 ### RSI Mean Reversion
@@ -441,6 +453,7 @@ if strategy.position_size < 0 and ta.crossunder(rsi, exit_level)
 ```
 
 </Accordion>
+
 </AccordionGroup>
 
 ## Performance Monitoring & Optimization
@@ -452,15 +465,19 @@ Track your PineScript strategy performance:
 <CardGroup cols={3}>
 <Card title="Execution Metrics" icon="zap">
 Signal-to-execution latency, fill rates, and slippage analysis
+
 </Card>
 
 <Card title="Strategy Performance" icon="chart-line">
   Returns, Sharpe ratio, max drawdown, and win rate tracking
+
 </Card>
 
 <Card title="Risk Monitoring" icon="shield-check">
 Position sizing compliance, risk limit adherence, and exposure tracking
+
 </Card>
+
 </CardGroup>
 
 ### Optimization Strategies
@@ -472,6 +489,7 @@ Position sizing compliance, risk limit adherence, and exposure tracking
 - **Walk-forward analysis**: Validate parameters on out-of-sample data
 - **Monte Carlo testing**: Assess parameter robustness
 - **Live performance tracking**: Monitor parameter effectiveness
+
 </Accordion>
 
 <Accordion icon="brain" title="Adaptive Strategies">
@@ -480,7 +498,9 @@ Position sizing compliance, risk limit adherence, and exposure tracking
 - **Regime detection**: Different parameters for different market states
 - **Performance feedback**: Modify behavior based on recent results
 - **Machine learning integration**: Use ML for parameter optimization
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Troubleshooting & Best Practices
@@ -513,6 +533,7 @@ Position sizing compliance, risk limit adherence, and exposure tracking
 - Monitor and optimize webhook server performance
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Best Practices
@@ -525,6 +546,7 @@ Position sizing compliance, risk limit adherence, and exposure tracking
   focused on essential information - Implement proper error handling and
   fallback mechanisms - Test webhook connectivity regularly to ensure
   reliability
+
 </CheckList>
 
 ## Advanced Integration Features
@@ -553,6 +575,7 @@ alert_msg = '{"action":"buy","symbol":"ETH","size":100,"htf_trend":"' + trend_co
 ```
 
 </Accordion>
+
 </AccordionGroup>
 
 ## Next Steps
@@ -560,6 +583,7 @@ alert_msg = '{"action":"buy","symbol":"ETH","size":100,"htf_trend":"' + trend_co
 <CardGroup cols={2}>
 <Card title="Webhook Configuration" icon="link" href="/advanced/webhook-configuration">
   Set up and manage webhook endpoints for strategy execution.
+
 </Card>
 
 <Card
@@ -568,6 +592,7 @@ alert_msg = '{"action":"buy","symbol":"ETH","size":100,"htf_trend":"' + trend_co
   href="/advanced/backtesting-engine"
 >
   Test your PineScript strategies against historical data.
+
 </Card>
 
 <Card
@@ -576,15 +601,19 @@ alert_msg = '{"action":"buy","symbol":"ETH","size":100,"htf_trend":"' + trend_co
   href="/trading-strategies/signal-based-trading"
 >
   Combine PineScript with Hyperscript's proprietary signals.
+
 </Card>
 
 <Card title="Portfolio Dashboard" icon="chart-mixed" href="/portfolio/dashboard">
   Monitor your PineScript strategy performance.
+
 </Card>
+
 </CardGroup>
 
 <Note>
   PineScript integration provides powerful flexibility for strategy development
   while maintaining the safety and risk management features of the Hyperscript
   platform. Always test thoroughly before deploying real capital.
+
 </Note>{" "}

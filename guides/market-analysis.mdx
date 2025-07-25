@@ -10,16 +10,21 @@ Effective market analysis is the foundation of successful automated trading. Und
 <CardGroup cols={2}>
   <Card title="Technical Analysis" icon="chart-line">
     Price action and indicator-based analysis
-  </Card>
+  
+</Card>
   <Card title="Market Structure" icon="building">
     Understanding market microstructure and mechanics
-  </Card>
+  
+</Card>
   <Card title="Sentiment Analysis" icon="heart">
     Gauging market psychology and positioning
-  </Card>
+  
+</Card>
   <Card title="Multi-Timeframe Analysis" icon="clock">
     Analyzing markets across different timeframes
-  </Card>
+  
+</Card>
+
 </CardGroup>
 
 ## Technical Analysis Fundamentals
@@ -33,14 +38,17 @@ Effective market analysis is the foundation of successful automated trading. Und
     **Dynamic Levels**: Moving averages and trendlines - **Psychological
     Levels**: Round numbers (e.g., $50,000 for BTC) - **Volume-Weighted
     Levels**: Price levels with significant trading volume
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Trend Analysis">
   Determine the overall direction of market movement - **Uptrend**: Higher highs
   and higher lows - **Downtrend**: Lower highs and lower lows -
   **Sideways/Range**: Price oscillates between support and resistance - **Trend
   Strength**: Rate of change and consistency of direction
+
 </Accordion>
 
   <Accordion title="Chart Patterns">
@@ -49,7 +57,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     Patterns] B --> B1[Triangles] B --> B2[Flags] B --> B3[Pennants] B -->
     B4[Rectangles] C --> C1[Head & Shoulders] C --> C2[Double Top/Bottom] C -->
     C3[Cup & Handle] C --> C4[Wedges] ```
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Technical Indicators
@@ -57,6 +67,7 @@ Effective market analysis is the foundation of successful automated trading. Und
 <Info>
   Technical indicators are mathematical calculations based on price and volume
   data that help identify trends and momentum.
+
 </Info>
 
 #### Trend-Following Indicators
@@ -70,15 +81,18 @@ Effective market analysis is the foundation of successful automated trading. Und
     **Common Strategies:** - MA crossovers (fast MA crosses slow MA) - Price vs
     MA (price above/below moving average) - Multiple MA system (50, 100, 200
     period MAs)
+
 </Accordion>
 
 {" "}
+
 <Accordion title="MACD (Moving Average Convergence Divergence)">
   Momentum oscillator showing relationship between two moving averages ``` MACD
   Line = 12-period EMA - 26-period EMA Signal Line = 9-period EMA of MACD Line
   Histogram = MACD Line - Signal Line ``` **Signals:** - MACD line crosses
   above/below signal line - MACD line crosses above/below zero line - Divergence
   between MACD and price
+
 </Accordion>
 
   <Accordion title="ADX (Average Directional Index)">
@@ -86,7 +100,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     scale - **Weak Trend**: ADX below 25 - **Strong Trend**: ADX above 50 -
     **Very Strong Trend**: ADX above 75 **Usage:** Filter trades to only take
     signals during strong trends
+
 </Accordion>
+
 </AccordionGroup>
 
 #### Oscillators and Momentum Indicators
@@ -104,6 +120,7 @@ Effective market analysis is the foundation of successful automated trading. Und
     - **Oversold**: RSI < 30
     - **Bullish Divergence**: Price makes lower low, RSI makes higher low
     - **Bearish Divergence**: Price makes higher high, RSI makes lower high
+
 </Accordion>
   
   <Accordion title="Stochastic Oscillator">
@@ -117,6 +134,7 @@ Effective market analysis is the foundation of successful automated trading. Und
     - %K crosses above/below %D
     - Values above 80 (overbought) or below 20 (oversold)
     - Divergence with price action
+
 </Accordion>
   
   <Accordion title="Williams %R">
@@ -125,7 +143,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     - **Overbought**: Above -20
     - **Oversold**: Below -80
     - **Similar to Stochastic**: But unbounded and faster
+
 </Accordion>
+
 </AccordionGroup>
 
 #### Volume-Based Indicators
@@ -141,6 +161,7 @@ Effective market analysis is the foundation of successful automated trading. Und
     - **Institutional Reference**: Large traders use VWAP as benchmark
     - **Support/Resistance**: Price often respects VWAP levels
     - **Trend Confirmation**: Price above VWAP suggests bullish sentiment
+
 </Accordion>
   
   <Accordion title="On-Balance Volume (OBV)">
@@ -155,6 +176,7 @@ Effective market analysis is the foundation of successful automated trading. Und
     - OBV trend confirmation with price trend
     - Divergence between OBV and price
     - OBV breakouts preceding price breakouts
+
 </Accordion>
   
   <Accordion title="Volume Profile">
@@ -163,7 +185,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     - **Point of Control (POC)**: Price level with highest volume
     - **High Volume Nodes**: Significant support/resistance levels
     - **Low Volume Nodes**: Areas of potential quick price movement
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Market Structure Analysis
@@ -173,6 +197,7 @@ Effective market analysis is the foundation of successful automated trading. Und
 <Warning>
   Order book analysis requires real-time data and can change rapidly, making it
   more suitable for short-term strategies.
+
 </Warning>
 
 <AccordionGroup>
@@ -181,14 +206,17 @@ Effective market analysis is the foundation of successful automated trading. Und
     liquidity, low trading costs - **Wide Spreads**: Low liquidity, high trading
     costs - **Spread Widening**: Often precedes significant price moves -
     **Normal vs Crisis Spreads**: Compare current to historical averages
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Market Depth">
   Analyze buy and sell order distribution - **Depth Imbalance**: More buy orders
   (bullish) or sell orders (bearish) - **Large Orders**: Significant
   support/resistance levels - **Iceberg Orders**: Hidden large orders revealed
   gradually - **Spoofing Detection**: Fake orders placed to manipulate price
+
 </Accordion>
 
   <Accordion title="Order Flow">
@@ -197,7 +225,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     Institutional activity indicators - **Time and Sales**: Sequence and size of
     actual trades - **Market vs Limit Orders**: Aggressive vs passive trading
     behavior
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Market Microstructure
@@ -208,14 +238,17 @@ Effective market analysis is the foundation of successful automated trading. Und
     trade price - **Downtick**: Trade executed below previous trade price -
     **Tick Volume**: Number of price changes rather than share volume - **Plus
     Tick Rule**: Regulations affecting short selling
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Market Making vs Taking">
   Understand different trading behaviors - **Market Makers**: Provide liquidity,
   profit from spread - **Market Takers**: Remove liquidity, pay spread -
   **Maker/Taker Ratio**: Indicates market aggression level - **Rebate
   Programs**: Exchanges incentivize market making
+
 </Accordion>
 
   <Accordion title="Latency and Speed">
@@ -223,7 +256,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     Microsecond execution times - **Latency Arbitrage**: Profit from speed
     differences - **Co-location**: Physical proximity to exchange servers -
     **Impact on Retail**: How HFT affects individual traders
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Sentiment Analysis
@@ -233,6 +268,7 @@ Effective market analysis is the foundation of successful automated trading. Und
 <Info>
   Blockchain data provides unique insights into crypto market sentiment and
   participant behavior.
+
 </Info>
 
 <AccordionGroup>
@@ -241,14 +277,17 @@ Effective market analysis is the foundation of successful automated trading. Und
     unique addresses transacting - **Transaction Count**: Daily transaction
     volume - **Transaction Fees**: Network congestion indicator - **Hash Rate**:
     Mining activity and network security
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Exchange Flow Analysis">
   Track cryptocurrency movements to/from exchanges - **Exchange Inflows**:
   Potential selling pressure - **Exchange Outflows**: Potential hodling behavior
   - **Exchange Balances**: Available supply for trading - **Stablecoin Flows**:
   Preparation for buying/selling
+
 </Accordion>
 
   <Accordion title="Long-Term Holder Metrics">
@@ -256,7 +295,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     Distribution of coins by holding period - **Realized vs Unrealized Gains**:
     Profit-taking behavior - **Coin Days Destroyed**: Long-term holder selling
     activity - **Supply Distribution**: Concentration among addresses
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Social Sentiment Indicators
@@ -268,14 +309,17 @@ Effective market analysis is the foundation of successful automated trading. Und
     (Extreme Fear) to 100 (Extreme Greed) - **Contrarian Indicator**: High greed
     may signal tops, extreme fear may signal bottoms - **Strategy Application**:
     Increase allocation during fear, reduce during greed
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Social Media Analysis">
   Monitor sentiment across social platforms - **Twitter/X Sentiment**: Real-time
   sentiment analysis - **Reddit Activity**: Community engagement and discussions
   - **Telegram Groups**: Insider sentiment and information flow - **Google
   Trends**: Public interest and search volume
+
 </Accordion>
 
   <Accordion title="News Sentiment">
@@ -283,7 +327,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     changes, adoption news - **Technical News**: Network upgrades, security
     issues - **Market News**: Institutional involvement, ETF approvals -
     **Sentiment Scoring**: Automated positive/negative classification
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Institutional Activity Indicators
@@ -295,6 +341,7 @@ Effective market analysis is the foundation of successful automated trading. Und
     outstanding derivative contracts - **Put/Call Ratio**: Options market
     sentiment indicator - **Volatility Surface**: Implied volatility across
     strikes and expirations
+
 </Accordion>
 
   <Accordion title="Grayscale and ETF Flows">
@@ -302,7 +349,9 @@ Effective market analysis is the foundation of successful automated trading. Und
     Institutional demand indicator - **ETF Inflows/Outflows**: Traditional
     finance participation - **Custody Services**: Institutional infrastructure
     adoption - **Corporate Treasury**: Public company bitcoin adoption
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Multi-Timeframe Analysis
@@ -312,6 +361,7 @@ Effective market analysis is the foundation of successful automated trading. Und
 <Tip>
   Align your trading timeframe with higher timeframe trends for better success
   rates.
+
 </Tip>
 
 ```mermaid
@@ -341,14 +391,17 @@ graph TD
     intermediate levels 3. **4-Hour**: Refine entry/exit timing 4. **1-Hour**:
     Fine-tune execution and risk management 5. **Lower Timeframes**: Precise
     entry and exit points
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Timeframe Confluence">
   Look for alignment across multiple timeframes - **Trend Alignment**: All
   timeframes showing same direction - **Support/Resistance**: Levels that align
   across timeframes - **Indicator Confluence**: Multiple indicators agreeing -
   **Pattern Confirmation**: Patterns visible on multiple timeframes
+
 </Accordion>
 
   <Accordion title="Timeframe-Specific Strategies">
@@ -357,7 +410,9 @@ graph TD
     moves, daily targets - **Swing Trading (4H-Daily)**: Multi-day holds, larger
     moves - **Position Trading (Weekly+)**: Long-term trends, fundamental
     drivers
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Market Regime Analysis
@@ -370,14 +425,17 @@ graph TD
     Strong directional movement - **Moving Average Alignment**: MAs stacked in
     order - **Breakout Patterns**: Price breaking key levels - **Strategy
     Focus**: Trend-following systems, momentum strategies
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Range-Bound Markets">
   Sideways market characteristics and approaches - **Low ADX**: Weak directional
   bias - **Oscillating Indicators**: RSI/Stochastic reversals -
   **Support/Resistance Respect**: Price bouncing between levels - **Strategy
   Focus**: Mean reversion, range trading, grid strategies
+
 </Accordion>
 
   <Accordion title="Volatile Markets">
@@ -385,7 +443,9 @@ graph TD
     price swings - **News-Driven**: Event-based volatility spikes - **Whipsaw
     Action**: Rapid direction changes - **Strategy Adjustments**: Wider stops,
     smaller positions, shorter holds
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Volatility Analysis
@@ -397,14 +457,17 @@ graph TD
     movement - **Rolling Windows**: 30, 60, 90-day periods - **Volatility
     Regimes**: High vs low volatility periods - **Volatility Clustering**:
     Tendency for volatility to cluster
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Implied Volatility">
   Market's expectation of future volatility from options - **IV vs HV**: Compare
   expected to realized volatility - **Volatility Smile**: IV varies by strike
   price - **Term Structure**: IV varies by expiration - **VIX Equivalent**:
   Crypto volatility indices
+
 </Accordion>
 
   <Accordion title="Volatility-Based Strategies">
@@ -412,7 +475,9 @@ graph TD
     position sizes, use tighter stops - **High Volatility**: Decrease position
     sizes, use wider stops - **Volatility Breakouts**: Trade volatility
     expansion - **Volatility Reversion**: Trade volatility contraction
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Correlation Analysis
@@ -422,6 +487,7 @@ graph TD
 <Warning>
   Correlations can change rapidly during market stress, potentially invalidating
   diversification strategies.
+
 </Warning>
 
 <AccordionGroup>
@@ -431,6 +497,7 @@ graph TD
     - **Sector Correlations**: DeFi, gaming, infrastructure tokens
     - **Size-Based Correlations**: Large vs small cap cryptos
     - **Rolling Correlations**: Time-varying correlation analysis
+
 </Accordion>
   
   <Accordion title="Crypto-Traditional Asset Correlations">
@@ -439,6 +506,7 @@ graph TD
     - **Crypto vs Gold**: Alternative store of value comparison
     - **Crypto vs USD**: Dollar strength impact
     - **Crypto vs Bonds**: Interest rate sensitivity
+
 </Accordion>
   
   <Accordion title="Dynamic Correlation Monitoring">
@@ -456,7 +524,9 @@ graph TD
       }
     }
     ```
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Economic Calendar and Events
@@ -469,14 +539,17 @@ graph TD
     Direct impact on risk assets - **FOMC Meetings**: Policy statement analysis
     - **Fed Speaker Events**: Hawkish vs dovish commentary - **Quantitative
     Easing**: Money supply changes
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Economic Data Releases">
   Key economic indicators affecting markets - **Inflation Data (CPI/PPI)**:
   Price stability measures - **Employment Data**: Labor market strength - **GDP
   Reports**: Economic growth indicators - **Consumer Confidence**: Economic
   sentiment
+
 </Accordion>
 
   <Accordion title="Crypto-Specific Events">
@@ -484,7 +557,9 @@ graph TD
     decisions - **Exchange Listings**: New token availability - **Network
     Upgrades**: Protocol improvements - **Institutional Adoption**:
     Corporate/government acceptance
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Event-Driven Analysis
@@ -495,6 +570,7 @@ graph TD
     increase before events - **Positioning Bias**: Market consensus vs
     contrarian views - **Risk Management**: Reduced size due to uncertainty -
     **Volatility Trading**: Trade volatility expansion
+
 </Accordion>
 
   <Accordion title="Post-Event Analysis">
@@ -502,7 +578,9 @@ graph TD
     minutes - **Follow-Through**: Sustained move or reversal - **Volume
     Confirmation**: High volume supporting moves - **Cross-Asset Impact**:
     Spillover to related markets
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Practical Implementation
@@ -515,6 +593,7 @@ graph TD
   Review**: Performance and market regime analysis - [ ] **Real-Time
   Monitoring**: Key level and event alerts - [ ] **Post-Trade Analysis**: Review
   decisions and outcomes
+
 </CheckList>
 
 ### Market Analysis Checklist
@@ -524,25 +603,31 @@ graph TD
     - Check overnight price action and news - Review key support/resistance
     levels - Assess market sentiment indicators - Identify potential trading
     opportunities - Update risk management parameters
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Weekly Analysis (1-2 hours)">
   - Comprehensive technical analysis - Market regime assessment - Correlation
   matrix review - Economic calendar review - Strategy performance evaluation
+
 </Accordion>
 
   <Accordion title="Monthly Analysis (2-4 hours)">
     - Long-term trend analysis - Market structure changes - Strategy
     optimization review - Risk management effectiveness - Market outlook and
     planning
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Analysis Tools and Resources
 
 <Info>
   Combine multiple analysis tools for comprehensive market understanding.
+
 </Info>
 
 <AccordionGroup>
@@ -550,20 +635,25 @@ graph TD
     - **TradingView**: Comprehensive charting and indicators - **Coinigy**:
     Multi-exchange analysis platform - **Glassnode**: On-chain analytics for
     crypto - **IntoTheBlock**: AI-powered crypto analytics
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Market Data Sources">
   - **CoinMarketCap/CoinGecko**: Price and market cap data - **Messari**:
   Fundamental crypto research - **Santiment**: Social sentiment and on-chain
   data - **The Block**: Institutional and market news
+
 </Accordion>
 
   <Accordion title="Economic Data Sources">
     - **Federal Reserve**: FOMC minutes and data - **BLS/BEA**: US economic
     statistics - **OECD**: International economic data -
     **MarketWatch/Bloomberg**: Financial news and data
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Next Steps
@@ -575,26 +665,31 @@ graph TD
     icon="hammer"
   >
     Apply market analysis to strategy development
-  </Card>
+  
+</Card>
   <Card
     title="Technical Indicators"
     href="/signals/technical-indicators"
     icon="chart-bar"
   >
     Learn about Hyperscript's technical indicator tools
-  </Card>
+  
+</Card>
   <Card
     title="Orderbook Signal Engine"
     href="/signals/orderbook-signal-engine"
     icon="layer-group"
   >
     Utilize advanced market microstructure analysis
-  </Card>
+  
+</Card>
   <Card
     title="Risk Management Best Practices"
     href="/guides/risk-management-best-practices"
     icon="shield-check"
   >
     Integrate risk management with market analysis
-  </Card>
+  
+</Card>
+
 </CardGroup>{" "}

@@ -41,20 +41,25 @@ graph TD
 <CardGroup cols={2}>
 <Card title="Volatility Reduction" icon="chart-mixed">
 Smooths out price volatility by averaging purchase prices over time.
+
 </Card>
 
 <Card title="Emotional Discipline" icon="brain">
   Removes fear and greed from investment decisions through systematic execution.
+
 </Card>
 
 <Card title="Lower Average Cost" icon="trending-down">
   Often achieves better average prices than lump-sum investing in volatile
   markets.
+
 </Card>
 
 <Card title="Accessibility" icon="heart">
 Allows smaller investors to build positions gradually without large upfront capital.
+
 </Card>
+
 </CardGroup>
 
 ## DCA Strategy Types
@@ -70,6 +75,7 @@ Purchase the same dollar amount at each interval:
 - Weekly: $50-200 per week for balanced approach
 - Monthly: $200-1000 per month for larger investors
 - Custom: Any interval from 6 hours to 30 days
+
 </Accordion>
 
 <Accordion icon="chart-line" title="Price-Based DCA">
@@ -77,7 +83,9 @@ Purchase the same dollar amount at each interval:
 - **Dip buying**: Extra purchases when price drops >5%
 - **Averaging down**: Increase purchase amount during downtrends
 - **Volatility triggered**: Buy when daily volatility exceeds threshold
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Dynamic DCA
@@ -87,19 +95,24 @@ Adjust purchase amounts based on market conditions:
 <CardGroup cols={2}>
 <Card title="Value-Based DCA" icon="calculator">
 Increase purchases when assets appear undervalued based on technical indicators.
+
 </Card>
 
 <Card title="Volatility-Adjusted DCA" icon="wave-square">
   Larger purchases during high volatility periods for better average pricing.
+
 </Card>
 
 <Card title="Performance-Based DCA" icon="chart-area">
   Adjust amounts based on recent portfolio performance and available capital.
+
 </Card>
 
 <Card title="Signal-Enhanced DCA" icon="radar">
 Incorporate market signals to optimize purchase timing within intervals.
+
 </Card>
+
 </CardGroup>
 
 ## Configuration Options
@@ -114,6 +127,7 @@ Incorporate market signals to optimize purchase timing within intervals.
 - **Total Budget**: Maximum total investment (optional)
 - **Duration**: Time limit or number of purchases
 - **Asset Selection**: Single asset or multiple assets
+
 </Accordion>
 
 <Accordion icon="clock" title="Timing Configuration">
@@ -123,7 +137,9 @@ Incorporate market signals to optimize purchase timing within intervals.
 - **Weekend Trading**: Enable/disable weekend purchases
 - **Holiday Schedule**: Pause during market holidays
 - **Time Zone**: Local time zone for scheduling
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Advanced DCA Features
@@ -136,6 +152,7 @@ Incorporate market signals to optimize purchase timing within intervals.
 - **Volatility filters**: Pause during extreme volatility
 - **Market hours**: Restrict to specific trading windows
 - **Correlation limits**: Avoid purchases when assets highly correlated
+
 </Accordion>
 
 <Accordion icon="gear" title="Order Execution">
@@ -145,7 +162,9 @@ Incorporate market signals to optimize purchase timing within intervals.
 - **Order Splitting**: Break large orders into smaller chunks
 - **Retry Logic**: Reattempt failed orders with adjusted parameters
 - **MEV Protection**: Use private mempools to prevent frontrunning
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Setting Up Your DCA Bot
@@ -170,6 +189,7 @@ DCA Bot Settings:
 ├── Total Budget: $5,000 (50 purchases)
 └── Duration: 1 year or until budget exhausted
 ```
+
 </Accordion>
 
 <Accordion icon="shield" title="Risk Management">
@@ -177,6 +197,7 @@ DCA Bot Settings:
   limit**: 10% (skip if price moved dramatically) - **Slippage tolerance**: 0.5%
   - **Emergency stop**: Pause on 15% daily portfolio loss - **Minimum balance**:
   Maintain $50 buffer in account
+
 </Accordion>
 
 <Accordion icon="bell" title="Notifications">
@@ -185,7 +206,9 @@ DCA Bot Settings:
 - **Weekly summaries**: Performance and statistics
 - **Budget warnings**: Alert when 90% budget consumed
 - **Price alerts**: Notify on significant price movements
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Step 3: Backtesting
@@ -200,6 +223,7 @@ Test your DCA strategy against historical data:
 <Tip>
   DCA typically outperforms lump-sum investing in volatile markets but may
   underperform in strong bull markets.
+
 </Tip>
 
 ## Multi-Asset DCA Strategies
@@ -214,6 +238,7 @@ Apply DCA across multiple assets simultaneously:
 - 40% ETH, 30% BTC, 20% SOL, 10% USDC
 - Weekly purchases maintaining allocation ratios
 - Automatic rebalancing between DCA purchases
+
 </Card>
 
 <Card title="Rotational DCA" icon="arrows-rotate">
@@ -222,7 +247,9 @@ Apply DCA across multiple assets simultaneously:
 - Week 2: BTC purchase  
 - Week 3: SOL purchase
 - Week 4: Restart cycle
+
 </Card>
+
 </CardGroup>
 
 ### Conditional Multi-Asset DCA
@@ -245,6 +272,7 @@ Adjust asset allocation based on market conditions:
 - **Liquidity timing**: Purchase when orderbook depth is highest
 - **Geographic optimization**: Align with major market opening/closing times
 - **Weekend effect**: Take advantage of different weekend pricing patterns
+
 </Accordion>
 
 <Accordion icon="calendar-days" title="Weekly/Monthly Patterns">
@@ -253,7 +281,9 @@ Adjust asset allocation based on market conditions:
 - **Month-end patterns**: Institutional rebalancing can create opportunities
 - **Options expiry**: Coordinate with major derivatives expiry dates
 - **Seasonal patterns**: Adjust for known seasonal trends (if any)
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Cost Minimization
@@ -270,27 +300,34 @@ Adjust asset allocation based on market conditions:
 <CardGroup cols={3}>
 <Card title="Average Cost" icon="calculator">
 Your volume-weighted average purchase price vs current market price
+
 </Card>
 
 <Card title="Total Return" icon="chart-line">
   Current portfolio value vs total amount invested
+
 </Card>
 
 <Card title="Purchase Efficiency" icon="target">
   How well your average cost compares to average market price over period
+
 </Card>
 
 <Card title="Volatility Reduction" icon="shield">
   Portfolio volatility vs underlying asset volatility
+
 </Card>
 
 <Card title="Max Drawdown" icon="arrow-down">
   Largest unrealized loss from peak portfolio value
+
 </Card>
 
 <Card title="Sharpe Ratio" icon="star">
 Risk-adjusted returns accounting for volatility
+
 </Card>
+
 </CardGroup>
 
 ### Performance Dashboard
@@ -315,6 +352,7 @@ Combine DCA with market signals for improved timing:
 - **Moving average**: Extra purchases when price below moving average
 - **Support/resistance**: Time purchases near support levels
 - **Bollinger Bands**: Buy more when price touches lower band
+
 </Accordion>
 
 <Accordion icon="newspaper" title="Fundamental Signal DCA">
@@ -323,7 +361,9 @@ Combine DCA with market signals for improved timing:
 - **On-chain metrics**: Adjust based on network activity and holding patterns
 - **News sentiment**: Pause during extremely negative news cycles
 - **Macro indicators**: Modify based on broader economic conditions
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Dynamic DCA Adjustments
@@ -344,7 +384,8 @@ Automatically adjust DCA parameters based on performance:
 - **Inconsistent execution**: Manual intervention often reduces DCA effectiveness
 - **Ignoring fees**: High transaction costs can erode DCA benefits
 - **Wrong frequency**: Too frequent DCA may increase costs; too infrequent may miss opportunities
-  </Warning>
+
+</Warning>
 
 ### Troubleshooting
 
@@ -358,7 +399,8 @@ Automatically adjust DCA parameters based on performance:
 - Extend intervals between purchases
 - Use exchanges with lower fees or fee-free promotions
 - Consider layer-2 solutions for lower gas costs
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="chart-line-down" title="Poor Performance">
 **Problem**: DCA underperforming expectations
@@ -369,7 +411,9 @@ Automatically adjust DCA parameters based on performance:
 - Consider dynamic adjustments based on market conditions
 - Analyze asset selection and diversification
 - Compare to appropriate benchmarks (not just buy-and-hold)
-  </Accordion>
+
+</Accordion>
+
 </AccordionGroup>
 
 ## Next Steps
@@ -377,10 +421,12 @@ Automatically adjust DCA parameters based on performance:
 <CardGroup cols={2}>
 <Card title="Portfolio Rebalancer" icon="balance-scale" href="/trading-strategies/smart-portfolio-rebalancer">
   Combine DCA with automatic portfolio rebalancing.
+
 </Card>
 
 <Card title="Grid Trading" icon="grid" href="/trading-strategies/grid-trading">
   Explore more active trading strategies for volatile markets.
+
 </Card>
 
 <Card
@@ -389,9 +435,12 @@ Automatically adjust DCA parameters based on performance:
   href="/trading-strategies/trading-wizard"
 >
   Get AI recommendations for optimal DCA parameters.
+
 </Card>
 
 <Card title="Performance Analytics" icon="chart-mixed" href="/portfolio/performance-analytics">
   Deep dive into DCA performance analysis and optimization.
+
 </Card>
+
 </CardGroup>

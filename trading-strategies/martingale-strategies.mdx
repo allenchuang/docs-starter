@@ -11,6 +11,7 @@ Martingale is a recovery-based trading strategy that increases position sizes af
   **High Risk Strategy**: Martingale strategies can lead to significant losses
   during extended trending periods. Only use with strict risk controls and
   position limits.
+
 </Warning>
 
 ## How Martingale Works
@@ -56,6 +57,7 @@ Traditional doubling strategy with fixed multipliers:
 - **Reset condition**: Any profitable trade resets to base size
 - **Best for**: Assets with frequent mean reversion
 - **Risk level**: Very high during extended trends
+
 </Accordion>
 
 <Accordion icon="chart-line" title="Conservative Multiplier">
@@ -64,7 +66,9 @@ Traditional doubling strategy with fixed multipliers:
 - **Gradual increase**: 100 → 150 → 225 → 337
 - **Best for**: Risk-averse traders who want recovery potential
 - **Risk level**: High but more manageable
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Adaptive Martingale
@@ -77,17 +81,20 @@ Dynamic strategies that adjust based on market conditions:
 - Higher multipliers during low volatility
 - Lower multipliers during high volatility
 - Position sizing based on recent price swings
+
 </Card>
 
 <Card title="Trend-Aware Martingale" icon="trending-up">
   **Considers market direction:** - Reduced multipliers against strong trends -
   Increased multipliers in ranging markets - Automatic pause during momentum
   extremes
+
 </Card>
 
 <Card title="Time-Decay Martingale" icon="clock">
   **Reduces risk over time:** - Multipliers decrease with each iteration -
   Maximum recovery attempts limited - Automatic reset after time periods
+
 </Card>
 
 <Card title="Correlation-Based Martingale" icon="link">
@@ -95,7 +102,9 @@ Dynamic strategies that adjust based on market conditions:
 - Adjusts based on asset correlations
 - Reduces size when assets move together
 - Diversifies across uncorrelated markets
+
 </Card>
+
 </CardGroup>
 
 ## Configuration Parameters
@@ -110,6 +119,7 @@ Dynamic strategies that adjust based on market conditions:
 - **Maximum position size**: $5,000 absolute limit
 - **Maximum iterations**: 5-7 consecutive losses maximum
 - **Reset conditions**: Profit threshold to restart sequence
+
 </Accordion>
 
 <Accordion icon="shield" title="Risk Management">
@@ -118,7 +128,9 @@ Dynamic strategies that adjust based on market conditions:
 - **Daily loss limit**: Stop after losing X% in one day
 - **Sequence stop loss**: Exit if losses exceed predetermined amount
 - **Cool-down period**: Wait time before restarting after max sequence
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Entry & Exit Conditions
@@ -130,6 +142,7 @@ Dynamic strategies that adjust based on market conditions:
 - **Support/resistance bounces**: Entry near key levels
 - **Volatility expansion**: After periods of low volatility
 - **Pattern completion**: Technical pattern breakdowns or breakouts
+
 </Accordion>
 
 <Accordion icon="target" title="Exit Strategies">
@@ -138,7 +151,9 @@ Dynamic strategies that adjust based on market conditions:
 - **Partial exits**: Take profits on portions of large positions
 - **Time-based exits**: Close after predetermined time periods
 - **Risk-based exits**: Exit if next position would exceed limits
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Setting Up Martingale Strategy
@@ -160,6 +175,7 @@ Account needed: $15,500 (20% max risk rule)
 <Warning>
   **Critical**: Ensure you can afford the maximum sequence loss multiple times.
   Martingale can consume capital quickly during adverse conditions.
+
 </Warning>
 
 ### Step 2: Strategy Configuration
@@ -177,6 +193,7 @@ Martingale Bot Configuration:
 ├── Account Requirement: $8,435 (20% risk)
 └── Profit Target: 2% to reset sequence
 ```
+
 </Accordion>
 
 <Accordion icon="gear" title="Advanced Settings">
@@ -184,7 +201,9 @@ Martingale Bot Configuration:
 - **Market filters**: Only trade during normal volatility periods
 - **Time restrictions**: Avoid major news events and low liquidity hours
 - **Correlation checks**: Pause if correlated assets trending strongly
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Step 3: Backtesting & Validation
@@ -196,6 +215,7 @@ Test your Martingale strategy extensively:
   Analyze maximum drawdown periods and recovery times - Test different
   multipliers and iteration limits - Verify profit consistency vs risk taken -
   Ensure strategy survives worst-case scenarios in historical data
+
 </CheckList>
 
 ## Enhanced Martingale Strategies
@@ -211,6 +231,7 @@ Increase position size after wins instead of losses:
 - Reduce to base size after losses
 - Better for trending markets
 - Lower risk of catastrophic loss
+
 </Card>
 
 <Card title="Hybrid Approach" icon="balance-scale">
@@ -219,7 +240,9 @@ Increase position size after wins instead of losses:
 - Classic Martingale during ranges
 - Dynamic switching based on market regime
 - Balanced risk-reward profile
+
 </Card>
+
 </CardGroup>
 
 ### Grid Martingale
@@ -233,6 +256,7 @@ Combine grid trading with Martingale recovery:
 - Increase order sizes using Martingale progression
 - Profit from multiple small reversions within trend
 - More opportunities for recovery than single-position Martingale
+
 </Accordion>
 
 <Accordion icon="arrows-rotate" title="Rolling Martingale Grid">
@@ -241,7 +265,9 @@ Combine grid trading with Martingale recovery:
 - Maintain Martingale sizing at each level
 - Continuous adaptation to market direction
 - Reduced risk of being trapped in single direction
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Performance Optimization
@@ -255,6 +281,7 @@ Combine grid trading with Martingale recovery:
 - Enter near strong support/resistance levels
 - Avoid entries during strong momentum periods
 - Use shorter timeframes for entry refinement
+
 </Accordion>
 
 <Accordion icon="brain" title="Market Regime Detection">
@@ -263,7 +290,9 @@ Combine grid trading with Martingale recovery:
 - **Trending markets**: Use anti-Martingale or avoid entirely
 - **High volatility**: Reduce multipliers and position sizes
 - **Low volatility**: Can use higher multipliers safely
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Risk Reduction Techniques
@@ -280,27 +309,34 @@ Combine grid trading with Martingale recovery:
 <CardGroup cols={3}>
 <Card title="Recovery Rate" icon="chart-line-up">
 Percentage of sequences that recover to profitability
+
 </Card>
 
 <Card title="Average Sequence Length" icon="list">
   How many trades typically needed for recovery
+
 </Card>
 
 <Card title="Maximum Sequence Cost" icon="exclamation-triangle">
   Highest total loss during any single sequence
+
 </Card>
 
 <Card title="Profit Factor" icon="calculator">
   Total profits divided by total losses
+
 </Card>
 
 <Card title="Risk-Adjusted Return" icon="shield-check">
   Returns relative to maximum risk taken
+
 </Card>
 
 <Card title="Recovery Time" icon="stopwatch">
 Average time from loss to full recovery
+
 </Card>
+
 </CardGroup>
 
 ### Dashboard Monitoring
@@ -324,7 +360,8 @@ Track your Martingale strategy performance:
 - **Daily limits**: Stop trading after reaching daily loss threshold
 - **Correlation monitoring**: Avoid multiple Martingale strategies on correlated assets
 - **Market condition filters**: Pause during extreme volatility or major events
-  </Warning>
+
+</Warning>
 
 ### Emergency Procedures
 
@@ -335,6 +372,7 @@ Track your Martingale strategy performance:
 - Individual sequence reaches maximum iterations
 - Market volatility exceeds 3x normal levels
 - Correlation between assets exceeds 0.9
+
 </Accordion>
 
 <Accordion icon="exclamation-triangle" title="Manual Override">
@@ -343,7 +381,9 @@ Track your Martingale strategy performance:
 - Major market structure changes or news events
 - Technical issues affecting order execution
 - Personal risk tolerance exceeded
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Common Martingale Mistakes
@@ -356,7 +396,8 @@ Track your Martingale strategy performance:
 - **No exit plan**: Lacking clear rules for stopping losing sequences
 - **Correlation ignorance**: Multiple Martingale bots on correlated assets
 - **Emotional override**: Manually interfering with systematic execution
-  </Warning>
+
+</Warning>
 
 ### Troubleshooting Issues
 
@@ -370,7 +411,8 @@ Track your Martingale strategy performance:
 - Reduce multipliers to extend sequence length
 - Add market regime filters to avoid unfavorable conditions
 - Consider switching to anti-Martingale during trends
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="credit-card" title="High Transaction Costs">
 **Problem**: Fees reducing profits from recovery
@@ -381,7 +423,9 @@ Track your Martingale strategy performance:
 - Use exchanges with lower trading fees
 - Consider longer-term positions to reduce trade frequency
 - Optimize order timing for better fee structures
-  </Accordion>
+
+</Accordion>
+
 </AccordionGroup>
 
 ## Next Steps
@@ -389,10 +433,12 @@ Track your Martingale strategy performance:
 <CardGroup cols={2}>
 <Card title="Signal-Based Trading" icon="radar" href="/trading-strategies/signal-based-trading">
   Combine Martingale with market signals for better entry timing.
+
 </Card>
 
 <Card title="Grid Trading" icon="grid" href="/trading-strategies/grid-trading">
   Explore grid strategies that can complement Martingale approaches.
+
 </Card>
 
 <Card
@@ -401,15 +447,19 @@ Track your Martingale strategy performance:
   href="/portfolio/risk-management-tools"
 >
   Set up comprehensive risk controls for Martingale strategies.
+
 </Card>
 
 <Card title="Backtesting Engine" icon="clock-rotate-left" href="/advanced/backtesting-engine">
   Thoroughly test Martingale strategies before live deployment.
+
 </Card>
+
 </CardGroup>
 
 <Note>
   **Important Reminder**: Martingale strategies require careful risk management
   and are not suitable for all traders. Always test thoroughly and never risk
   more than you can afford to lose.
+
 </Note>{" "}

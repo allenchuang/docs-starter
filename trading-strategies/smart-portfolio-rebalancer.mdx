@@ -15,6 +15,7 @@ The rebalancer monitors your portfolio continuously and triggers trades when all
   **Example**: You want 60% ETH, 40% USDC. ETH pumps and your portfolio becomes
   70% ETH, 30% USDC. The bot sells ETH and buys USDC to restore the 60/40
   balance.
+
 </Info>
 
 ### Rebalancing Logic
@@ -35,19 +36,24 @@ graph TD
 <CardGroup cols={2}>
 <Card title="Risk Management" icon="shield-check">
 Maintains consistent exposure across asset classes, reducing concentration risk.
+
 </Card>
 
 <Card title="Profit Taking" icon="chart-line-up">
   Automatically sells high-performing assets and buys dips, locking in gains.
+
 </Card>
 
 <Card title="Discipline" icon="robot">
   Removes emotion from rebalancing decisions, ensuring consistent execution.
+
 </Card>
 
 <Card title="Simplicity" icon="circle-check">
 Set-and-forget approach perfect for long-term investors.
+
 </Card>
+
 </CardGroup>
 
 ## Configuration Options
@@ -63,7 +69,8 @@ Define your target portfolio composition:
 - **60% ETH, 30% BTC, 10% USDC**: Balanced crypto exposure with stablecoin buffer
 - **40% ETH, 40% BTC, 20% USDC**: Equal major crypto weights with larger stable allocation
 - **50% ETH, 25% BTC, 25% SOL**: Diversified across top layer-1 platforms
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="zap" title="Aggressive Portfolios">
 **Higher-risk, growth-focused allocations:**
@@ -71,7 +78,8 @@ Define your target portfolio composition:
 - **50% ETH, 30% SOL, 20% ARB**: Focus on layer-1 and layer-2 growth
 - **40% ETH, 30% BTC, 30% Altcoins**: Broader crypto diversification
 - **60% DeFi Tokens, 40% ETH**: Concentrated DeFi exposure
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="balance-scale" title="Custom Allocations">
 **Create your own portfolio:**
@@ -81,6 +89,7 @@ Set any combination of supported assets with allocations totaling 100%. Minimum 
 Supported assets: ETH, BTC, SOL, ARB, MATIC, AVAX, USDC, USDT, and more.
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Rebalancing Parameters
@@ -104,7 +113,8 @@ Manage rebalancing frequency:
 - **Maximum interval**: Force rebalancing after X days regardless of drift
 - **Trading hours**: Restrict trading to specific time windows
 - **Blackout periods**: Pause during major events or low liquidity
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="dollar-sign" title="Trade Sizing">
 Control individual trade parameters:
@@ -113,7 +123,9 @@ Control individual trade parameters:
 - **Maximum trade size**: Cap individual trades for large portfolios
 - **Slippage tolerance**: 0.1-2% maximum acceptable slippage
 - **Fee optimization**: Minimize transaction costs through smart routing
-  </Accordion>
+
+</Accordion>
+
 </AccordionGroup>
 
 ## Advanced Features
@@ -125,19 +137,24 @@ Adapt rebalancing behavior based on market conditions:
 <CardGroup cols={2}>
 <Card title="Volatility-Based" icon="chart-mixed">
 Increase thresholds during high volatility to reduce trading frequency.
+
 </Card>
 
 <Card title="Momentum-Based" icon="trending-up">
   Delay rebalancing during strong trends to capture additional gains.
+
 </Card>
 
 <Card title="Correlation-Aware" icon="link">
   Consider asset correlations when determining rebalancing urgency.
+
 </Card>
 
 <Card title="Tax-Optimized" icon="receipt">
 Prioritize long-term vs short-term gains for tax efficiency.
+
 </Card>
+
 </CardGroup>
 
 ### Risk Management Integration
@@ -174,12 +191,14 @@ Example Configuration:
 - **Total Portfolio Value**: $10,000
 - **Drift Threshold**: 5%
 - **Minimum Trade Size**: $25
+
 </Accordion>
 
 <Accordion icon="clock" title="Timing Settings">
   - **Check Frequency**: Every 4 hours - **Minimum Rebalancing Interval**: 12
   hours - **Trading Hours**: 24/7 (or set specific hours) - **Weekend Trading**:
   Enabled
+
 </Accordion>
 
 <Accordion icon="shield" title="Risk Controls">
@@ -187,7 +206,9 @@ Example Configuration:
 - **Slippage Tolerance**: 0.5%
 - **Emergency Stop**: 10% daily loss
 - **Position Size Limits**: $2,000 maximum per asset
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Step 3: Backtesting & Validation
@@ -202,6 +223,7 @@ Before deploying, backtest your strategy:
 <Tip>
   A good rebalancing strategy should outperform buy-and-hold on a risk-adjusted
   basis while reducing volatility.
+
 </Tip>
 
 ## Performance Monitoring
@@ -211,27 +233,34 @@ Before deploying, backtest your strategy:
 <CardGroup cols={3}>
 <Card title="Total Return" icon="chart-line">
 Absolute performance vs initial investment
+
 </Card>
 
 <Card title="Sharpe Ratio" icon="calculator">
   Risk-adjusted returns accounting for volatility
+
 </Card>
 
 <Card title="Max Drawdown" icon="arrow-down">
   Largest peak-to-trough loss during operation
+
 </Card>
 
 <Card title="Rebalancing Alpha" icon="star">
   Excess return vs buy-and-hold strategy
+
 </Card>
 
 <Card title="Transaction Costs" icon="credit-card">
   Total fees as percentage of portfolio value
+
 </Card>
 
 <Card title="Drift Statistics" icon="chart-bar">
 Average time to threshold and drift magnitude
+
 </Card>
+
 </CardGroup>
 
 ### Real-Time Dashboard
@@ -253,6 +282,7 @@ Monitor your rebalancer's status:
 - Split large rebalancing trades across multiple exchanges
 - Time trades during high liquidity periods
 - Employ limit orders when market conditions allow
+
 </Accordion>
 
 <Accordion icon="layers" title="Threshold Optimization">
@@ -260,7 +290,9 @@ Monitor your rebalancer's status:
 - **Asset-specific thresholds**: Different drift limits for different assets
 - **Dynamic thresholds**: Adjust based on volatility and correlation
 - **Cost-benefit analysis**: Ensure rebalancing benefits exceed costs
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Performance Enhancement
@@ -279,7 +311,8 @@ Monitor your rebalancer's status:
 - **Market timing**: Don't manually override during market events
 - **Ignoring correlations**: Highly correlated assets don't provide true diversification
 - **Static allocations**: Consider periodic review and adjustment of targets
-  </Warning>
+
+</Warning>
 
 ### Troubleshooting Issues
 
@@ -292,7 +325,8 @@ Monitor your rebalancer's status:
 - Increase drift thresholds
 - Extend minimum rebalancing intervals
 - Review asset volatility and consider more stable alternatives
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="chart-line-down" title="Underperformance">
 **Symptoms**: Returns below buy-and-hold benchmark
@@ -302,7 +336,9 @@ Monitor your rebalancer's status:
 - Analyze transaction costs vs rebalancing alpha
 - Consider wider thresholds or different allocation targets
 - Review asset selection and correlation patterns
-  </Accordion>
+
+</Accordion>
+
 </AccordionGroup>
 
 ## Next Steps
@@ -310,10 +346,12 @@ Monitor your rebalancer's status:
 <CardGroup cols={2}>
 <Card title="DCA Strategy" icon="chart-line-up" href="/trading-strategies/dca-bots">
   Combine rebalancing with dollar-cost averaging for enhanced accumulation.
+
 </Card>
 
 <Card title="Grid Trading" icon="grid" href="/trading-strategies/grid-trading">
   Explore grid strategies for more active trading approaches.
+
 </Card>
 
 <Card
@@ -322,9 +360,12 @@ Monitor your rebalancer's status:
   href="/trading-strategies/trading-wizard"
 >
   Get AI-powered recommendations for optimal portfolio allocations.
+
 </Card>
 
 <Card title="Backtesting" icon="clock-rotate-left" href="/advanced/backtesting-engine">
   Test your rebalancing strategy against historical data.
+
 </Card>
+
 </CardGroup>

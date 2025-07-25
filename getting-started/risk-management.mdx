@@ -19,6 +19,7 @@ Never risk more than you can afford to lose on any single trade or strategy.
 - 1-2% of portfolio per trade
 - 5-10% maximum allocation per strategy
 - Diversify across multiple assets
+
 </Card>
 
 <Card title="Aggressive Approach" icon="zap">
@@ -26,7 +27,9 @@ Never risk more than you can afford to lose on any single trade or strategy.
 - 3-5% of portfolio per trade
 - 15-25% maximum per strategy
 - Higher leverage tolerance
+
 </Card>
+
 </CardGroup>
 
 ### The 1% Rule
@@ -49,7 +52,8 @@ Set maximum exposure across all your trading bots:
 - **Maximum daily loss**: Stop all bots if losses exceed threshold
 - **Maximum position size**: Limit total capital allocation
 - **Correlation limits**: Prevent over-concentration in similar assets
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="clock" title="Time-Based Controls">
 Manage trading frequency and duration:
@@ -59,6 +63,7 @@ Manage trading frequency and duration:
 - **Session timeouts**: Automatic bot pause after set periods
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Strategy-Level Controls
@@ -71,7 +76,8 @@ Configure individual bot risk parameters:
 - **Stop-loss levels** (percentage or dollar amount)
 - **Take-profit targets**
 - **Maximum drawdown limits**
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="trending-down" title="Drawdown Protection">
 Automatically pause bots during adverse conditions:
@@ -81,6 +87,7 @@ Automatically pause bots during adverse conditions:
 - **Volatility filters**: Pause during extreme market conditions
 
 </Accordion>
+
 </AccordionGroup>
 
 ## Risk Assessment Tools
@@ -97,13 +104,17 @@ Hyperscript calculates a real-time risk score based on:
 <div style="background: linear-gradient(to right, #22c55e, #eab308, #ef4444); height: 20px; border-radius: 10px; position: relative;">
   <div style="position: absolute; top: -30px; left: 0; color: #22c55e;">
     Low Risk
-  </div>
+  
+</div>
   <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); color: #eab308;">
     Medium Risk
-  </div>
+  
+</div>
   <div style="position: absolute; top: -30px; right: 0; color: #ef4444;">
     High Risk
-  </div>
+  
+</div>
+
 </div>
 
 ### Correlation Matrix
@@ -120,6 +131,7 @@ Monitor how your assets move together:
 <Warning>
   High correlation (>0.8) between assets increases portfolio risk. Diversify
   into uncorrelated assets when possible.
+
 </Warning>
 
 ## Setting Up Risk Controls
@@ -144,6 +156,7 @@ For each trading bot, set:
   - Maximum position size (dollars or percentage) - Stop-loss percentage
   (recommended: 2-5%) - Take-profit target (recommended: 4-10%) - Maximum
   consecutive losses (recommended: 3-5)
+
 </CheckList>
 
 ### Step 3: Market Condition Filters
@@ -182,6 +195,7 @@ Position Size = (0.6 × 10 - 0.4 × 5) / 10 = 0.4 or 40% of available capital
 <Warning>
   Kelly Criterion can suggest aggressive position sizes. Consider using 25-50%
   of the calculated amount for safety.
+
 </Warning>
 
 ## Emergency Procedures
@@ -219,6 +233,7 @@ Before deploying any strategy:
   set - ✅ Position sizes within risk tolerance - ✅ Emergency procedures
   understood - ✅ Diversification across assets/strategies - ✅ Performance
   monitoring alerts enabled
+
 </CheckList>
 
 ## Next Steps
@@ -226,9 +241,12 @@ Before deploying any strategy:
 <CardGroup cols={2}>
 <Card title="Deploy Your First Bot" icon="rocket" href="/getting-started/first-bot">
   Set up your first trading bot with proper risk controls.
+
 </Card>
 
 <Card title="Portfolio Dashboard" icon="chart-line" href="/portfolio/dashboard">
   Monitor your risk metrics in real-time.
+
 </Card>
+
 </CardGroup>

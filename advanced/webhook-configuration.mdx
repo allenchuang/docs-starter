@@ -18,18 +18,21 @@ Hyperscript supports multiple webhook types for different use cases:
 - Custom signal generation
 - Multi-timeframe analysis
 - Automated position management
+
 </Card>
 
 <Card title="Custom Alert Systems" icon="bell">
   **External alert processing:** - Price alerts from monitoring services -
   Technical indicator signals - News-based trading triggers - Social sentiment
   alerts
+
 </Card>
 
 <Card title="Portfolio Management" icon="chart-pie">
   **Portfolio rebalancing triggers:** - External rebalancing signals - Risk
   management alerts - Asset allocation adjustments - Performance-based
   modifications
+
 </Card>
 
 <Card title="Risk Management" icon="shield-check">
@@ -38,7 +41,9 @@ Hyperscript supports multiple webhook types for different use cases:
 - Volatility alerts
 - Correlation warnings
 - Emergency position closing
+
 </Card>
+
 </CardGroup>
 
 ## Setting Up Webhooks
@@ -86,6 +91,7 @@ Navigate to your webhook management dashboard:
 - Enable logging for security audit trails
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Step 2: Message Format Configuration
@@ -149,6 +155,7 @@ Field Mapping Configuration:
 - **Default values**: Fallback values when fields are missing
 
 </Accordion>
+
 </AccordionGroup>
 
 ## Advanced Webhook Features
@@ -207,6 +214,7 @@ Conditional Processing Rules:
 ```
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Multi-Webhook Coordination
@@ -220,6 +228,7 @@ Coordinate signals from multiple webhook sources:
 - Weight signals by source reliability
 - Resolve conflicting signals intelligently
 - Track correlation between sources
+
 </Card>
 
 <Card title="Failover & Redundancy" icon="shield">
@@ -228,7 +237,9 @@ Coordinate signals from multiple webhook sources:
 - Health monitoring for all endpoints
 - Alert when primary sources fail
 - Load balancing across endpoints
+
 </Card>
+
 </CardGroup>
 
 ## Webhook Management
@@ -278,6 +289,7 @@ Webhook Analytics Dashboard:
 - **Rate Limiting**: Warning when approaching rate limits
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Webhook Testing & Debugging
@@ -291,6 +303,7 @@ Tools for testing and troubleshooting webhook integrations:
 - Check field mapping and transformations
 - Verify filtering and conditional logic
 - Test error handling and edge cases
+
 </Card>
 
 <Card title="Debug Tools" icon="bug">
@@ -299,7 +312,9 @@ Tools for testing and troubleshooting webhook integrations:
 - Schema validation results
 - Processing step breakdown
 - Error message details and context
+
 </Card>
+
 </CardGroup>
 
 ## Webhook Security
@@ -341,18 +356,17 @@ Secure your webhook endpoints against unauthorized access:
 **Recommended security measures:**
 
 <CheckList>
-- Use HTTPS for all webhook endpoints
-- Implement signature verification for all requests
-- Rotate webhook secrets regularly (monthly)
-- Monitor for unusual request patterns
-- Set up rate limiting to prevent abuse
-- Log all webhook activity for audit purposes
-- Use separate webhooks for different integrations
-- Validate and sanitize all incoming data
-- Implement timeout controls for processing
-- Set up alerting for security events
+  - Use HTTPS for all webhook endpoints - Implement signature verification for
+  all requests - Rotate webhook secrets regularly (monthly) - Monitor for
+  unusual request patterns - Set up rate limiting to prevent abuse - Log all
+  webhook activity for audit purposes - Use separate webhooks for different
+  integrations - Validate and sanitize all incoming data - Implement timeout
+  controls for processing - Set up alerting for security events
+
 </CheckList>
+
 </Accordion>
+
 </AccordionGroup>
 
 ## Integration Examples
@@ -397,6 +411,7 @@ Complete setup for TradingView PineScript integration:
    - Check trade execution on Hyperliquid
 
 </Accordion>
+
 </AccordionGroup>
 
 ### Custom Alert Service
@@ -432,6 +447,7 @@ Price Alert Webhook Configuration:
 ```
 
 </Accordion>
+
 </AccordionGroup>
 
 ## Webhook Troubleshooting
@@ -480,7 +496,8 @@ curl -X POST \
 - Pre-validate signal format
 - Implement parallel processing
 - Cache frequently accessed data
-  </Accordion>
+
+</Accordion>
 
 <Accordion icon="ban" title="Signal Rejection">
 **Problem**: Valid signals being rejected or filtered
@@ -500,7 +517,9 @@ curl -X POST \
 - Position size exceeds limits
 - Rate limit reached
 - Market hours restriction
-  </Accordion>
+
+</Accordion>
+
 </AccordionGroup>
 
 ## Advanced Webhook Patterns
@@ -534,6 +553,7 @@ Webhook Chain Example:
 ```
 
 </Accordion>
+
 </AccordionGroup>
 
 ## Next Steps
@@ -541,6 +561,7 @@ Webhook Chain Example:
 <CardGroup cols={2}>
 <Card title="PineScript Integration" icon="chart-line" href="/advanced/pinescript-integration">
   Set up TradingView PineScript strategy execution.
+
 </Card>
 
 <Card
@@ -549,6 +570,7 @@ Webhook Chain Example:
   href="/advanced/backtesting-engine"
 >
   Test webhook-driven strategies against historical data.
+
 </Card>
 
 <Card
@@ -557,15 +579,19 @@ Webhook Chain Example:
   href="/trading-strategies/signal-based-trading"
 >
   Combine webhooks with Hyperscript's signal engine.
+
 </Card>
 
 <Card title="Portfolio Dashboard" icon="chart-mixed" href="/portfolio/dashboard">
   Monitor webhook-driven strategy performance.
+
 </Card>
+
 </CardGroup>
 
 <Note>
   Webhooks provide powerful integration capabilities but require careful
   security and error handling. Always test thoroughly in a sandbox environment
   before deploying to production trading.
+
 </Note>{" "}

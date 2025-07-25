@@ -10,16 +10,21 @@ Risk management is the cornerstone of successful automated trading. While genera
 <CardGroup cols={2}>
   <Card title="Capital Preservation" icon="shield">
     Protect your trading capital from catastrophic losses
-  </Card>
+  
+</Card>
   <Card title="Risk Measurement" icon="calculator">
     Quantify and monitor various types of risk
-  </Card>
+  
+</Card>
   <Card title="Position Sizing" icon="resize">
     Optimal allocation of capital to trades and strategies
-  </Card>
+  
+</Card>
   <Card title="Portfolio Protection" icon="umbrella">
     Diversification and correlation management
-  </Card>
+  
+</Card>
+
 </CardGroup>
 
 ## Fundamental Risk Management Principles
@@ -29,6 +34,7 @@ Risk management is the cornerstone of successful automated trading. While genera
 <Warning>
   Never risk more than 1-2% of your total capital on any single trade or
   strategy.
+
 </Warning>
 
 The foundation of risk management is limiting your maximum loss per trade:
@@ -43,6 +49,7 @@ The foundation of risk management is limiting your maximum loss per trade:
     ``` Position Size = (Account Balance × Risk %) / Stop Loss Distance Example:
     - Account Balance: $100,000 - Risk per Trade: 1% = $1,000 - Stop Loss: 2%
     from entry - Position Size: $1,000 / 0.02 = $50,000 maximum position ```
+
 </Accordion>
 
   <Accordion title="Risk-Adjusted Returns">
@@ -50,7 +57,9 @@ The foundation of risk management is limiting your maximum loss per trade:
     Risk-free Rate) / Standard Deviation - **Sortino Ratio**: Return / Downside
     Deviation - **Calmar Ratio**: Annual Return / Maximum Drawdown -
     **Information Ratio**: Excess Return / Tracking Error
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Diversification Strategies
@@ -82,6 +91,7 @@ graph TD
 <Info>
   Effective diversification reduces portfolio volatility without necessarily
   reducing expected returns.
+
 </Info>
 
 ## Position Sizing Methodologies
@@ -96,6 +106,7 @@ The Kelly Criterion provides mathematically optimal position sizing:
     Average Win Example: - Win Rate: 60% (0.6) - Average Win: 4% - Loss Rate:
     40% (0.4) - Average Loss: 2% - Kelly % = (0.6 × 4%) - (0.4 × 2%) / 4% = 1.8%
     ```
+
 </Accordion>
 
   <Accordion title="Fractional Kelly">
@@ -105,8 +116,11 @@ The Kelly Criterion provides mathematically optimal position sizing:
     <Tip>
       Quarter to Half Kelly typically provides the best risk-adjusted returns
       for most traders.
-    </Tip>
+    
+</Tip>
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Fixed Percentage Method
@@ -118,6 +132,7 @@ Simple but effective position sizing approach:
   **Easy to Calculate**: Simple position sizing formula - [ ] **Consistent
   Risk**: Equal risk across all trades - [ ] **Capital Preservation**: Automatic
   position scaling as account grows/shrinks
+
 </CheckList>
 
 ### Volatility-Based Sizing
@@ -150,22 +165,27 @@ Adjust position sizes based on market volatility:
     consistent risk - **Disadvantages**: Doesn't account for market volatility -
     **Best For**: Stable, low-volatility markets - **Example**: Always exit at
     -2% loss regardless of conditions
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Volatility-Based Stops">
   ATR (Average True Range) based stop placement - **Advantages**: Adapts to
   market conditions - **Disadvantages**: More complex to calculate - **Best
   For**: Varying volatility environments - **Example**: Stop = Entry Price - (2
   × ATR)
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Technical Stops">
   Stops based on technical levels - **Support/Resistance Levels**: Stop below
   support for longs - **Moving Average Stops**: Exit when price crosses MA -
   **Fibonacci Levels**: Stops at key retracement levels - **Chart Pattern
   Stops**: Based on pattern invalidation points
+
 </Accordion>
 
   <Accordion title="Time-Based Stops">
@@ -173,7 +193,9 @@ Adjust position sizes based on market volatility:
     Exit after X days regardless of P&L - **Weekend Exits**: Close positions
     before market close - **Session-Based**: Exit at end of trading sessions -
     **Decay Stops**: Tighten stops as time passes
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Dynamic Stop Management
@@ -181,6 +203,7 @@ Adjust position sizes based on market volatility:
 <Warning>
   Never move stops against your position - this violates fundamental risk
   management principles.
+
 </Warning>
 
 Advanced stop-loss techniques:
@@ -203,6 +226,7 @@ Monitor and control correlation between positions:
     - Different strategies running simultaneously
     - Portfolio vs overall market (Beta)
     - Cross-asset correlations during stress periods
+
 </Accordion>
   
   <Accordion title="Correlation Limits">
@@ -220,6 +244,7 @@ Monitor and control correlation between positions:
       }
     }
     ```
+
 </Accordion>
   
   <Accordion title="Correlation-Based Position Sizing">
@@ -228,7 +253,9 @@ Monitor and control correlation between positions:
     - **Medium Correlation (0.3-0.7)**: Reduce positions by 25-50%
     - **High Correlation (> 0.7)**: Reduce positions by 50-75%
     - **Crisis Correlation (> 0.9)**: Consider position closure
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Maximum Drawdown Controls
@@ -236,6 +263,7 @@ Monitor and control correlation between positions:
 <Info>
   Drawdown protection is often more important than maximizing returns for
   long-term success.
+
 </Info>
 
 Implement systematic drawdown controls:
@@ -246,6 +274,7 @@ Implement systematic drawdown controls:
   Limits**: 3-5% maximum daily portfolio loss - [ ] **Risk Scaling**: Reduce
   position sizes during drawdowns - [ ] **Circuit Breakers**: Halt trading
   during extreme conditions
+
 </CheckList>
 
 ### Heat Maps and Risk Budgeting
@@ -280,14 +309,17 @@ graph LR
     next day - **Confidence Levels**: 95%, 99%, 99.9% - **Calculation Methods**:
     Historical, parametric, Monte Carlo - **Usage**: Daily risk monitoring and
     position sizing
+
 </Accordion>
 
 {" "}
+
 <Accordion title="Expected Shortfall (ES)">
   Average loss beyond VaR threshold - **Also Called**: Conditional VaR (CVaR) -
   **Advantage**: Captures tail risk better than VaR - **Calculation**: Average
   of losses exceeding VaR - **Usage**: Stress testing and extreme risk
   assessment
+
 </Accordion>
 
   <Accordion title="Maximum Drawdown">
@@ -295,7 +327,9 @@ graph LR
     high - **Maximum Historical**: Worst decline in backtest/live trading -
     **Recovery Time**: Time to reach new equity highs - **Underwater Periods**:
     Duration of continuous losses
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Real-Time Risk Monitoring
@@ -305,6 +339,7 @@ Set up comprehensive risk monitoring dashboards:
 <Tip>
   Monitor risk metrics in real-time to catch problems before they become
   catastrophic.
+
 </Tip>
 
 **Daily Monitoring Checklist:**
@@ -314,6 +349,7 @@ Set up comprehensive risk monitoring dashboards:
   maximums - [ ] Strategy correlation matrix - [ ] Current drawdown vs
   historical maximum - [ ] Cash reserves and margin utilization - [ ] Upcoming
   economic events and market risks
+
 </CheckList>
 
 ## Stress Testing and Scenario Analysis
@@ -327,13 +363,16 @@ Test your portfolio against historical market events:
     - **May 2021 Crash**: 50% BTC decline in days - **June 2022 Terra/Luna
     Collapse**: Broad crypto selloff - **November 2022 FTX Collapse**: Liquidity
     crisis - **March 2020 COVID Crash**: All-asset correlation spike
+
 </Accordion>
 
   <Accordion title="Traditional Market Events">
     - **2008 Financial Crisis**: Correlation breakdowns - **Flash Crashes**:
     Extreme intraday volatility - **Currency Crises**: Emerging market selloffs
     - **Interest Rate Shocks**: Federal Reserve policy changes
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Monte Carlo Simulations
@@ -363,6 +402,7 @@ Plan for black swan events:
 <Warning>
   Always plan for scenarios worse than your historical data suggests is
   possible.
+
 </Warning>
 
 - **80% Portfolio Decline**: Can you survive and recover?
@@ -382,6 +422,7 @@ Plan for black swan events:
     increase size after losses - **Overconfidence**: Maintain consistent risk
     after winning streaks - **Analysis Paralysis**: Set decision deadlines and
     stick to them
+
 </Accordion>
 
   <Accordion title="Systematic Approach">
@@ -389,7 +430,9 @@ Plan for black swan events:
     entry, exit, and sizing rules - **Automated Execution**: Reduce human
     intervention - **Regular Reviews**: Scheduled performance analysis -
     **Journaling**: Track decisions and emotional states
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Cognitive Biases
@@ -402,6 +445,7 @@ Recognize and mitigate common trading biases:
   **Recency Bias**: Overweighting recent events - [ ] **Overconfidence**:
   Overestimating accuracy of predictions - [ ] **Loss Aversion**: Taking
   excessive risk to avoid realizing losses
+
 </CheckList>
 
 ## Risk Management Implementation
@@ -421,6 +465,7 @@ Recognize and mitigate common trading biases:
       }
     }
     ```
+
 </Accordion>
   
   <Accordion title="Strategy-Level Controls">
@@ -435,6 +480,7 @@ Recognize and mitigate common trading biases:
       }
     }
     ```
+
 </Accordion>
   
   <Accordion title="Position-Level Controls">
@@ -449,7 +495,9 @@ Recognize and mitigate common trading biases:
       }
     }
     ```
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Risk Reporting and Alerts
@@ -459,6 +507,7 @@ Set up comprehensive risk reporting:
 <Info>
   Automate risk reporting to ensure consistent monitoring and quick response to
   risk events.
+
 </Info>
 
 **Risk Alert Triggers:**
@@ -480,6 +529,7 @@ Set up comprehensive risk reporting:
     position size - **Bid-Ask Spreads**: Monitor trading costs - **Market
     Depth**: Ability to exit without major impact - **Historical Liquidity**:
     Performance during stress periods
+
 </Accordion>
 
   <Accordion title="Liquidity Stress Testing">
@@ -487,7 +537,9 @@ Set up comprehensive risk reporting:
     50% normal volume - **Wider Spreads**: 2-5x normal bid-ask spreads -
     **Market Gapping**: Inability to execute at expected prices - **Exchange
     Outages**: Temporary inability to trade
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Dynamic Risk Budgeting
@@ -528,6 +580,7 @@ Consider risks across different timeframes:
   - [ ] Review current portfolio VaR - [ ] Check position sizes vs limits - [ ]
   Monitor correlation matrix - [ ] Verify stop-loss levels - [ ] Assess cash
   reserves - [ ] Review upcoming market events
+
 </CheckList>
 
 ### Weekly Risk Management
@@ -537,6 +590,7 @@ Consider risks across different timeframes:
   correlations - [ ] Update volatility estimates - [ ] Stress test current
   positions - [ ] Evaluate risk-adjusted returns - [ ] Plan for upcoming
   economic events
+
 </CheckList>
 
 ### Monthly Risk Management
@@ -545,6 +599,7 @@ Consider risks across different timeframes:
   - [ ] Comprehensive performance review - [ ] Risk model validation - [ ]
   Strategy optimization analysis - [ ] Benchmark comparison - [ ] Risk limit
   effectiveness review - [ ] Update risk management procedures
+
 </CheckList>
 
 ## Next Steps
@@ -556,26 +611,31 @@ Consider risks across different timeframes:
     icon="tools"
   >
     Explore Hyperscript's risk management features
-  </Card>
+  
+</Card>
   <Card
     title="Strategy Building Guide"
     href="/guides/strategy-building"
     icon="hammer"
   >
     Learn to incorporate risk management into strategies
-  </Card>
+  
+</Card>
   <Card
     title="Portfolio Dashboard"
     href="/portfolio/dashboard"
     icon="chart-mixed"
   >
     Monitor risk in real-time
-  </Card>
+  
+</Card>
   <Card
     title="Performance Analytics"
     href="/portfolio/performance-analytics"
     icon="chart-line"
   >
     Analyze risk-adjusted performance
-  </Card>
+  
+</Card>
+
 </CardGroup>{" "}

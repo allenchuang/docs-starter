@@ -41,30 +41,35 @@ You are an AI writing assistant specialized in creating exceptional technical do
 
 <Note>
 Supplementary information that supports the main content without interrupting flow
+
 </Note>
 
 #### Tip - Best practices and pro tips
 
 <Tip>
 Expert advice, shortcuts, or best practices that enhance user success
+
 </Tip>
 
 #### Warning - Important cautions
 
 <Warning>
 Critical information about potential issues, breaking changes, or destructive actions
+
 </Warning>
 
 #### Info - Neutral contextual information
 
 <Info>
 Background information, context, or neutral announcements
+
 </Info>
 
 #### Check - Success confirmations
 
 <Check>
 Positive confirmations, successful completions, or achievement indicators
+
 </Check>
 
 ### Code components
@@ -117,6 +122,7 @@ curl -X POST 'https://api.example.com/users' \
   -H 'Content-Type: application/json' \
   -d '{"name": "John Doe", "email": "john@example.com"}'
 ```
+
 </RequestExample>
 
 <ResponseExample>
@@ -128,6 +134,7 @@ curl -X POST 'https://api.example.com/users' \
   "created_at": "2024-01-15T10:30:00Z"
 }
 ```
+
 </ResponseExample>
 
 ### Structural components
@@ -142,7 +149,9 @@ Example of step-by-step instructions:
   
   <Check>
   Verify installation by running `npm list`.
-  </Check>
+  
+</Check>
+
 </Step>
 
 <Step title="Configure environment">
@@ -154,8 +163,11 @@ Example of step-by-step instructions:
   
   <Warning>
   Never commit API keys to version control.
-  </Warning>
+  
+</Warning>
+
 </Step>
+
 </Steps>
 
 #### Tabs for alternative content
@@ -168,6 +180,7 @@ Example of tabbed content:
   brew install node
   npm install -g package-name
   ```
+
 </Tab>
 
 <Tab title="Windows">
@@ -175,6 +188,7 @@ Example of tabbed content:
   choco install nodejs
   npm install -g package-name
   ```
+
 </Tab>
 
 <Tab title="Linux">
@@ -182,7 +196,9 @@ Example of tabbed content:
   sudo apt install nodejs npm
   npm install -g package-name
   ```
+
 </Tab>
+
 </Tabs>
 
 #### Accordions for collapsible content
@@ -194,6 +210,7 @@ Example of accordion groups:
   - **Firewall blocking**: Ensure ports 80 and 443 are open
   - **Proxy configuration**: Set HTTP_PROXY environment variable
   - **DNS resolution**: Try using 8.8.8.8 as DNS server
+
 </Accordion>
 
 <Accordion title="Advanced configuration">
@@ -203,7 +220,9 @@ Example of accordion groups:
     security: { encryption: 'AES-256' }
   };
   ```
+
 </Accordion>
+
 </AccordionGroup>
 
 ### Cards and columns for emphasizing information
@@ -212,16 +231,20 @@ Example of cards and card groups:
 
 <Card title="Getting started guide" icon="rocket" href="/quickstart">
 Complete walkthrough from installation to your first API call in under 10 minutes.
+
 </Card>
 
 <CardGroup cols={2}>
 <Card title="Authentication" icon="key" href="/auth">
   Learn how to authenticate requests using API keys or JWT tokens.
+
 </Card>
 
 <Card title="Rate limiting" icon="clock" href="/rate-limits">
   Understand rate limits and best practices for high-volume usage.
+
 </Card>
+
 </CardGroup>
 
 ### API documentation components
@@ -232,18 +255,22 @@ Example of parameter documentation:
 
 <ParamField path="user_id" type="string" required>
 Unique identifier for the user. Must be a valid UUID v4 format.
+
 </ParamField>
 
 <ParamField body="email" type="string" required>
 User's email address. Must be valid and unique within the system.
+
 </ParamField>
 
 <ParamField query="limit" type="integer" default="10">
 Maximum number of results to return. Range: 1-100.
+
 </ParamField>
 
 <ParamField header="Authorization" type="string" required>
 Bearer token for API authentication. Format: `Bearer YOUR_API_KEY`
+
 </ParamField>
 
 #### Response fields
@@ -252,14 +279,17 @@ Example of response field documentation:
 
 <ResponseField name="user_id" type="string" required>
 Unique identifier assigned to the newly created user.
+
 </ResponseField>
 
 <ResponseField name="created_at" type="timestamp">
 ISO 8601 formatted timestamp of when the user was created.
+
 </ResponseField>
 
 <ResponseField name="permissions" type="array">
 List of permission strings assigned to this user.
+
 </ResponseField>
 
 #### Expandable nested fields
@@ -276,14 +306,20 @@ Complete user object with all associated data.
   <Expandable title="Profile details">
     <ResponseField name="first_name" type="string">
     User's first name as entered during registration.
-    </ResponseField>
+    
+</ResponseField>
     
     <ResponseField name="avatar_url" type="string | null">
     URL to user's profile picture. Returns null if no avatar is set.
-    </ResponseField>
-  </Expandable>
-  </ResponseField>
+    
+</ResponseField>
+  
 </Expandable>
+  
+</ResponseField>
+
+</Expandable>
+
 </ResponseField>
 
 ### Media and advanced components
@@ -294,10 +330,12 @@ Wrap all images in frames:
 
 <Frame>
 <img src="/images/dashboard.png" alt="Main dashboard showing analytics overview" />
+
 </Frame>
 
 <Frame caption="The analytics dashboard provides real-time insights">
 <img src="/images/analytics.png" alt="Analytics dashboard with charts" />
+
 </Frame>
 
 #### Videos
@@ -320,7 +358,8 @@ Embed YouTube videos using iframe elements:
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
-></iframe>
+>
+</iframe>
 
 #### Tooltips
 
@@ -328,6 +367,7 @@ Example of tooltip usage:
 
 <Tooltip tip="Application Programming Interface - protocols for building software">
 API
+
 </Tooltip>
 
 #### Updates
@@ -343,7 +383,8 @@ Use updates for changelogs:
 
 - Fixed pagination issue with large datasets
 - Resolved authentication timeout problems
-  </Update>
+
+</Update>
 
 ## Required page structure
 
