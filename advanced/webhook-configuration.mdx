@@ -5,11 +5,11 @@ description: "Set up and manage webhook endpoints for external integrations, ale
 
 ## What are Webhooks?
 
-Webhooks are HTTP endpoints that allow external services to send real-time data to Hyperscript. They enable seamless integration with trading platforms, alert services, and third-party applications for automated strategy execution and notification management.
+Webhooks are HTTP endpoints that allow external services to send real-time data to Nimbus. They enable seamless integration with trading platforms, alert services, and third-party applications for automated strategy execution and notification management.
 
 ## Supported Webhook Types
 
-Hyperscript supports multiple webhook types for different use cases:
+Nimbus supports multiple webhook types for different use cases:
 
 <CardGroup cols={2}>
 <Card title="TradingView Integration" icon="chart-line">
@@ -65,7 +65,7 @@ Navigate to your webhook management dashboard:
    ├── Name: "TradingView EMA Strategy"
    ├── Type: "TradingView PineScript"
    ├── Status: "Active"
-   ├── URL: "https://api.hyperscript.xyz/webhook/tv/abc123"
+   ├── URL: "https://api.nimbus.trade/webhook/tv/abc123"
    ├── Secret: "wh_secret_xyz789"
    └── Rate Limit: "100 requests/minute"
    ```
@@ -133,7 +133,7 @@ Define how incoming webhook data should be processed:
 
 <Accordion icon="gear" title="Custom Field Mapping">
 
-**Map webhook fields to Hyperscript parameters:**
+**Map webhook fields to Nimbus parameters:**
 
 ```javascript
 Field Mapping Configuration:
@@ -382,10 +382,10 @@ Complete setup for TradingView PineScript integration:
 1. **Create TradingView Alert**:
 
    - Condition: Your PineScript strategy
-   - Webhook URL: `https://api.hyperscript.xyz/webhook/tv/your-id`
+   - Webhook URL: `https://api.nimbus.trade/webhook/tv/your-id`
    - Message: `{{strategy.order.alert_message}}`
 
-2. **Configure Hyperscript Webhook**:
+2. **Configure Nimbus Webhook**:
 
    ```javascript
    TradingView Webhook Settings:
@@ -407,7 +407,7 @@ Complete setup for TradingView PineScript integration:
 
 3. **Test Integration**:
    - Send test alert from TradingView
-   - Verify signal processing in Hyperscript
+   - Verify signal processing in Nimbus
    - Check trade execution on Hyperliquid
 
 </Accordion>
@@ -470,7 +470,7 @@ Price Alert Webhook Configuration:
 
 ```bash
 curl -X POST \
-  https://api.hyperscript.xyz/webhook/tv/your-id \
+  https://api.nimbus.trade/webhook/tv/your-id \
   -H "Content-Type: application/json" \
   -H "X-Webhook-Signature: sha256=your-signature" \
   -d '{"action":"buy","symbol":"ETH","size":100}'
@@ -578,7 +578,7 @@ Webhook Chain Example:
   icon="radar"
   href="/trading-strategies/signal-based-trading"
 >
-  Combine webhooks with Hyperscript's signal engine.
+  Combine webhooks with Nimbus's signal engine.
 
 </Card>
 

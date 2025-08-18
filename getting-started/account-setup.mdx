@@ -1,6 +1,6 @@
 ---
 title: "Account Setup & Connection to Hyperliquid"
-description: "Complete guide to securely connecting your Hyperliquid account to Hyperscript"
+description: "Complete guide to securely connecting your Hyperliquid account to Nimbus"
 ---
 
 ## Setting Up Your Trading Account
@@ -42,13 +42,13 @@ Before you begin, ensure you have:
 
 ### Connection Process
 
-1. Click "Connect Wallet" in the Hyperscript dashboard
+1. Click "Connect Wallet" in the Nimbus dashboard
 2. Select your preferred wallet type
 3. Approve the connection request
 4. Sign the message to verify ownership
 
 <Warning>
-  Never share your private keys or seed phrase. Hyperscript only needs
+  Never share your private keys or seed phrase. Nimbus only needs
   read/write permissions for trading, not wallet access.
 
 </Warning>
@@ -89,7 +89,7 @@ Start with testnet to familiarize yourself with the platform.
 
 </AccordionGroup>
 
-### Adding API Keys to Hyperscript
+### Adding API Keys to Nimbus
 
 1. Navigate to Settings → API Configuration
 2. Select "Hyperliquid" as your exchange
@@ -99,7 +99,7 @@ Start with testnet to familiarize yourself with the platform.
 6. Save your configuration
 
 <Note>
-  API keys are encrypted and stored securely. Hyperscript cannot access your
+  API keys are encrypted and stored securely. Nimbus cannot access your
   funds for withdrawal.
 
 </Note>
@@ -135,7 +135,7 @@ For mainnet:
 
 <Warning>
   **Critical Security Rules:** - Never enable withdrawal permissions - Use
-  unique API keys only for Hyperscript - Regularly rotate your API keys
+  unique API keys only for Nimbus - Regularly rotate your API keys
   (monthly) - Monitor your account for unexpected activity
 
 </Warning>
@@ -151,7 +151,7 @@ For mainnet:
 
 For maximum security, restrict API key access:
 
-1. In Hyperliquid API settings, add Hyperscript's IP addresses:
+1. In Hyperliquid API settings, add Nimbus's IP addresses:
    - `52.91.45.123` (Primary)
    - `3.87.156.201` (Backup)
 2. This prevents unauthorized access from other locations

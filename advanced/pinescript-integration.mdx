@@ -1,20 +1,20 @@
 ---
 title: "PineScript Integration"
-description: "Execute TradingView PineScript strategies on Hyperliquid using Hyperscript's webhook integration and automated execution engine"
+description: "Execute TradingView PineScript strategies on Hyperliquid using Nimbus's webhook integration and automated execution engine"
 ---
 
 ## What is PineScript Integration?
 
-Hyperscript's PineScript Integration allows you to execute your TradingView Pine Script strategies directly on Hyperliquid through webhook automation. This bridges the gap between TradingView's powerful charting and strategy development environment and real-world trading execution.
+Nimbus's PineScript Integration allows you to execute your TradingView Pine Script strategies directly on Hyperliquid through webhook automation. This bridges the gap between TradingView's powerful charting and strategy development environment and real-world trading execution.
 
 ## How PineScript Integration Works
 
-Connect your TradingView strategies to Hyperscript for seamless automated execution:
+Connect your TradingView strategies to Nimbus for seamless automated execution:
 
 <Info>
   **Example Workflow**: 1. Develop your strategy in TradingView Pine Script 2.
-  Configure webhook alerts in TradingView 3. Connect webhook to Hyperscript
-  execution engine 4. Hyperscript automatically executes trades on Hyperliquid
+  Configure webhook alerts in TradingView 3. Connect webhook to Nimbus
+  execution engine 4. Nimbus automatically executes trades on Hyperliquid
   5. Monitor performance and adjust parameters as needed
 
 </Info>
@@ -25,7 +25,7 @@ Connect your TradingView strategies to Hyperscript for seamless automated execut
 graph TD
     A[TradingView Pine Script] --> B[Strategy Alerts]
     B --> C[Webhook Configuration]
-    C --> D[Hyperscript Webhook Receiver]
+    C --> D[Nimbus Webhook Receiver]
     D --> E[Signal Processing & Validation]
     E --> F[Risk Management Checks]
     F --> G[Hyperliquid Order Execution]
@@ -45,7 +45,7 @@ Configure your TradingView environment for webhook integration:
 
 ```pinescript
 //@version=5
-strategy("Hyperscript Integration Example", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=10)
+strategy("Nimbus Integration Example", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=10)
 
 // Strategy parameters
 fast_length = input.int(12, title="Fast MA Length")
@@ -90,7 +90,7 @@ if strategy.position_size < 0 and ta.crossover(fast_ma, slow_ma)
 1. **Create Alert**: Click "Alert" button on TradingView chart
 2. **Select Condition**: Choose your strategy from dropdown
 3. **Configure Webhook**:
-   - **Webhook URL**: `https://api.hyperscript.xyz/webhook/tv/{your-webhook-id}`
+   - **Webhook URL**: `https://api.nimbus.trade/webhook/tv/{your-webhook-id}`
    - **Message**: Use `{{strategy.order.alert_message}}` to pass Pine Script data
 4. **Alert Settings**:
    - **Name**: Descriptive name for your strategy
@@ -101,9 +101,9 @@ if strategy.position_size < 0 and ta.crossover(fast_ma, slow_ma)
 
 </AccordionGroup>
 
-### Step 2: Hyperscript Configuration
+### Step 2: Nimbus Configuration
 
-Connect your TradingView alerts to Hyperscript execution:
+Connect your TradingView alerts to Nimbus execution:
 
 <AccordionGroup>
 <Accordion icon="link" title="Webhook Setup">
@@ -231,7 +231,7 @@ Execute coordinated strategies across multiple assets:
 
 ### Webhook Message Structure
 
-Hyperscript supports flexible JSON message formats:
+Nimbus supports flexible JSON message formats:
 
 <AccordionGroup>
 <Accordion icon="code" title="Basic Trade Messages">
@@ -325,7 +325,7 @@ Complete implementation of a classic crossover strategy:
 
 ```pinescript
 //@version=5
-strategy("Hyperscript EMA Cross", overlay=true,
+strategy("Nimbus EMA Cross", overlay=true,
          default_qty_type=strategy.percent_of_equity, default_qty_value=10,
          commission_type=strategy.commission.percent, commission_value=0.1)
 
@@ -393,7 +393,7 @@ Contrarian strategy based on RSI extremes:
 
 ```pinescript
 //@version=5
-strategy("Hyperscript RSI Reversal", overlay=false,
+strategy("Nimbus RSI Reversal", overlay=false,
          default_qty_type=strategy.percent_of_equity, default_qty_value=5)
 
 // RSI settings
@@ -509,7 +509,7 @@ Position sizing compliance, risk limit adherence, and exposure tracking
 
 <AccordionGroup>
 <Accordion icon="exclamation-triangle" title="Webhook Delivery Issues">
-**Problem**: Alerts not reaching Hyperscript
+**Problem**: Alerts not reaching Nimbus
 
 **Solutions**:
 
@@ -600,7 +600,7 @@ alert_msg = '{"action":"buy","symbol":"ETH","size":100,"htf_trend":"' + trend_co
   icon="radar"
   href="/trading-strategies/signal-based-trading"
 >
-  Combine PineScript with Hyperscript's proprietary signals.
+  Combine PineScript with Nimbus's proprietary signals.
 
 </Card>
 
@@ -613,7 +613,7 @@ alert_msg = '{"action":"buy","symbol":"ETH","size":100,"htf_trend":"' + trend_co
 
 <Note>
   PineScript integration provides powerful flexibility for strategy development
-  while maintaining the safety and risk management features of the Hyperscript
+  while maintaining the safety and risk management features of the Nimbus
   platform. Always test thoroughly before deploying real capital.
 
 </Note>{" "}
