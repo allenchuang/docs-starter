@@ -3,11 +3,14 @@
   "theme": "almond",
   "name": "Nimbus",
   "colors": {
-    "primary": "#1defdf",
-    "light": "#36e3d6",
-    "dark": "#07f8e6"
+    "primary": "#06dbcb",
+    "light": "#06dbcb",
+    "dark": "#06dbcb"
   },
   "favicon": "/favicon.svg",
+  "fonts": {
+    "family": "Geist"
+  },
   "navigation": {
     "tabs": [
       {
